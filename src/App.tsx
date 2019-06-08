@@ -1,11 +1,15 @@
 import React from 'react'
-import logo from './logo.svg'
 import './App.css'
 import TopBar from './components/TopBar'
 import TopHero from './components/TopHero'
 import ServiceGroupList from './components/ServiceGroupList'
 import FeaturedServices from './components/FeaturedServices'
 import HowItWorks from './components/HowItWorks'
+import CustomerReview from './components/CustomerReview'
+import CallToSignup from './components/CallToSignup'
+import ServiceReview from './components/ServiceReview'
+import FeatureList from './components/FeatureList'
+import Footer from './components/Footer'
 
 const App: React.FC = () => {
   return (
@@ -14,22 +18,21 @@ const App: React.FC = () => {
       <TopHero/>
       <ServiceGroupList/>
       <FeaturedServices/>
+
       <hr/>
       <HowItWorks/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <hr/>
+      <CustomerReview/>
+
+      <hr/>
+      <ServiceReview/>
+      <CallToSignup/>
+
+      <hr/>
+      <FeatureList/>
+
+      <Footer/>
     </div>
   )
 }

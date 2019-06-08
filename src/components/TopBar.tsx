@@ -8,7 +8,6 @@ const TopBar: React.FC = () => {
   return (
     <nav className="TopBar navbar is-fixed-top has-shadow" role="navigation"
          aria-label="main navigation">
-      <Container>
         <div className="navbar-brand">
           <a className="navbar-item" href="https://bulma.io">
             <img src={getImage('ninjaman')} width="28" height="28" alt="NinjaMan"/>
@@ -26,7 +25,6 @@ const TopBar: React.FC = () => {
             </div>
           </div>
         </div>
-      </Container>
     </nav>
   )
 }

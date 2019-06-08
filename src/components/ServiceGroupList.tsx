@@ -1,5 +1,7 @@
 import React from 'react'
 import {getImage} from '../util/Resource'
+import './ServiceGroupList.css'
+import Container from './Container'
 
 const ServiceGroupList: React.FC = () => {
   const mkGroup = (name: string, imageName: string) => {
@@ -15,13 +17,13 @@ const ServiceGroupList: React.FC = () => {
 
   return (
     <section className="ServiceGroupList section">
-      <div className="container">
-        <nav className="ServiceGroupList level">
+      <Container>
+        <div className="ServiceGroupList level">
           {mkGroup('Plumbing', 'plumbing')}
           {mkGroup('Cleaning', 'cleaning')}
           {mkGroup('Repair', 'repair')}
-        </nav>
-      </div>
+        </div>
+      </Container>
     </section>
   )
 }

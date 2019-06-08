@@ -1,0 +1,20 @@
+.CallToSignup {
+  padding-top: 0;
+}
+
+.call_to_signup_wrapper {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d2d2d2;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_signup {
+  margin-left: 40px
+}
