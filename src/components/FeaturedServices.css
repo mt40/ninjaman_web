@@ -1,0 +1,36 @@
+.featured-listing {
+  width: 250px;
+  background: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d2d2d2;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.listing-img {
+  height: 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-origin: border-box;
+}
+
+.listing-text {
+  padding: 5px;
+}
+
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.ScrollMenu {
+  margin-left: -100px;
+}
+
+.featured-section {
+  margin-bottom: 30px;
+}
