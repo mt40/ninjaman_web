@@ -3,27 +3,35 @@ import ScrollMenu from 'react-horizontal-scrolling-menu'
 import {getImage} from '../util/Resource'
 import Container from './Container'
 import './FeaturedServices.css'
-
-interface Listing {
-  name: string,
-  image: string
-}
+import useRouter from 'use-react-router'
+import {Listing} from '../models/Listing'
+import {appContext} from '../App'
 
 const FeaturedServices: React.FC = () => {
+  const context = React.useContext(appContext)
+  const {history} = useRouter()
+
   const mkListingElems = (listings: Listing[]) => {
-    return listings.map((i: Listing, index: number) => {
-      const image = getImage(i.image, 'jpg')
+    return listings.map((l: Listing, index: number) => {
+      const image = getImage(l.image, 'jpg')
       return (
-        <div className="featured-listing" key={index}>
+
+        <div className="featured-listing" key={index} onClick={() => onListingClick(l)}>
           <div className="listing-img" style={{backgroundImage: `url('${image}')`}}/>
           <div className="listing-text">
-            <p>{i.name}</p>
+            <p>{l.name}</p>
           </div>
         </div>
+
       )
     })
   }
 
+  const onListingClick = (l: Listing) => {
+    context.actions.setListing(l)
+    const hyphenName = l.name.toLowerCase().replace(new RegExp('\\s+'), ' ').replace(' ', '-')
+    history.push(`/service/${hyphenName}`)
+  }
 
   const leftArrow = <div className="scroll-menu-arrow">{'<'}</div>
   const rightArrow = <div className="scroll-menu-arrow">{'>'}</div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBox from './SearchBox'
+import './TopHero.css'
 
 const TopHero: React.FC = () => {
   return (

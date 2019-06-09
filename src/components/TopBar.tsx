@@ -1,8 +1,6 @@
 import React from 'react'
 import SimpleButton from './SimpleButton'
 import {getImage} from '../util/Resource'
-import Container from './Container'
-import './TopBar.css'
 
 const TopBar: React.FC = () => {
   return (

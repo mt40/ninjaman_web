@@ -35,3 +35,44 @@ code {
 .no_bg {
   background-color: transparent;
 }
+
+.bg_white {
+  background-color: white;
+}
+
+.text_white {
+  color: white;
+}
+
+.padding_10 {
+  padding: 10px;
+}
+
+.padding_20 {
+  padding: 20px;
+}
+
+.v_margin_5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.v_margin_20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.margin_top_20 {
+  margin-top: 20px;
+}
+
+.radius_5 {
+  border-radius: 5px;
+}
+
+.border_solid {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d2d2d2;
+  overflow: hidden;
+}

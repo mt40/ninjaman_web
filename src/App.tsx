@@ -1,39 +1,74 @@
 import React from 'react'
 import './App.css'
+import HomePage from './pages/HomePage'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import ListingDetailPage from './pages/ListingDetailPage'
 import TopBar from './components/TopBar'
-import TopHero from './components/TopHero'
-import ServiceGroupList from './components/ServiceGroupList'
-import FeaturedServices from './components/FeaturedServices'
-import HowItWorks from './components/HowItWorks'
-import CustomerReview from './components/CustomerReview'
-import CallToSignup from './components/CallToSignup'
-import ServiceReview from './components/ServiceReview'
-import FeatureList from './components/FeatureList'
-import Footer from './components/Footer'
+import {Listing} from './models/Listing'
+import {none, Option, some} from 'ts-option'
+
+export interface AppState {
+  current: {
+    listing: Option<Listing>
+  }
+}
+
+const defaultState: AppState = {
+  current: {
+    listing: none,
+  },
+}
+
+export interface AppContext {
+  state: AppState,
+  actions: {
+    setListing: (l: Listing) => void
+  }
+}
+
+// ATTENTION: context must be set properly later
+const defaultContext: AppContext = {
+  state: defaultState,
+  actions: {
+    setListing: () => {
+    },
+  },
+}
+
+export const appContext = React.createContext<AppContext>(defaultContext)
+const Provider = appContext.Provider
 
 const App: React.FC = () => {
+  const [state, setState] = React.useState<AppState>(defaultState)
+
+  const context: AppContext = {
+    state: state,
+    actions: {
+      setListing: l => {
+        setState({
+            current: {
+              ...state.current,
+              listing: some(l),
+            },
+          },
+        )
+      },
+    },
+  }
+
   return (
-    <div className="App">
-      <TopBar/>
-      <TopHero/>
-      <ServiceGroupList/>
-      <FeaturedServices/>
+    <Provider value={context}>
+      <BrowserRouter>
+        <div className="App">
+          <TopBar/>
 
-      <hr/>
-      <HowItWorks/>
-
-      <hr/>
-      <CustomerReview/>
-
-      <hr/>
-      <ServiceReview/>
-      <CallToSignup/>
-
-      <hr/>
-      <FeatureList/>
-
-      <Footer/>
-    </div>
+          <Switch>
+            <Route path="/" exact={true} component={HomePage}/>
+            <Route path="/service/:name" component={ListingDetailPage}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </Provider>
   )
 }
 
