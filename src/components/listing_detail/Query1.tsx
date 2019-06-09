@@ -1,9 +1,9 @@
 import React from 'react'
-import './ListingDetailQuery1.css'
-import Container from './Container'
-import {getImage} from '../util/Resource'
+import './Query1.css'
+import Container from '../Container'
+import {getImage} from '../../util/Resource'
 
-const ListingDetailQuery1: React.FC = () => {
+const Query1: React.FC = () => {
   const answers = [
     'Repair toilet',
     'Repair kitchen sink',
@@ -124,4 +124,4 @@ const ListingDetailQuery1: React.FC = () => {
   )
 }
 
-export default ListingDetailQuery1
+export default Query1

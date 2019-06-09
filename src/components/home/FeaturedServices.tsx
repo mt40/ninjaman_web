@@ -1,11 +1,11 @@
 import React from 'react'
 import ScrollMenu from 'react-horizontal-scrolling-menu'
-import {getImage} from '../util/Resource'
-import Container from './Container'
+import {getImage} from '../../util/Resource'
+import Container from '../Container'
 import './FeaturedServices.css'
 import useRouter from 'use-react-router'
-import {Listing} from '../models/Listing'
-import {appContext} from '../App'
+import {Listing} from '../../models/Listing'
+import {appContext} from '../../App'
 
 const FeaturedServices: React.FC = () => {
   const context = React.useContext(appContext)

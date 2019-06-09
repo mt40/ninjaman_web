@@ -1,7 +1,7 @@
 import React from 'react'
-import {getImage} from '../util/Resource'
+import {getImage} from '../../util/Resource'
 import './CustomerReview.css'
-import Container from './Container'
+import Container from '../Container'
 
 interface UserInfo {
   avatar: string,

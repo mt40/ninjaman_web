@@ -1,8 +1,8 @@
 import React from 'react'
-import ListingDetailHero from '../components/ListingDetailHero'
+import Hero from './Hero'
 import useRouter from 'use-react-router'
-import {appContext} from '../App'
-import ListingDetailQuery1 from '../components/ListingDetailQuery1'
+import {appContext} from '../../App'
+import Query1 from './Query1'
 
 const ListingDetailPage: React.FC = () => {
   const context = React.useContext(appContext)
@@ -15,8 +15,8 @@ const ListingDetailPage: React.FC = () => {
   else {
     return (
       <div className="ListingDetailPage">
-        <ListingDetailHero/>
-        <ListingDetailQuery1/>
+        <Hero/>
+        <Query1/>
       </div>
     )
   }

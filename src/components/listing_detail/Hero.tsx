@@ -1,9 +1,9 @@
 import React from 'react'
-import {appContext} from '../App'
-import './ListingDetailHero.css'
-import Container from './Container'
+import {appContext} from '../../App'
+import './Hero.css'
+import Container from '../Container'
 
-const ListingDetailHero: React.FC = () => {
+const Hero: React.FC = () => {
   const context = React.useContext(appContext)
 
   // Can safely get current listing here since empty case is already
@@ -30,4 +30,4 @@ const ListingDetailHero: React.FC = () => {
   )
 }
 
-export default ListingDetailHero
+export default Hero

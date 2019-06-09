@@ -1,8 +1,8 @@
 import React from 'react'
-import SearchBox from './SearchBox'
-import './TopHero.css'
+import SearchBox from '../SearchBox'
+import './Hero.css'
 
-const TopHero: React.FC = () => {
+const Hero: React.FC = () => {
   return (
     <section className="TopHero hero is-info is-medium">
       <div className="hero-body">
@@ -20,4 +20,4 @@ const TopHero: React.FC = () => {
   )
 }
 
-export default TopHero
+export default Hero
