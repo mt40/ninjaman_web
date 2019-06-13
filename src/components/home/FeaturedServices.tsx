@@ -28,7 +28,8 @@ const FeaturedServices: React.FC = () => {
   }
 
   const onListingClick = (l: Listing) => {
-    context.actions.setListing(l)
+    context.action.listing.setCurrent(l)
+
     const hyphenName = l.name.toLowerCase().replace(new RegExp('\\s+'), ' ').replace(' ', '-')
     history.push(`/service/${hyphenName}`)
   }

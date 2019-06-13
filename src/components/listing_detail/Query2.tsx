@@ -3,29 +3,21 @@ import Container from '../Container'
 import {appContext} from '../../App'
 import './Query2.css'
 
-const Query1: React.FC = () => {
+const Query2: React.FC = () => {
   const context = React.useContext(appContext)
 
   const answers = [
-    'Split A/C',
-    'Portable A/C',
-    'Ceiling A/C',
+    'Only Installation or only Un-installation',
+    'Un-installation and Installation + Moving',
   ]
 
   const answerElems = answers.map((a, idx) => {
     return (
-      <div
-        key={idx}
-        className="radius_5 border_solid padding_10 v_margin_10 bg_white cursor_pointer"
-        onClick={() => onAnswerClick(a)}>
+      <div key={idx} className="radius_5 border_solid padding_10 v_margin_10 bg_white">
         {a}
       </div>
     )
   })
-
-  const onAnswerClick = (answer: string) => {
-    context.action.query.answerQuery(answer)
-  }
 
   const onBackClick = () => {
     context.action.query.goBack()
@@ -34,7 +26,7 @@ const Query1: React.FC = () => {
   return (
     <section className="ListingDetailQuery2 text_centered">
       <Container isSmall={true}>
-        <h1 className="title">Tell us about your AC</h1>
+        <h1 className="title">What services do you need?</h1>
         <div>
           {answerElems}
         </div>
@@ -49,4 +41,4 @@ const Query1: React.FC = () => {
   )
 }
 
-export default Query1
+export default Query2

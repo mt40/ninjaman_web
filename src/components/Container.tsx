@@ -1,11 +1,18 @@
-import React from 'react'
+import React, {ReactNode} from 'react'
 
-const Container: React.FC = ({children}) => {
+interface Props {
+  isSmall?: boolean,
+  children: ReactNode,
+}
+
+const Container: React.FC<Props> = (props) => {
+  const size = props.isSmall ? "is-6" : "is-10"
+
   return (
     <div className="Container container">
       <div className="columns">
-        <div className="column is-10">
-          {children}
+        <div className={`column ${size}`}>
+          {props.children}
         </div>
       </div>
     </div>

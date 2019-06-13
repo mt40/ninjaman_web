@@ -4,57 +4,18 @@ import HomePage from './components/home/HomePage'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import ListingDetailPage from './components/listing_detail/ListingDetailPage'
 import TopBar from './components/TopBar'
-import {Listing} from './models/Listing'
-import {none, Option, some} from 'ts-option'
-
-export interface AppState {
-  current: {
-    listing: Option<Listing>
-  }
-}
-
-const defaultState: AppState = {
-  current: {
-    listing: none,
-  },
-}
-
-export interface AppContext {
-  state: AppState,
-  actions: {
-    setListing: (l: Listing) => void
-  }
-}
-
-// ATTENTION: context must be set properly later
-const defaultContext: AppContext = {
-  state: defaultState,
-  actions: {
-    setListing: () => {
-    },
-  },
-}
+import Footer from './components/Footer'
+import {AppContext, AppContextAsState, defaultContext} from './context/AppContext'
+import {contextFor} from './context/util'
 
 export const appContext = React.createContext<AppContext>(defaultContext)
 const Provider = appContext.Provider
 
 const App: React.FC = () => {
-  const [state, setState] = React.useState<AppState>(defaultState)
+  const [state, setState] = React.useState<AppContext>(defaultContext)
+  const context: AppContext = contextFor(new AppContextAsState(state, setState))
 
-  const context: AppContext = {
-    state: state,
-    actions: {
-      setListing: l => {
-        setState({
-            current: {
-              ...state.current,
-              listing: some(l),
-            },
-          },
-        )
-      },
-    },
-  }
+  console.log('app', context) // REMOVE
 
   return (
     <Provider value={context}>
@@ -62,10 +23,14 @@ const App: React.FC = () => {
         <div className="App">
           <TopBar/>
 
-          <Switch>
-            <Route path="/" exact={true} component={HomePage}/>
-            <Route path="/service/:name" component={ListingDetailPage}/>
-          </Switch>
+          <div className="page_content">
+            <Switch>
+              <Route path="/" exact={true} component={HomePage}/>
+              <Route path="/service/:name" component={ListingDetailPage}/>
+            </Switch>
+          </div>
+
+          <Footer/>
         </div>
       </BrowserRouter>
     </Provider>

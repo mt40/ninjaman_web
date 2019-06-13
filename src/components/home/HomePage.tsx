@@ -7,7 +7,6 @@ import CustomerReview from './CustomerReview'
 import CallToSignup from './CallToSignup'
 import ServiceReview from './ServiceReview'
 import FeatureList from './FeatureList'
-import Footer from '../Footer'
 
 const HomePage: React.FC = () => {
   return (
@@ -28,8 +27,6 @@ const HomePage: React.FC = () => {
 
       <hr/>
       <FeatureList/>
-
-      <Footer/>
     </div>
   )
 }

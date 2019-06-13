@@ -12,6 +12,14 @@ code {
   monospace;
 }
 
+.page_content {
+  /**
+  Set relative position so that this element can act as an "anchor" to position
+  inner children.
+   */
+  position: relative;
+}
+
 .section-title {
   text-align: center;
   margin-bottom: 50px;
@@ -44,6 +52,10 @@ code {
   color: white;
 }
 
+.text_centered {
+  text-align: center;
+}
+
 .padding_10 {
   padding: 10px;
 }
@@ -57,9 +69,19 @@ code {
   margin-bottom: 5px;
 }
 
+.v_margin_10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .v_margin_20 {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.h_margin_20 {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .margin_top_20 {
@@ -68,11 +90,24 @@ code {
 
 .radius_5 {
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .border_solid {
   border-style: solid;
   border-width: 1px;
   border-color: #d2d2d2;
-  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/*Remove margins from Font-Awesome icons*/
+i.fas {
+  margin: 0 !important;
+}
+
+.cursor_pointer {
+  cursor: pointer;
 }

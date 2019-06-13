@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
 
   // Can safely get current listing here since empty case is already
   // handled earlier in `ListingDetailPage`.
-  const listing = context.state.current.listing.get
+  const listing = context.data.listing.get.current
 
   return (
     <section className="ListingDetailHero hero is-info is-medium">
