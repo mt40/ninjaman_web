@@ -88,6 +88,10 @@ code {
   margin-top: 20px;
 }
 
+.padding_btm_80 {
+  padding-bottom: 80px;
+}
+
 .radius_5 {
   border-radius: 5px;
   overflow: hidden;

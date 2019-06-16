@@ -1,28 +1,28 @@
 import {none, Option, some} from 'ts-option'
-import {defaultListingActions, Listing, ListingActions} from './listing'
+import {defaultListingActions, ServiceActions, ServiceContext} from './service'
 import {defaultQueryActions, QueryActions, QueryContext} from './query'
 
 export interface AppContext {
   data: {
-    listing: Option<Listing>
+    service: Option<ServiceContext>
     query: QueryContext
   },
   action: {
-    listing: ListingActions,
+    service: ServiceActions,
     query: QueryActions,
   }
 }
 
 export const defaultContext: AppContext = {
   data: {
-    listing: none,
+    service: none,
     query: {
       current: 0,
       answers: [],
     },
   },
   action: {
-    listing: defaultListingActions,
+    service: defaultListingActions,
     query: defaultQueryActions,
   },
 }
@@ -36,12 +36,12 @@ export class AppContextAsState {
     this.setState = setState
   }
 
-  setListingContext(lc: Listing) {
+  setServiceContext(s: ServiceContext) {
     this.setState({
       ...this.context,
       data: {
         ...this.context.data,
-        listing: some(lc),
+        service: some(s),
       },
     })
   }

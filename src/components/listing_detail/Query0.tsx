@@ -6,12 +6,8 @@ import {appContext} from '../../App'
 
 const Query0: React.FC = () => {
   const context = React.useContext(appContext)
-
-  const answers = [
-    'Install/Uninstall AC',
-    'Repair AC',
-    'Other',
-  ]
+  const query0 = context.data.service.get.info.queries[0]
+  const answers = query0.answers['']
 
   const answersElems = answers.map((a, idx) => {
     return (
@@ -48,7 +44,7 @@ const Query0: React.FC = () => {
   const leftSide = (
     <div className="column is-5">
       <div className="wrapper padding_20 radius_5">
-        <h1 className="title is-4 text_white">Need a plumber for:</h1>
+        <h1 className="title is-4 text_white">{query0.text}</h1>
         {answersElems}
         <p className="text_white margin_top_20"><b>9999</b> people book this last year</p>
       </div>
@@ -122,7 +118,7 @@ const Query0: React.FC = () => {
   )
 
   return (
-    <section className="ListingDetailQuery1">
+    <section className="ListingDetailQuery0">
       <Container>
         <div className="columns v_margin_20">
           {leftSide}

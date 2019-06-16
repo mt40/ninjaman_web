@@ -8,12 +8,9 @@ export interface QueryActions {
 }
 
 export const defaultQueryActions: QueryActions = {
-  answerQuery: () => {
-  },
-  goToFirst: () => {
-  },
-  goBack: () => {
-  },
+  answerQuery: () => {},
+  goToFirst: () => {},
+  goBack: () => {},
 }
 
 export interface QueryContext {

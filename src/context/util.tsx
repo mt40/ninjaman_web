@@ -1,14 +1,15 @@
-import {Listing} from './listing'
 import {QueryContext} from './query'
-import {AppContext, AppContextAsState, defaultContext} from './AppContext'
+import {AppContext, AppContextAsState} from './AppContext'
 import {Option} from 'ts-option'
+import {groupOf} from '../config/services'
+import {ServiceContext} from './service'
 
-function mkListingAction(
+function mkServiceAction(
   state: AppContextAsState,
-  f: (prevState: Option<Listing>) => Listing,
+  f: (prevState: Option<ServiceContext>) => ServiceContext,
 ): void {
-  const newContext = f(state.context.data.listing)
-  state.setListingContext(newContext)
+  const newContext = f(state.context.data.service)
+  state.setServiceContext(newContext)
 }
 
 function mkQueryAction(
@@ -23,10 +24,13 @@ export function contextFor(state: AppContextAsState): AppContext {
   return {
     ...state.context,
     action: {
-      listing: {
+      service: {
         setCurrent: l => {
-          mkListingAction(state, () => {
-            return {current: l}
+          mkServiceAction(state, () => {
+            return {
+              group: groupOf(l),
+              info: l
+            }
           })
         },
       },

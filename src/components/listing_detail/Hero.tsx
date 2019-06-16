@@ -6,22 +6,25 @@ import Container from '../Container'
 const Hero: React.FC = () => {
   const context = React.useContext(appContext)
 
-  // Can safely get current listing here since empty case is already
+  // Can safely get current service here since empty case is already
   // handled earlier in `ListingDetailPage`.
-  const listing = context.data.listing.get.current
+  const service = context.data.service.get
 
+  const features = context.data.service.get.info.features.map((f, idx) => {
+    return <li key={idx}>{f}</li>
+  })
+
+  // todo: make features dynamic
   return (
     <section className="ListingDetailHero hero is-info is-medium">
       <div className="hero-body">
         <Container>
           <h1 className="title">
-            Best {listing.name} in Ho Chi Minh City
+            Best {service.info.name} in Ho Chi Minh City
           </h1>
           <h2 className="subtitle content">
             <ul>
-              <li>At your door within 90 minutes</li>
-              <li>30 days post service guarantee</li>
-              <li>No joking around :)</li>
+              {features}
             </ul>
           </h2>
         </Container>

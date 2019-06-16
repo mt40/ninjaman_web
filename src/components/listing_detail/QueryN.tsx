@@ -1,16 +1,16 @@
 import React from 'react'
 import Container from '../Container'
 import {appContext} from '../../App'
-import './Query2.css'
+import './QueryN.css'
 
-const Query1: React.FC = () => {
+const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
+  console.log('QueryN', context) // REMOVE
 
-  const answers = [
-    'Split A/C',
-    'Portable A/C',
-    'Ceiling A/C',
-  ]
+  const queryId = context.data.query.current
+  const query = context.data.service.get.info.queries[queryId]
+  const prevAnswer = context.data.query.answers[context.data.query.answers.length - 1]
+  const answers = query.answers[prevAnswer]
 
   const answerElems = answers.map((a, idx) => {
     return (
@@ -32,9 +32,9 @@ const Query1: React.FC = () => {
   }
 
   return (
-    <section className="ListingDetailQuery2 text_centered">
+    <div className="ListingDetailQueryN text_centered">
       <Container isSmall={true}>
-        <h1 className="title">Tell us about your AC</h1>
+        <h1 className="title">{query.text}</h1>
         <div>
           {answerElems}
         </div>
@@ -45,8 +45,8 @@ const Query1: React.FC = () => {
           </button>
         </div>
       </Container>
-    </section>
+    </div>
   )
 }
 
-export default Query1
+export default QueryN

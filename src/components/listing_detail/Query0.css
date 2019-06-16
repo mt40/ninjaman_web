@@ -1,21 +1,21 @@
-.ListingDetailQuery1 .wrapper {
+.ListingDetailQuery0 .wrapper {
   background: rgb(6, 0, 105);
   background: linear-gradient(151deg, rgba(6, 0, 105, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 153, 184, 1) 100%);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.ListingDetailQuery1 .avatar {
+.ListingDetailQuery0 .avatar {
   width: 100px;
   height: 100px;
   border-radius: 50px;
 }
 
-.ListingDetailQuery1 .instructions i.fas {
+.ListingDetailQuery0 .instructions i.fas {
   font-size: 1.5rem;
   margin: 0;
 }
 
-.ListingDetailQuery1 .answers i.fas {
+.ListingDetailQuery0 .answers i.fas {
   font-size: 1rem;
   margin: 0;
 }

@@ -3,19 +3,29 @@ import Hero from './Hero'
 import useRouter from 'use-react-router'
 import {appContext} from '../../App'
 import Query0 from './Query0'
-import Query1 from './Query1'
 import './ListingDetailPage.css'
 import Container from '../Container'
-import Query2 from './Query2'
+import QueryN from './QueryN'
+import {ServiceGroup, ServiceInfo} from '../../config/services'
 
 const ListingDetailPage: React.FC = () => {
+  console.log("ListingDetailPage")
+
   const context = React.useContext(appContext)
   const {history} = useRouter()
 
-  if (context.data.listing.isEmpty) {
-    history.replace('/')
-    return null
-  } else {
+  return context.data.service.match({
+    none: () => {
+      history.replace('/')
+      return null
+    },
+    some: sv => {
+      return render(sv.group, sv.info)
+    },
+  })
+
+  function render(group: ServiceGroup, service: ServiceInfo) {
+    // todo: move to left side
     const allAnswers = () => {
       const items = context.data.query.answers.map((a, idx) => {
         return (
@@ -26,11 +36,13 @@ const ListingDetailPage: React.FC = () => {
     }
 
     const deepQueryWrapper = (queryElem: any) => {
+      const title = `${group.name} > ${service.name}`
+
       const topBar = (
         <Container>
           <div className="columns margin_top_20">
             <div className="column is-narrow">
-              <p><b>Appliance Repair > Air Conditioner</b></p>
+              <p><b>{title}</b></p>
               {allAnswers()}
             </div>
 
@@ -48,7 +60,7 @@ const ListingDetailPage: React.FC = () => {
       )
 
       return (
-        <div className="deep_query_wrapper">
+        <div className="deep_query_wrapper padding_btm_80">
           {topBar}
           {queryElem}
         </div>
@@ -60,20 +72,24 @@ const ListingDetailPage: React.FC = () => {
     }
 
     const renderQuery = () => {
-      switch (context.data.query.current) {
-        case 0:
-          return null
-        case 1:
-          return deepQueryWrapper(<Query1/>)
-        case 2:
-          return deepQueryWrapper(<Query2/>)
+      const cur = context.data.query.current
+      if (cur === 0) return (
+        <div>
+          <Hero/>
+          <Query0/>
+        </div>
+      )
+      else {
+        const prevQuery = context.data.service.get.info.queries[cur - 1]
+        if(prevQuery.isFinal) {
+          return <div>No more query</div>
+        }
+        return deepQueryWrapper(<QueryN/>)
       }
     }
 
     return (
       <div className="ListingDetailPage">
-        <Hero/>
-        <Query0/>
         {renderQuery()}
       </div>
     )
