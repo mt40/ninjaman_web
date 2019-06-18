@@ -7,9 +7,10 @@ import './ListingDetailPage.css'
 import Container from '../Container'
 import QueryN from './QueryN'
 import {ServiceGroup, ServiceInfo} from '../../config/services'
+import UserInfoForm from './UserInfoForm'
 
 const ListingDetailPage: React.FC = () => {
-  console.log("ListingDetailPage")
+  console.log('ListingDetailPage')
 
   const context = React.useContext(appContext)
   const {history} = useRouter()
@@ -39,11 +40,10 @@ const ListingDetailPage: React.FC = () => {
       const title = `${group.name} > ${service.name}`
 
       const topBar = (
-        <Container>
+        <div>
           <div className="columns margin_top_20">
             <div className="column is-narrow">
               <p><b>{title}</b></p>
-              {allAnswers()}
             </div>
 
             <div className="column"/>
@@ -56,13 +56,23 @@ const ListingDetailPage: React.FC = () => {
           </div>
 
           <hr/>
-        </Container>
+        </div>
       )
 
       return (
         <div className="deep_query_wrapper padding_btm_80">
-          {topBar}
-          {queryElem}
+          <Container>
+            {topBar}
+
+            <div className="columns">
+              <div className="column is-3">
+                {allAnswers()}
+              </div>
+              <div className="column">
+                {queryElem}
+              </div>
+            </div>
+          </Container>
         </div>
       )
     }
@@ -81,8 +91,8 @@ const ListingDetailPage: React.FC = () => {
       )
       else {
         const prevQuery = context.data.service.get.info.queries[cur - 1]
-        if(prevQuery.isFinal) {
-          return <div>No more query</div>
+        if (prevQuery.isFinal) {
+          return <UserInfoForm/>
         }
         return deepQueryWrapper(<QueryN/>)
       }

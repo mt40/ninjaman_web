@@ -28,12 +28,12 @@ const QueryN: React.FC = () => {
   }
 
   const onBackClick = () => {
-    context.action.query.goBack()
+    context.action.query.goBack(true)
   }
 
   return (
-    <div className="ListingDetailQueryN text_centered">
-      <Container isSmall={true}>
+    <div className="ListingDetailQueryN">
+      <Container isSmall={false}>
         <h1 className="title">{query.text}</h1>
         <div>
           {answerElems}

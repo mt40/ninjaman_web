@@ -19,6 +19,7 @@ export const defaultContext: AppContext = {
     query: {
       current: 0,
       answers: [],
+      showUserInfoForm: false,
     },
   },
   action: {

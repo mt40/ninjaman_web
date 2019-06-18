@@ -56,6 +56,10 @@ code {
   text-align: center;
 }
 
+.text_left {
+  text-align: left;
+}
+
 .padding_10 {
   padding: 10px;
 }
@@ -86,6 +90,11 @@ code {
 
 .margin_top_20 {
   margin-top: 20px;
+}
+
+.v_padding_80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .padding_btm_80 {
