@@ -1,7 +1,7 @@
 import {QueryContext} from './query'
 import {AppContext, AppContextAsState} from './AppContext'
 import {Option} from 'ts-option'
-import {groupOf, services} from '../config/services'
+import {groupOf} from '../config/services'
 import {ServiceContext} from './service'
 
 function mkServiceAction(

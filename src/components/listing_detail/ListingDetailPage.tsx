@@ -8,12 +8,17 @@ import Container from '../Container'
 import QueryN from './QueryN'
 import {ServiceGroup, ServiceInfo} from '../../config/services'
 import UserInfoForm from './UserInfoForm'
+import {Route, Switch} from 'react-router'
+import Checkout from './Checkout'
+import * as Page from '../../context/navigation'
+import {Link} from 'react-router-dom'
+import {Elements, StripeProvider} from 'react-stripe-elements'
 
 const ListingDetailPage: React.FC = () => {
   console.log('ListingDetailPage')
 
   const context = React.useContext(appContext)
-  const {history} = useRouter()
+  const {history, match} = useRouter()
 
   return context.data.service.match({
     none: () => {
@@ -98,9 +103,21 @@ const ListingDetailPage: React.FC = () => {
       }
     }
 
+    const checkout = (
+      <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+        <Elements>
+          <Checkout/>
+        </Elements>
+      </StripeProvider>
+    )
+
+    // todo: use router for query id
     return (
       <div className="ListingDetailPage">
-        {renderQuery()}
+        <Switch>
+          <Route exact path={Page.checkout.path} render={() => checkout}/>
+          <Route path={Page.serviceDetail.path} render={() => renderQuery()}/>
+        </Switch>
       </div>
     )
   }

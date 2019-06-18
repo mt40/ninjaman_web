@@ -1,8 +1,9 @@
 import React from 'react'
 import Container from '../Container'
 import {appContext} from '../../App'
-import {Link} from 'react-router-dom'
 import './UserInfoForm.css'
+import {Link} from 'react-router-dom'
+import * as Page from '../../context/navigation'
 
 const UserInfoForm: React.FC = () => {
   const context = React.useContext(appContext)
@@ -21,7 +22,7 @@ const UserInfoForm: React.FC = () => {
             className="input"
             type="text"
             placeholder={label.toLowerCase()}
-            value={value}/>
+            defaultValue={value}/>
           <span className="icon is-small is-left">
             <i className={faIcon}/>
           </span>
@@ -54,6 +55,7 @@ const UserInfoForm: React.FC = () => {
     <div>
       {mkField('Fullname', 'Tom Hanks', 'fas fa-user')}
       {mkField('Email', 'tom@hanks.com', 'fas fa-envelope')}
+      {mkField('Phone', '18001560', 'fas fa-mobile-alt')}
       {mkField('Address', '12 Wall St, NYC, USA', 'fas fa-map-marker-alt')}
       {mkSelectField('What time works best for you')}
     </div>
@@ -91,7 +93,7 @@ const UserInfoForm: React.FC = () => {
           <div className="column"/>
 
           <div className="column is-narrow">
-            <Link to="/checkout">
+            <Link to={Page.checkout.path}>
               <button className="button is-info">
                 Checkout
               </button>
