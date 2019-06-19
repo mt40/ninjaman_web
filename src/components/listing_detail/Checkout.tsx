@@ -5,16 +5,20 @@ import {CardElement, injectStripe} from 'react-stripe-elements'
 import './Checkout.css'
 import {Link} from 'react-router-dom'
 import * as Page from '../../context/navigation'
+import useRouter from 'use-react-router'
 
 const Checkout: React.FC = () => {
   const context = React.useContext(appContext)
+  const {history} = useRouter()
+  const service = context.data.service.get.info
+
   console.log('Checkout', context) // REMOVE
 
-  const items = context.data.query.answers
+  const items = context.data.query.answers.map(a => a.get)
   const purchase = items.reduce((prev, cur) => prev + ' > ' + cur)
 
   const onBackClick = () => {
-
+    history.goBack()
   }
 
   return (
@@ -55,7 +59,7 @@ const Checkout: React.FC = () => {
             <div className="column"/>
 
             <div className="column is-narrow">
-              <Link to={Page.checkout.path}>
+              <Link to={Page.checkout(service).path}>
                 <button className="button is-info">
                   Pay
                 </button>

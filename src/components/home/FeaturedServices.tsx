@@ -5,6 +5,7 @@ import './FeaturedServices.css'
 import useRouter from 'use-react-router'
 import {appContext} from '../../App'
 import {ServiceInfo, services} from '../../config/services'
+import * as Page from '../../context/navigation'
 
 const FeaturedServices: React.FC = () => {
   const context = React.useContext(appContext)
@@ -14,10 +15,8 @@ const FeaturedServices: React.FC = () => {
   const rightArrow = <div className="scroll-menu-arrow">{'>'}</div>
 
   const onListingClick = (sv: ServiceInfo) => {
-    context.action.service.setCurrent(sv)
-
-    const hyphenName = sv.name.toLowerCase().replace(new RegExp('\\s+'), ' ').replace(' ', '-')
-    history.push(`/service/${hyphenName}`)
+    context.action.setService(sv)
+    history.push(Page.serviceDetail(sv).path)
   }
 
   const mkServiceElems = (services: ServiceInfo[]) => {

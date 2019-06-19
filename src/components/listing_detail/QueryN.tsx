@@ -1,16 +1,21 @@
 import React from 'react'
 import Container from '../Container'
-import {appContext} from '../../App'
+import {appContext, QueryAnswer} from '../../App'
 import './QueryN.css'
+import * as _ from 'lodash'
+import useRouter from 'use-react-router'
+import * as Page from '../../context/navigation'
 
 const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
+  const {history} = useRouter()
+
   console.log('QueryN', context) // REMOVE
 
-  const queryId = context.data.query.current
-  const query = context.data.service.get.info.queries[queryId]
-  const prevAnswer = context.data.query.answers[context.data.query.answers.length - 1]
-  const answers = query.answers[prevAnswer]
+  const query = context.action.getNextQuery().get
+  const prevAnswer = _.last(context.data.query.answers) as QueryAnswer
+  const answers = query.answers[prevAnswer.get]
+  const service = context.data.service.get.info
 
   const answerElems = answers.map((a, idx) => {
     return (
@@ -24,11 +29,14 @@ const QueryN: React.FC = () => {
   })
 
   const onAnswerClick = (answer: string) => {
-    context.action.query.answerQuery(answer)
+    context.action.answer(query, answer)
+    if(query.isFinal) {
+      history.push(Page.userInfo(service).path)
+    }
   }
 
   const onBackClick = () => {
-    context.action.query.goBack(true)
+    context.action.popAnswer()
   }
 
   return (

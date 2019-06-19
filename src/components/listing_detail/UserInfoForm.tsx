@@ -7,11 +7,8 @@ import * as Page from '../../context/navigation'
 
 const UserInfoForm: React.FC = () => {
   const context = React.useContext(appContext)
+  const service = context.data.service.get.info
   console.log('UserInfoForm', context) // REMOVE
-
-  const onBackClick = () => {
-    context.action.query.goBack(false)
-  }
 
   function mkField(label: string, value: string, faIcon: string) {
     return (
@@ -74,16 +71,10 @@ const UserInfoForm: React.FC = () => {
         <hr className="margin_top_40"/>
 
         <div className="columns v_margin_20">
-          <div className="column is-narrow">
-            <button className="button" onClick={() => onBackClick()}>
-              Back
-            </button>
-          </div>
-
           <div className="column"/>
 
           <div className="column is-narrow">
-            <Link to={Page.checkout.path}>
+            <Link to={Page.checkout(service).path}>
               <button className="button is-info">
                 Checkout
               </button>

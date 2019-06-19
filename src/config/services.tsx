@@ -129,7 +129,7 @@ export interface QueryInfo {
 
   /**
    * A map of answers with:
-   * - key: the answer from the previous query that leads to these
+   * - key: the get from the previous query that leads to these
    *        set of answers. Put '' if this is the 1st query.
    * - value: a list of answers
    */

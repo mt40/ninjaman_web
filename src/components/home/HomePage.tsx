@@ -16,9 +16,7 @@ const HomePage: React.FC = () => {
 
   // whenever user go (back) to home page, reset all queries
   React.useEffect(() => {
-    if(context.data.query.current > 0) {
-      context.action.query.goToFirst()
-    }
+    context.action.clearAnswers()
   })
 
   return (

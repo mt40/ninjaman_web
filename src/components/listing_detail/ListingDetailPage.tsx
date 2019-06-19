@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './Hero'
 import useRouter from 'use-react-router'
-import {appContext} from '../../App'
+import {appContext, QueryAnswer} from '../../App'
 import Query0 from './Query0'
 import './ListingDetailPage.css'
 import Container from '../Container'
@@ -11,31 +11,30 @@ import UserInfoForm from './UserInfoForm'
 import {Route, Switch} from 'react-router'
 import Checkout from './Checkout'
 import * as Page from '../../context/navigation'
-import {Link} from 'react-router-dom'
 import {Elements, StripeProvider} from 'react-stripe-elements'
+import * as _ from 'lodash'
 
 const ListingDetailPage: React.FC = () => {
   console.log('ListingDetailPage')
 
   const context = React.useContext(appContext)
-  const {history, match} = useRouter()
+  const {history} = useRouter()
 
   return context.data.service.match({
     none: () => {
-      history.replace('/')
+      history.replace(Page.home.path)
       return null
     },
     some: sv => {
-      return render(sv.group, sv.info)
+      return main(sv.group, sv.info)
     },
   })
 
-  function render(group: ServiceGroup, service: ServiceInfo) {
-    // todo: move to left side
+  function main(group: ServiceGroup, service: ServiceInfo) {
     const allAnswers = () => {
       const items = context.data.query.answers.map((a, idx) => {
         return (
-          <li key={idx}>⦁ {a}</li>
+          <li key={idx}>⦁ {a.get}</li>
         )
       })
       return <ul className="all_answers">{items}</ul>
@@ -89,22 +88,20 @@ const ListingDetailPage: React.FC = () => {
     }
 
     const deepQueryCloseBtnClick = () => {
-      context.action.query.goToFirst()
+      context.action.clearAnswers()
+      history.replace(Page.serviceDetail(service).path)
     }
 
     const renderQuery = () => {
-      const cur = context.data.query.current
-      if (cur === 0) return (
-        <div>
-          <Hero/>
-          <Query0/>
-        </div>
-      )
+      if (_.isEmpty(context.data.query.answers)) {
+        return (
+          <div>
+            <Hero/>
+            <Query0/>
+          </div>
+        )
+      }
       else {
-        const prevQuery = context.data.service.get.info.queries[cur - 1]
-        if (prevQuery.isFinal) {
-          return deepQueryWrapper(<UserInfoForm/>)
-        }
         return deepQueryWrapper(<QueryN/>)
       }
     }
@@ -117,12 +114,14 @@ const ListingDetailPage: React.FC = () => {
       </StripeProvider>
     )
 
-    // todo: use router for query id
+    const userInfoForm = deepQueryWrapper(<UserInfoForm/>)
+
     return (
       <div className="ListingDetailPage">
         <Switch>
-          <Route exact path={Page.checkout.path} render={() => checkout}/>
-          <Route path={Page.serviceDetail.path} render={() => renderQuery()}/>
+          <Route exact path={Page.checkout(service).path} render={() => checkout}/>
+          <Route exact path={Page.userInfo(service).path} render={() => userInfoForm}/>
+          <Route path={Page.serviceDetail(service).path} render={() => renderQuery()}/>
         </Switch>
       </div>
     )

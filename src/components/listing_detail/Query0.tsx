@@ -6,7 +6,8 @@ import {appContext} from '../../App'
 
 const Query0: React.FC = () => {
   const context = React.useContext(appContext)
-  const query0 = context.data.service.get.info.queries[0]
+  const service = context.data.service.get
+  const query0 = service.info.queries[0]
   const answers = query0.answers['']
 
   const answersElems = answers.map((a, idx) => {
@@ -25,7 +26,7 @@ const Query0: React.FC = () => {
   })
 
   const onAnswerClick = (answer: string) => {
-    context.action.query.answerQuery(answer)
+    context.action.answer(query0, answer)
   }
 
   const mkInstruction = (img: any, desc: any) => {
