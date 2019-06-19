@@ -3,39 +3,66 @@ import Container from '../Container'
 import {appContext} from '../../App'
 import {CardElement, injectStripe} from 'react-stripe-elements'
 import './Checkout.css'
+import {Link} from 'react-router-dom'
+import * as Page from '../../context/navigation'
 
 const Checkout: React.FC = () => {
   const context = React.useContext(appContext)
   console.log('Checkout', context) // REMOVE
 
-  const allAnswers = () => {
-    const items = context.data.query.answers.map((a, idx) => {
-      return (
-        <li key={idx}>- {a}</li>
-      )
-    })
-    return <ul className="all_answers">{items}</ul>
+  const items = context.data.query.answers
+  const purchase = items.reduce((prev, cur) => prev + ' > ' + cur)
+
+  const onBackClick = () => {
+
   }
 
   return (
     <div className="Checkout v_padding_80">
       <Container isSmall={true}>
-        <h1 className="title">Time to pay mate :)</h1>
+        <h1 className="title text_centered">Time to pay mate :)</h1>
 
-        <div>
-          <h1 className="title is-5">Your cart</h1>
-          {allAnswers()}
-          <p>Total: 99$</p>
+        <div className="margin_top_80">
+          <h1 className="title is-5">Your booking</h1>
+
+          <div className="columns">
+            <div className="column">
+              {purchase}
+            </div>
+
+            <div className="column is-narrow">
+              <p className="text_right"><b>99.000 VND</b></p>
+            </div>
+          </div>
         </div>
 
-        <hr/>
+        <hr className="margin_top_80"/>
 
         <div>
           <h1 className="title is-5">Payment method</h1>
+
           <CardElement/>
-          <button className="button is-info margin_top_20">
-            Pay
-          </button>
+
+          <hr className="margin_top_40"/>
+
+          <div className="columns v_margin_20">
+            <div className="column is-narrow">
+              <button className="button" onClick={() => onBackClick()}>
+                Back
+              </button>
+            </div>
+
+            <div className="column"/>
+
+            <div className="column is-narrow">
+              <Link to={Page.checkout.path}>
+                <button className="button is-info">
+                  Pay
+                </button>
+              </Link>
+            </div>
+          </div>
+
         </div>
       </Container>
     </div>

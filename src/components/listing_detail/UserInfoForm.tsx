@@ -61,27 +61,17 @@ const UserInfoForm: React.FC = () => {
     </div>
   )
 
-  const allAnswers = () => {
-    const items = context.data.query.answers.map((a, idx) => {
-      return (
-        <li key={idx}>- {a}</li>
-      )
-    })
-    return <ul className="all_answers">{items}</ul>
-  }
-
   return (
-    <div className="ListingDetailUserInfoForm v_padding_80">
+    <div className="ListingDetailUserInfoForm">
       <Container isSmall={false}>
         <div className="columns">
-          <div className="column is-3">
-            {allAnswers()}
-          </div>
           <div className="column">
             <h1 className="title">Tell us about you</h1>
             {inputs}
           </div>
         </div>
+
+        <hr className="margin_top_40"/>
 
         <div className="columns v_margin_20">
           <div className="column is-narrow">

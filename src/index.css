@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,11 +9,16 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
+}
+
+#root {
+  height: 100%;
 }
 
 .page_content {
@@ -18,6 +27,7 @@ code {
   inner children.
    */
   position: relative;
+  padding-bottom: 400px;
 }
 
 .section-title {
@@ -60,12 +70,30 @@ code {
   text-align: left;
 }
 
+.text_right {
+  text-align: right;
+}
+
 .padding_10 {
   padding: 10px;
 }
 
 .padding_20 {
   padding: 20px;
+}
+
+.h_padding_20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.v_padding_80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.padding_btm_80 {
+  padding-bottom: 80px;
 }
 
 .v_margin_5 {
@@ -92,13 +120,12 @@ code {
   margin-top: 20px;
 }
 
-.v_padding_80 {
-  padding-top: 80px;
-  padding-bottom: 80px;
+.margin_top_80 {
+  margin-top: 80px;
 }
 
-.padding_btm_80 {
-  padding-bottom: 80px;
+.margin_top_40 {
+  margin-top: 40px;
 }
 
 .radius_5 {
@@ -123,4 +150,12 @@ i.fas {
 
 .cursor_pointer {
   cursor: pointer;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.button {
+  min-width: 100px;
 }

@@ -35,7 +35,7 @@ const ListingDetailPage: React.FC = () => {
     const allAnswers = () => {
       const items = context.data.query.answers.map((a, idx) => {
         return (
-          <li key={idx}>- {a}</li>
+          <li key={idx}>⦁ {a}</li>
         )
       })
       return <ul className="all_answers">{items}</ul>
@@ -66,16 +66,22 @@ const ListingDetailPage: React.FC = () => {
 
       return (
         <div className="deep_query_wrapper padding_btm_80">
+
           <Container>
             {topBar}
 
             <div className="columns">
+
               <div className="column is-3">
+                <h1 className="title is-5 underlined">Your selection</h1>
                 {allAnswers()}
               </div>
+
               <div className="column">
                 {queryElem}
               </div>
+
+              <div className="column is-3"/>
             </div>
           </Container>
         </div>
@@ -97,7 +103,7 @@ const ListingDetailPage: React.FC = () => {
       else {
         const prevQuery = context.data.service.get.info.queries[cur - 1]
         if (prevQuery.isFinal) {
-          return <UserInfoForm/>
+          return deepQueryWrapper(<UserInfoForm/>)
         }
         return deepQueryWrapper(<QueryN/>)
       }

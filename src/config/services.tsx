@@ -31,7 +31,7 @@ import {getImage} from '../util/Resource'
  */
 export const services: ServiceGroup[] = [
   {
-    name: 'beauty',
+    name: 'Beauty',
     services: [
       {
         name: 'Spa',

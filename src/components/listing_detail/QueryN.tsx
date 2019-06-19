@@ -39,6 +39,8 @@ const QueryN: React.FC = () => {
           {answerElems}
         </div>
 
+        <hr className="margin_top_40"/>
+
         <div className="buttons v_margin_20">
           <button className="button" onClick={() => onBackClick()}>
             Back
