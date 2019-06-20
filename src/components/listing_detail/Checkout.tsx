@@ -7,10 +7,17 @@ import {Link} from 'react-router-dom'
 import * as Page from '../../context/navigation'
 import useRouter from 'use-react-router'
 
+enum PaymentMethod {
+  Cash = 0,
+  CreditCard = 1
+}
+
 const Checkout: React.FC = () => {
   const context = React.useContext(appContext)
   const {history} = useRouter()
   const service = context.data.service.get.info
+
+  const [selectedMethod, setMethod] = React.useState(PaymentMethod.Cash)
 
   console.log('Checkout', context) // REMOVE
 
@@ -19,6 +26,48 @@ const Checkout: React.FC = () => {
 
   const onBackClick = () => {
     history.goBack()
+  }
+
+  const onMethodClick = (method: PaymentMethod) => {
+    if (selectedMethod !== method) {
+      setMethod(method)
+    }
+  }
+
+  const paymentMethodSelect = () => {
+    const mkMethod = (m: PaymentMethod, isActive: boolean = false) => {
+      return (
+        <li key={m} className={isActive ? 'is-active' : ''}>
+          <a onClick={() => onMethodClick(m)}>
+            <span className="icon is-small">
+              <i className="fas fa-image" aria-hidden="true"/>
+            </span>
+            <span>Cash</span>
+          </a>
+        </li>
+      )
+    }
+
+    const methods = [PaymentMethod.Cash, PaymentMethod.CreditCard].map(m => {
+      return mkMethod(m, m === selectedMethod)
+    })
+
+    return (
+      <div className="tabs is-boxed">
+        <ul>
+          {methods}
+        </ul>
+      </div>
+    )
+  }
+
+  const renderMethod = () => {
+    if(selectedMethod === PaymentMethod.Cash) {
+      return "Cash payment"
+    }
+    else {
+      return <CardElement/>
+    }
   }
 
   return (
@@ -45,7 +94,9 @@ const Checkout: React.FC = () => {
         <div>
           <h1 className="title is-5">Payment method</h1>
 
-          <CardElement/>
+          {paymentMethodSelect()}
+
+          {renderMethod()}
 
           <hr className="margin_top_40"/>
 
