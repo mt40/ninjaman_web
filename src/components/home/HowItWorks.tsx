@@ -1,9 +1,20 @@
 import React from 'react'
-import {getImage} from '../../util/Resource'
 import './HowItWorks.css'
 import Container from '../Container'
 
 const HowItWorks: React.FC = () => {
+  const mkTitleColumn = (text: string) => {
+    return (
+      <div className="column">
+        <h1 className="title is-3">{text}</h1>
+      </div>
+    )
+  }
+
+  const mkColumn = (text: string) => {
+    return <div className="column">{text}</div>
+  }
+
   return (
     <section className="HowItWorks section">
       <Container>
@@ -11,22 +22,21 @@ const HowItWorks: React.FC = () => {
           <h1 className="title is-1">How Ninjaman Works</h1>
         </div>
 
-        <div className="columns">
-          <div className="column is-5">
-            <img src={getImage('how-it-works')} alt=""/>
-          </div>
-
-          <div className="content column is-7">
-            <h1 className="title is-3 has-text-warning">1. Tell Us What You Need</h1>
-            First, answer a few quick questions about what type of pro you’re looking for.
-
-            <h1 className="title is-3 has-text-warning">2. Review Free Quotes</h1>
-            Within hours, you’ll receive custom quotes based on your specific needs.
-
-            <h1 className="title is-3 has-text-warning">3. Hire The Right Pro</h1>
-            Compare quotes, profiles, and reviews, then hire the pro that’s right for you.
-          </div>
+        <div className="columns text_centered">
+          {mkTitleColumn('Select services')}
+          {mkTitleColumn('Enter your details')}
+          {mkTitleColumn('Beautician comes to you')}
         </div>
+
+        <div className="columns text_centered">
+          {mkColumn('Explore our list of services and select the ones you want')}
+          {mkColumn('Choose appointment date, time, and address then check out securely')}
+          {mkColumn(
+            'Our stylists arrive at your home with everything needed to create your\n' +
+            'perfect look'
+          )}
+        </div>
+
       </Container>
     </section>
   )
