@@ -29,14 +29,14 @@ const HomePage: React.FC = () => {
       <HowItWorks/>
 
       <hr/>
+      <FeatureList/>
+
+      <hr/>
       <CustomerReview/>
 
       <hr/>
       <ServiceReview/>
       <CallToSignup/>
-
-      <hr/>
-      <FeatureList/>
     </div>
   )
 }

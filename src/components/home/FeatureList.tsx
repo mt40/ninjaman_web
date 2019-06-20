@@ -6,6 +6,10 @@ const FeatureList: React.FC = () => {
   return (
     <section className="FeatureList section">
       <Container>
+        <div className="section-title">
+          <h1 className="title is-1">Benefits</h1>
+        </div>
+
         <div className="columns">
           <div className="column is-4">
             <div><i className="fas fa-thumbs-up"/></div>
