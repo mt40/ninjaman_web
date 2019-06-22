@@ -11,10 +11,15 @@ const Query0: React.FC = () => {
   const answers = query0.answers['']
 
   const answersElems = answers.map((a, idx) => {
+    const ans = () => {
+      if(typeof a === 'string') return a
+      return a.text
+    }
+
     return (
       <div key={idx}
            className="answers cursor_pointer bg_white v_margin_5 padding_10 radius_5"
-           onClick={() => onAnswerClick(a)}>
+           onClick={() => onAnswerClick(ans())}>
         <div className="columns">
           <div className="column">{a}</div>
           <div className="column is-narrow">

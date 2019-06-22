@@ -53,8 +53,23 @@ export const services: ServiceGroup[] = [
             isFinal: true,
             answers: {
               'Facial': [
-                'Basic Facial cleaning + Spa',
-                'Facial pimple and blackheads treatment + Spa',
+                {
+                  text: 'Basic Facial cleaning + Spa',
+                  image: 'https://villageclubs.com/wp-content/uploads/2018/08/Facial-web_150dpi.jpg',
+                  desc: [
+                    'Includes 30 minutes of service',
+                    'Hourly rate card applicable',
+                    "Click the 'i' button for details",
+                  ]
+                },
+                {
+                  text: 'Facial pimple and blackheads treatment + Spa',
+                  desc: [
+                    'Includes 30 minutes of service',
+                    'Hourly rate card applicable',
+                    "Click the 'i' button for details",
+                  ]
+                },
                 'Lotus Herbals - natural glow skin radiance facial',
                 'Active charcoal skin purifying facial',
                 'Skin miracle bio whitening facial',
@@ -133,11 +148,20 @@ export interface QueryInfo {
    *        set of answers. Put '' if this is the 1st query.
    * - value: a list of answers
    */
-  answers: Record<string, string[]>
+  answers: Record<string, AnswerInfo[]>
 
   /** If `true`, display 'add to card'. */
   isFinal?: boolean
 }
+
+export interface RichAnswerInfo {
+  text: string
+  image?: string
+  desc?: string[]
+}
+
+export type AnswerInfo = string | RichAnswerInfo
+
 
 export function groupOf(sv: ServiceInfo): ServiceGroup {
   const rs = services.find(group => {
