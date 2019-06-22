@@ -29,3 +29,8 @@
 .Checkout i.fas {
   font-size: 1rem;
 }
+
+.Checkout .payment_icons {
+  display: flex;
+  flex-direction: row;
+}

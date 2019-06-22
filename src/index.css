@@ -159,3 +159,8 @@ i.fas {
 .button {
   min-width: 100px;
 }
+
+.is_50x100 {
+  height: 50px;
+  width: 100px;
+}

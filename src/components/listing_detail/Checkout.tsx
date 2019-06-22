@@ -6,6 +6,8 @@ import './Checkout.css'
 import {Link} from 'react-router-dom'
 import * as Page from '../../context/navigation'
 import useRouter from 'use-react-router'
+import {getImage} from '../../util/Resource'
+import DivImg from '../DivImg'
 
 enum PaymentMethod {
   Cash = 0,
@@ -62,11 +64,21 @@ const Checkout: React.FC = () => {
   }
 
   const renderMethod = () => {
-    if(selectedMethod === PaymentMethod.Cash) {
-      return "Cash payment"
+    if (selectedMethod === PaymentMethod.Cash) {
+      return 'Cash payment'
     }
     else {
-      return <CardElement/>
+      return (
+        <div>
+
+          <div className="payment_icons">
+            <DivImg className='is_50x100' url={getImage('visa')}/>
+            <DivImg className='is_50x100 h_margin_20' url={getImage('mastercard')}/>
+          </div>
+
+          <CardElement className="v_margin_20"/>
+        </div>
+      )
     }
   }
 
