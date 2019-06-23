@@ -8,6 +8,7 @@ import * as Page from '../../context/navigation'
 import { T } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import { RichAnswerInfo } from '../../config/services'
+import AddToCart from './AddToCart'
 
 const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
@@ -79,7 +80,7 @@ const QueryN: React.FC = () => {
       const footer = (
         <div className="final_answer_footer padding_10">
           <b>200.000 VND</b>
-          <button className="button">Add</button>
+          <AddToCart/>
         </div>
       )
 
@@ -165,7 +166,7 @@ const QueryN: React.FC = () => {
         return (
           <div>
             { cover }
-            <h1 className="title is-5 top_padding_20">{ ans.text }</h1>
+            <h1 className="title is-5 top_padding_20">{ T(ans.text) }</h1>
             <ul className='v_margin_10'>{ getAnsDescElem(ans) }</ul>
           </div>
         )

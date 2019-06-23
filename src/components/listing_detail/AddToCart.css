@@ -1,0 +1,23 @@
+.AddToCart.positive {
+  border-style: solid;
+  border-color: cornflowerblue;
+  border-width: 2px;
+  background-color: cornflowerblue;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.AddToCart.positive .btn {
+  background-color: cornflowerblue;
+  color: white;
+  font-weight: bold;
+}
+
+.AddToCart.positive .count {
+  color: cornflowerblue;
+  font-weight: bold;
+  background-color: white;
+}
