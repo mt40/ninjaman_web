@@ -1,9 +1,10 @@
 import React from 'react'
 import Container from '../Container'
-import {appContext} from '../../App'
+import { appContext } from '../../App'
 import './UserInfoForm.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import * as Page from '../../context/navigation'
+import { T } from '../../config/translation/util'
 
 const UserInfoForm: React.FC = () => {
   const context = React.useContext(appContext)
@@ -13,15 +14,15 @@ const UserInfoForm: React.FC = () => {
   function mkField(label: string, value: string, faIcon: string) {
     return (
       <div className="field">
-        <label className="label">{label}</label>
+        <label className="label">{ T(label) }</label>
         <div className="control has-icons-left">
           <input
             className="input"
             type="text"
-            placeholder={label.toLowerCase()}
-            defaultValue={value}/>
+            placeholder={ label.toLowerCase() }
+            defaultValue={ value }/>
           <span className="icon is-small is-left">
-            <i className={faIcon}/>
+            <i className={ faIcon }/>
           </span>
         </div>
       </div>
@@ -31,7 +32,7 @@ const UserInfoForm: React.FC = () => {
   function mkSelectField(label: string) {
     return (
       <div className="field">
-        <label className="label">{label}</label>
+        <label className="label">{ label }</label>
         <div className="control">
           <div className="select">
             <select>
@@ -50,21 +51,21 @@ const UserInfoForm: React.FC = () => {
 
   const inputs = (
     <div>
-      {mkField('Fullname', 'Tom Hanks', 'fas fa-user')}
-      {mkField('Email', 'tom@hanks.com', 'fas fa-envelope')}
-      {mkField('Phone', '18001560', 'fas fa-mobile-alt')}
-      {mkField('Address', '12 Wall St, NYC, USA', 'fas fa-map-marker-alt')}
-      {mkSelectField('What time works best for you')}
+      { mkField('Fullname', 'Tom Hanks', 'fas fa-user') }
+      { mkField('Email', 'tom@hanks.com', 'fas fa-envelope') }
+      { mkField('Phone', '18001560', 'fas fa-mobile-alt') }
+      { mkField('Address', '12 Wall St, NYC, USA', 'fas fa-map-marker-alt') }
+      { mkSelectField('What time works best for you') }
     </div>
   )
 
   return (
     <div className="ListingDetailUserInfoForm">
-      <Container isSmall={false}>
+      <Container isSmall={ false }>
         <div className="columns">
           <div className="column">
-            <h1 className="title">Tell us about you</h1>
-            {inputs}
+            <h1 className="title">{ T('Tell us about you') }</h1>
+            { inputs }
           </div>
         </div>
 
@@ -74,9 +75,9 @@ const UserInfoForm: React.FC = () => {
           <div className="column"/>
 
           <div className="column is-narrow">
-            <Link to={Page.checkout(service).path}>
+            <Link to={ Page.checkout(service).path }>
               <button className="button is-info">
-                Checkout
+                { T('Checkout') }
               </button>
             </Link>
           </div>

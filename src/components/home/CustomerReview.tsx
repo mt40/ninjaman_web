@@ -2,6 +2,7 @@ import React from 'react'
 import {getImage} from '../../util/Resource'
 import './CustomerReview.css'
 import Container from '../Container'
+import {T} from '../../config/translation/util'
 
 interface UserInfo {
   avatar: string,
@@ -17,7 +18,7 @@ const CustomerReview: React.FC = () => {
         </div>
 
         <div className="review_text">
-          <p>{text}</p>
+          <p>{T(text)}</p>
         </div>
 
 
@@ -28,7 +29,7 @@ const CustomerReview: React.FC = () => {
               <img className="avatar" src={pro.avatar} alt=""/>
             </div>
             <div className="column h_margin">
-              <p>THE PRO</p>
+              <p>{T('THE PRO')}</p>
               <p>{pro.name}</p>
             </div>
           </div>
@@ -71,7 +72,7 @@ const CustomerReview: React.FC = () => {
       <Container>
         <div className="section-title">
           <h1 className="title is-1">
-            Customer Reviews
+            {T('Customer Reviews')}
           </h1>
         </div>
 

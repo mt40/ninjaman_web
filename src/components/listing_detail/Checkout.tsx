@@ -1,13 +1,14 @@
 import React from 'react'
 import Container from '../Container'
-import {appContext} from '../../App'
-import {CardElement, injectStripe} from 'react-stripe-elements'
+import { appContext } from '../../App'
+import { CardElement, injectStripe } from 'react-stripe-elements'
 import './Checkout.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import * as Page from '../../context/navigation'
 import useRouter from 'use-react-router'
-import {getImage} from '../../util/Resource'
+import { getImage } from '../../util/Resource'
 import DivImg from '../DivImg'
+import { T } from '../../config/translation/util'
 
 enum PaymentMethod {
   Cash = 0,
@@ -24,7 +25,9 @@ const Checkout: React.FC = () => {
   console.log('Checkout', context) // REMOVE
 
   const items = context.data.query.answers.map(a => a.get)
-  const purchase = items.reduce((prev, cur) => prev + ' > ' + cur)
+  const purchase = items
+    .map(i => T(i))
+    .reduce((prev, cur) => prev + ' > ' + cur)
 
   const onBackClick = () => {
     history.goBack()
@@ -38,13 +41,18 @@ const Checkout: React.FC = () => {
 
   const paymentMethodSelect = () => {
     const mkMethod = (m: PaymentMethod, isActive: boolean = false) => {
+      const name = () => {
+        if (m === PaymentMethod.Cash) return 'Cash'
+        return 'Credit Card'
+      }
+
       return (
-        <li key={m} className={isActive ? 'is-active' : ''}>
-          <a onClick={() => onMethodClick(m)}>
+        <li key={ m } className={ isActive ? 'is-active' : '' }>
+          <a onClick={ () => onMethodClick(m) }>
             <span className="icon is-small">
               <i className="fas fa-image" aria-hidden="true"/>
             </span>
-            <span>Cash</span>
+            <span>{ T(name()) }</span>
           </a>
         </li>
       )
@@ -57,7 +65,7 @@ const Checkout: React.FC = () => {
     return (
       <div className="tabs is-boxed">
         <ul>
-          {methods}
+          { methods }
         </ul>
       </div>
     )
@@ -72,8 +80,8 @@ const Checkout: React.FC = () => {
         <div>
 
           <div className="payment_icons">
-            <DivImg className='is_50x100' url={getImage('visa')}/>
-            <DivImg className='is_50x100 h_margin_20' url={getImage('mastercard')}/>
+            <DivImg className='is_50x100' url={ getImage('visa') }/>
+            <DivImg className='is_50x100 h_margin_20' url={ getImage('mastercard') }/>
           </div>
 
           <CardElement className="v_margin_20"/>
@@ -84,15 +92,15 @@ const Checkout: React.FC = () => {
 
   return (
     <div className="Checkout v_padding_80">
-      <Container isSmall={true}>
-        <h1 className="title text_centered">Time to pay mate :)</h1>
+      <Container isSmall={ true }>
+        <h1 className="title text_centered">{ T('Time to pay mate :)') }</h1>
 
         <div className="margin_top_80">
-          <h1 className="title is-5">Your booking</h1>
+          <h1 className="title is-5">{ T('Your booking') }</h1>
 
           <div className="columns">
             <div className="column">
-              {purchase}
+              { purchase }
             </div>
 
             <div className="column is-narrow">
@@ -104,27 +112,27 @@ const Checkout: React.FC = () => {
         <hr className="margin_top_80"/>
 
         <div>
-          <h1 className="title is-5">Payment method</h1>
+          <h1 className="title is-5">{ T('Payment method') }</h1>
 
-          {paymentMethodSelect()}
+          { paymentMethodSelect() }
 
-          {renderMethod()}
+          { renderMethod() }
 
           <hr className="margin_top_40"/>
 
           <div className="columns v_margin_20">
             <div className="column is-narrow">
-              <button className="button" onClick={() => onBackClick()}>
-                Back
+              <button className="button" onClick={ () => onBackClick() }>
+                { T('Back') }
               </button>
             </div>
 
             <div className="column"/>
 
             <div className="column is-narrow">
-              <Link to={Page.checkout(service).path}>
+              <Link to={ Page.checkout(service).path }>
                 <button className="button is-info">
-                  Pay
+                  { T('Pay') }
                 </button>
               </Link>
             </div>

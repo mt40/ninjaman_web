@@ -1,11 +1,11 @@
 import React from 'react'
 import Container from '../Container'
-import {appContext, QueryAnswer} from '../../App'
+import { appContext, QueryAnswer } from '../../App'
 import './QueryN.css'
 import * as _ from 'lodash'
 import useRouter from 'use-react-router'
 import * as Page from '../../context/navigation'
-import {AnswerInfo} from '../../config/services'
+import { T } from '../../config/translation/util'
 
 const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
@@ -24,10 +24,10 @@ const QueryN: React.FC = () => {
     if (typeof a === 'string') {
       return (
         <div
-          key={idx}
-          className={cls}
-          onClick={() => onAnswerClick(a)}>
-          <b>{a}</b>
+          key={ idx }
+          className={ cls }
+          onClick={ () => onAnswerClick(a) }>
+          <b>{ T(a) }</b>
         </div>
       )
     }
@@ -35,7 +35,7 @@ const QueryN: React.FC = () => {
       const desc = () => {
         if (a.desc) {
           return a.desc.map((d, i) => {
-            return <li key={i}>⦁ {d}</li>
+            return <li key={ i }>⦁ { T(d) }</li>
           })
         }
         return a.desc
@@ -43,12 +43,12 @@ const QueryN: React.FC = () => {
 
       return (
         <div
-          key={idx}
-          className={cls}
-          onClick={() => onAnswerClick(a.text)}>
+          key={ idx }
+          className={ cls }
+          onClick={ () => onAnswerClick(a.text) }>
 
-          <b>{a.text}</b>
-          <ul className='v_margin_10'>{desc()}</ul>
+          <b>{ T(a.text) }</b>
+          <ul className='v_margin_10'>{ desc() }</ul>
 
         </div>
       )
@@ -68,17 +68,17 @@ const QueryN: React.FC = () => {
 
   return (
     <div className="ListingDetailQueryN">
-      <Container isSmall={false}>
-        <h1 className="title">{query.text}</h1>
+      <Container isSmall={ false }>
+        <h1 className="title">{ query.text }</h1>
         <div>
-          {answerElems}
+          { answerElems }
         </div>
 
         <hr className="margin_top_40"/>
 
         <div className="buttons v_margin_20">
-          <button className="button" onClick={() => onBackClick()}>
-            Back
+          <button className="button" onClick={ () => onBackClick() }>
+            { T('Back') }
           </button>
         </div>
       </Container>

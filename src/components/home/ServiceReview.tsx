@@ -1,8 +1,9 @@
 import React from 'react'
-import {getImage} from '../../util/Resource'
+import { getImage } from '../../util/Resource'
 import './CustomerReview.css'
 import './ServiceReview.css'
 import Container from '../Container'
+import { T } from '../../config/translation/util'
 
 interface ServiceInfo {
   avatar: string,
@@ -16,17 +17,17 @@ const ServiceReview: React.FC = () => {
     return (
       <div className="review_card service_review_card">
         <div className="">
-          <img className="avatar" src={sv.avatar} alt=""/>
+          <img className="avatar" src={ sv.avatar } alt=""/>
         </div>
 
         <div className="">
-          <b>{sv.name}</b>
-          <p>{sv.job}</p>
+          <b>{ T(sv.name) }</b>
+          <p>{ T(sv.job) }</p>
         </div>
 
         <hr/>
 
-        <p>{sv.review}</p>
+        <p>{ T(sv.review) }</p>
       </div>
     )
   }
@@ -41,15 +42,15 @@ const ServiceReview: React.FC = () => {
   const cards = (
     <div className="columns">
       <div className="column is-4">
-        {mkReviewCard(info)}
+        { mkReviewCard(info) }
       </div>
 
       <div className="column is-4">
-        {mkReviewCard(info)}
+        { mkReviewCard(info) }
       </div>
 
       <div className="column is-4">
-        {mkReviewCard(info)}
+        { mkReviewCard(info) }
       </div>
     </div>
   )
@@ -59,11 +60,11 @@ const ServiceReview: React.FC = () => {
       <Container>
         <div className="section-title">
           <h1 className="title is-1">
-            Thousands Of Professionals Are Growing Their Businesses With Ninjaman
+            { T('Thousands Of Professionals Are Growing Their Businesses With Ninjaman') }
           </h1>
         </div>
 
-        {cards}
+        { cards }
       </Container>
     </section>
   )

@@ -1,18 +1,19 @@
 import React from 'react'
 import Hero from './Hero'
 import useRouter from 'use-react-router'
-import {appContext, QueryAnswer} from '../../App'
+import { appContext, QueryAnswer } from '../../App'
 import Query0 from './Query0'
 import './ListingDetailPage.css'
 import Container from '../Container'
 import QueryN from './QueryN'
-import {ServiceGroup, ServiceInfo} from '../../config/services'
+import { ServiceGroup, ServiceInfo } from '../../config/services'
 import UserInfoForm from './UserInfoForm'
-import {Route, Switch} from 'react-router'
+import { Route, Switch } from 'react-router'
 import Checkout from './Checkout'
 import * as Page from '../../context/navigation'
-import {Elements, StripeProvider} from 'react-stripe-elements'
+import { Elements, StripeProvider } from 'react-stripe-elements'
 import * as _ from 'lodash'
+import { T } from '../../config/translation/util'
 
 const ListingDetailPage: React.FC = () => {
   console.log('ListingDetailPage')
@@ -33,27 +34,25 @@ const ListingDetailPage: React.FC = () => {
   function main(group: ServiceGroup, service: ServiceInfo) {
     const allAnswers = () => {
       const items = context.data.query.answers.map((a, idx) => {
-        return (
-          <li key={idx}>⦁ {a.get}</li>
-        )
+        return <li key={ idx }>⦁ { T(a.get) }</li>
       })
-      return <ul className="all_answers">{items}</ul>
+      return <ul className="all_answers">{ items }</ul>
     }
 
     const deepQueryWrapper = (queryElem: any) => {
-      const title = `${group.name} > ${service.name}`
+      const title = `${ T(group.name) } > ${ T(service.name) }`
 
       const topBar = (
         <div>
           <div className="columns margin_top_20">
             <div className="column is-narrow">
-              <p><b>{title}</b></p>
+              <p><b>{ title }</b></p>
             </div>
 
             <div className="column"/>
 
             <div className="column is-narrow">
-              <div className="cursor_pointer" onClick={deepQueryCloseBtnClick}>
+              <div className="cursor_pointer" onClick={ deepQueryCloseBtnClick }>
                 <i className="fas fa-times"/>
               </div>
             </div>
@@ -67,17 +66,17 @@ const ListingDetailPage: React.FC = () => {
         <div className="deep_query_wrapper padding_btm_80">
 
           <Container>
-            {topBar}
+            { topBar }
 
             <div className="columns">
 
               <div className="column is-3">
-                <h1 className="title is-5 underlined">Your selection</h1>
-                {allAnswers()}
+                <h1 className="title is-5 underlined">{ T('Your selection') }</h1>
+                { allAnswers() }
               </div>
 
               <div className="column">
-                {queryElem}
+                { queryElem }
               </div>
 
               <div className="column is-3"/>
@@ -119,9 +118,9 @@ const ListingDetailPage: React.FC = () => {
     return (
       <div className="ListingDetailPage">
         <Switch>
-          <Route exact path={Page.checkout(service).path} render={() => checkout}/>
-          <Route exact path={Page.userInfo(service).path} render={() => userInfoForm}/>
-          <Route path={Page.serviceDetail(service).path} render={() => renderQuery()}/>
+          <Route exact path={ Page.checkout(service).path } render={ () => checkout }/>
+          <Route exact path={ Page.userInfo(service).path } render={ () => userInfoForm }/>
+          <Route path={ Page.serviceDetail(service).path } render={ () => renderQuery() }/>
         </Switch>
       </div>
     )

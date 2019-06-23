@@ -1,7 +1,8 @@
 import React from 'react'
-import {appContext} from '../../App'
+import { appContext } from '../../App'
 import './Hero.css'
 import Container from '../Container'
+import { T } from '../../config/translation/util'
 
 const Hero: React.FC = () => {
   const context = React.useContext(appContext)
@@ -11,7 +12,7 @@ const Hero: React.FC = () => {
   const service = context.data.service.get
 
   const features = context.data.service.get.info.features.map((f, idx) => {
-    return <li key={idx}>{f}</li>
+    return <li key={ idx }>{ T(f) }</li>
   })
 
   // todo: make features dynamic
@@ -20,11 +21,11 @@ const Hero: React.FC = () => {
       <div className="hero-body">
         <Container>
           <h1 className="title">
-            Best {service.info.name} in Ho Chi Minh City
+            Best { service.info.name } in Ho Chi Minh City
           </h1>
           <h2 className="subtitle content">
             <ul>
-              {features}
+              { features }
             </ul>
           </h2>
         </Container>

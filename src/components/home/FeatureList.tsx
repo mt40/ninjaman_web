@@ -1,38 +1,38 @@
 import React from 'react'
 import Container from '../Container'
 import './FeatureList.css'
+import { T } from '../../config/translation/util'
 
 const FeatureList: React.FC = () => {
   return (
     <section className="FeatureList section">
       <Container>
         <div className="section-title">
-          <h1 className="title is-1">Benefits</h1>
+          <h1 className="title is-1">{ T('Benefits') }</h1>
         </div>
 
         <div className="columns">
           <div className="column is-4">
             <div><i className="fas fa-thumbs-up"/></div>
-            <b>High Quality & Trusted Professionals</b>
+            <b>{ T('High Quality & Trusted Professionals') }</b>
             <p>
-              High Quality & Trusted Professionals
-              We provide only verified, background checked and high quality professionals
+              { T('We provide only verified, background checked and high quality professionals') }
             </p>
           </div>
 
           <div className="column is-4">
             <div><i className="fas fa-user-check"/></div>
-            <b>Matched to Your Needs</b>
+            <b>{ T('Matched to Your Needs') }</b>
             <p>
-              We match you with the right professionals with the right budget
+              { T('We match you with the right professionals with the right budget') }
             </p>
           </div>
 
           <div className="column is-4">
             <div><i className="fas fa-shipping-fast"/></div>
-            <b>Hassle Free Service Delivery</b>
+            <b>{ T('Hassle Free Service Delivery') }</b>
             <p>
-              Super convenient, guaranteed service from booking to delivery
+              { T('Super convenient, guaranteed service from booking to delivery') }
             </p>
           </div>
         </div>

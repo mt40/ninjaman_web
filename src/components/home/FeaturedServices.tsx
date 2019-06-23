@@ -6,6 +6,7 @@ import useRouter from 'use-react-router'
 import {appContext} from '../../App'
 import {ServiceInfo, services} from '../../config/services'
 import * as Page from '../../context/navigation'
+import {T} from '../../config/translation/util'
 
 const FeaturedServices: React.FC = () => {
   const context = React.useContext(appContext)
@@ -25,7 +26,7 @@ const FeaturedServices: React.FC = () => {
         <div className="featured-listing" key={idx} onClick={() => onListingClick(sv)}>
           <div className="listing-img" style={{backgroundImage: `url('${sv.image}')`}}/>
           <div className="listing-text">
-            <p>{sv.name}</p>
+            <p>{T(sv.name)}</p>
           </div>
         </div>
       )
@@ -45,7 +46,7 @@ const FeaturedServices: React.FC = () => {
   const featureList = services.map((group, idx) => {
     return (
       <div key={idx} className="featured-section">
-        <b>{group.name}</b>
+        <b>{T(group.name)}</b>
         {mkScrollMenu(mkServiceElems(group.services))}
       </div>
     )
