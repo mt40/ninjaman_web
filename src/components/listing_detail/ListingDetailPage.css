@@ -2,8 +2,8 @@
   background-color: ghostwhite;
 }
 
-.deep_query_wrapper i.fas {
-  font-size: 1.5rem;
+.deep_query_close_icon {
+  font-size: 1.5rem !important;
 }
 
 .deep_query_wrapper .all_answers {

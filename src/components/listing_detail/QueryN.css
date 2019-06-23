@@ -1,5 +1,7 @@
 .buttons {
-  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .QueryN .final_answer_footer {

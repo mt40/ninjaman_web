@@ -120,9 +120,6 @@ const QueryN: React.FC = () => {
 
   const onAnswerClick = (answer: string) => {
     context.action.answer(query, answer)
-    if (query.isFinal) {
-      history.push(Page.userInfo(service).path)
-    }
   }
 
   const onFinalAnswerClick = (answer: string, idx: number) => {
@@ -131,26 +128,47 @@ const QueryN: React.FC = () => {
     }
   }
 
+  const onFinalAnswerNextClick = () => {
+    history.push(Page.userInfo(service).path)
+  }
+
   const onBackClick = () => {
     context.action.popAnswer()
   }
 
-  const answerColumn = (
-    <div className="column is-5">
-      <h1 className="title">{ query.text }</h1>
-      <div>
-        { query.isFinal ? finalAnswerElems() : answerElems() }
-      </div>
-
-      <hr className="margin_top_40"/>
-
-      <div className="buttons v_margin_20">
+  const answerColumn = () => {
+    const buttons = () => {
+      const back = (
         <button className="button" onClick={ () => onBackClick() }>
           { T('Back') }
         </button>
+      )
+      const next = query.isFinal && (
+        <button className="button is-info" onClick={ () => onFinalAnswerNextClick() }>
+          { T('Next') }
+        </button>
+      )
+      return (
+        <div className="buttons v_margin_20">
+          { back }
+          { next }
+        </div>
+      )
+    }
+
+    return (
+      <div className="column is-5">
+        <h1 className="title">{ query.text }</h1>
+        <div>
+          { query.isFinal ? finalAnswerElems() : answerElems() }
+        </div>
+
+        <hr className="margin_top_40"/>
+
+        { buttons() }
       </div>
-    </div>
-  )
+    )
+  }
 
   const answerDetailColumn = () => {
     const content = () => {
@@ -179,7 +197,7 @@ const QueryN: React.FC = () => {
   return (
     <div className="QueryN">
       <div className="columns">
-        { answerColumn }
+        { answerColumn() }
         { answerDetailColumn() }
       </div>
     </div>

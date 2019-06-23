@@ -39,29 +39,33 @@ const ListingDetailPage: React.FC = () => {
       return <ul className="all_answers">{ items }</ul>
     }
 
-    const deepQueryWrapper = (queryElem: any) => {
-      const title = `${ T(group.name) } > ${ T(service.name) }`
+    const deepQueryCloseBtnClick = () => {
+      context.action.clearAnswers()
+      history.replace(Page.serviceDetail(service).path)
+    }
 
-      const topBar = (
-        <div>
-          <div className="columns margin_top_20">
-            <div className="column is-narrow">
-              <p><b>{ title }</b></p>
-            </div>
-
-            <div className="column"/>
-
-            <div className="column is-narrow">
-              <div className="cursor_pointer" onClick={ deepQueryCloseBtnClick }>
-                <i className="fas fa-times"/>
-              </div>
-            </div>
+    const title = `${ T(group.name) } > ${ T(service.name) }`
+    const topBar = (
+      <div>
+        <div className="columns margin_top_20">
+          <div className="column is-narrow">
+            <p><b>{ title }</b></p>
           </div>
 
-          <hr/>
-        </div>
-      )
+          <div className="column"/>
 
+          <div className="column is-narrow">
+            <div className="cursor_pointer" onClick={ deepQueryCloseBtnClick }>
+              <i className="fas fa-times deep_query_close_icon"/>
+            </div>
+          </div>
+        </div>
+
+        <hr/>
+      </div>
+    )
+
+    const deepQueryWrapper = (queryElem: any) => {
       return (
         <div className="deep_query_wrapper padding_btm_80">
 
@@ -84,11 +88,6 @@ const ListingDetailPage: React.FC = () => {
       )
     }
 
-    const deepQueryCloseBtnClick = () => {
-      context.action.clearAnswers()
-      history.replace(Page.serviceDetail(service).path)
-    }
-
     const renderQuery = () => {
       if (_.isEmpty(context.data.query.answers)) {
         return (
@@ -104,14 +103,22 @@ const ListingDetailPage: React.FC = () => {
     }
 
     const checkout = (
-      <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
-        <Elements>
-          <Checkout/>
-        </Elements>
-      </StripeProvider>
+      <Container isFluid={ true }>
+        { topBar }
+        <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+          <Elements>
+            <Checkout/>
+          </Elements>
+        </StripeProvider>
+      </Container>
     )
 
-    const userInfoForm = deepQueryWrapper(<UserInfoForm/>)
+    const userInfoForm = (
+      <Container isFluid={ true }>
+        { topBar }
+        <UserInfoForm/>
+      </Container>
+    )
 
     return (
       <div className="ListingDetailPage">

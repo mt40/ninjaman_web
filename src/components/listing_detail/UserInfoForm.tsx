@@ -60,8 +60,9 @@ const UserInfoForm: React.FC = () => {
   )
 
   return (
-    <div className="ListingDetailUserInfoForm">
-      <Container isSmall={ false }>
+    <div className="ListingDetailUserInfoForm v_padding_80">
+      <Container isSmall={ true }>
+
         <div className="columns">
           <div className="column">
             <h1 className="title">{ T('Tell us about you') }</h1>
