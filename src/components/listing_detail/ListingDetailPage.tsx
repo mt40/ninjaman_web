@@ -65,12 +65,12 @@ const ListingDetailPage: React.FC = () => {
       return (
         <div className="deep_query_wrapper padding_btm_80">
 
-          <Container>
+          <Container isFluid={ true }>
             { topBar }
 
             <div className="columns">
 
-              <div className="column is-3">
+              <div className="column is-2">
                 <h1 className="title is-5 underlined">{ T('Your selection') }</h1>
                 { allAnswers() }
               </div>
@@ -78,8 +78,6 @@ const ListingDetailPage: React.FC = () => {
               <div className="column">
                 { queryElem }
               </div>
-
-              <div className="column is-3"/>
             </div>
           </Container>
         </div>

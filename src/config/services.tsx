@@ -64,6 +64,7 @@ export const services: ServiceGroup[] = [
                 },
                 {
                   text: 'Facial pimple and blackheads treatment + Spa',
+                  image: 'https://cdn.massagemag.com/wordpress/wp-content/uploads/HolidaySpa.jpg',
                   desc: [
                     'Includes 30 minutes of service',
                     'Hourly rate card applicable',
