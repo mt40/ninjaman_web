@@ -11,4 +11,5 @@ export default {
   'Basic Facial cleaning + Spa': 'Làm sạch da mặt + Spa',
   'Fullname': 'Tên đầy đủ',
   'Phone': 'Số điện thoại',
+  'Total': 'Tổng cộng'
 }

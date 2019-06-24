@@ -1,14 +1,14 @@
 import React from 'react'
-import Container from '../Container'
-import { appContext, QueryAnswer } from '../../App'
+import { appContext } from '../../App'
 import './QueryN.css'
 import * as _ from 'lodash'
 import useRouter from 'use-react-router'
 import * as Page from '../../context/navigation'
 import { T } from '../../config/translation/util'
 import DivImg from '../DivImg'
-import { RichAnswerInfo } from '../../config/services'
+import { AnswerInfo, RichAnswerInfo } from '../../config/services'
 import AddToCart from './AddToCart'
+import { QueryAnswer } from '../../models/QueryAnswer'
 
 const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
@@ -70,6 +70,15 @@ const QueryN: React.FC = () => {
     })
   }
 
+  const onAddRemoveCart = (a: AnswerInfo, count: number) => {
+    if(typeof a === 'string') {
+      context.action.setCart(a, count)
+    }
+    else {
+      context.action.setCart(a.text, count)
+    }
+  }
+
   const finalAnswerElems = () => {
     return answers.map((a, idx) => {
       const cls = () => {
@@ -80,7 +89,7 @@ const QueryN: React.FC = () => {
       const footer = (
         <div className="final_answer_footer padding_10">
           <b>200.000 VND</b>
-          <AddToCart/>
+          <AddToCart onItemChange={ (cnt) => onAddRemoveCart(a, cnt) }/>
         </div>
       )
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './Hero'
 import useRouter from 'use-react-router'
-import { appContext, QueryAnswer } from '../../App'
+import { appContext } from '../../App'
 import Query0 from './Query0'
 import './ListingDetailPage.css'
 import Container from '../Container'

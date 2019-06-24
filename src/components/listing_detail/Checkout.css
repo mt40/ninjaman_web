@@ -34,3 +34,9 @@
   display: flex;
   flex-direction: row;
 }
+
+.Checkout .receipt .purchase {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

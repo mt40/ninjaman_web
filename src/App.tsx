@@ -9,30 +9,12 @@ import * as _ from 'lodash'
 import {none, Option, some} from 'ts-option'
 import {ServiceContext} from './context/service'
 import {groupOf, QueryInfo, ServiceInfo} from './config/services'
+import { Cart } from './models/Cart'
+import { MyContext } from './models/MyContext'
+import { QueryAnswer } from './models/QueryAnswer'
 
 // export const appContext = React.createContext<AppContext>(defaultContext)
 // const Provider = appContext.Provider
-
-export interface QueryAnswer {
-  query: QueryInfo,
-  get: string,
-}
-
-interface MyContext {
-  data: {
-    query: {
-      answers: QueryAnswer[]
-    },
-    service: Option<ServiceContext>
-  },
-  action: {
-    answer: (query: QueryInfo, answer: string) => void,
-    popAnswer: () => void,
-    clearAnswers: () => void,
-    getNextQuery: () => Option<QueryInfo>,
-    setService: (sv: ServiceInfo) => void
-  }
-}
 
 export const appContext = React.createContext<MyContext>({
   data: {
@@ -40,6 +22,7 @@ export const appContext = React.createContext<MyContext>({
       answers: [] as QueryAnswer[],
     },
     service: none as Option<ServiceContext>,
+    cart: new Cart(),
   },
   action: {
     answer: () => {},
@@ -47,6 +30,8 @@ export const appContext = React.createContext<MyContext>({
     clearAnswers: () => {},
     getNextQuery: () => none,
     setService: () => {},
+    setCart: () => {},
+    clearCart: () => {},
   },
 })
 const Provider = appContext.Provider
@@ -54,16 +39,13 @@ const Provider = appContext.Provider
 type Props = {}
 
 class App extends React.Component<Props, MyContext> {
-  // const [state, setState] = React.useState<AppContext>(defaultContext)
-  // const context: AppContext = contextFor(new AppContextAsState(state, setState))
-
-  // console.log('app', context) // REMOVE
   state: MyContext = {
     data: {
       query: {
         answers: [],
       },
       service: none,
+      cart: new Cart(),
     },
     action: {
       answer: (query: QueryInfo, answer: string) => {
@@ -76,11 +58,10 @@ class App extends React.Component<Props, MyContext> {
                 query: query,
                 get: answer,
               }),
-            },
+            }
           },
         }
         if (!_.isEqual(newState.data, this.state.data)) {
-          console.log('Set new state', newState) // REMOVE
           this.setState(newState)
         }
       },
@@ -92,6 +73,7 @@ class App extends React.Component<Props, MyContext> {
             query: {
               answers: _.dropRight(this.state.data.query.answers),
             },
+            cart: new Cart(),
           },
         }
         if (!_.isEqual(newState.data, this.state.data)) {
@@ -106,6 +88,7 @@ class App extends React.Component<Props, MyContext> {
             query: {
               answers: [],
             },
+            cart: new Cart(),
           },
         }
         if (!_.isEqual(newState.data, this.state.data)) {
@@ -128,6 +111,31 @@ class App extends React.Component<Props, MyContext> {
               info: sv,
             }),
           },
+        }
+        if (!_.isEqual(newState.data, this.state.data)) {
+          this.setState(newState)
+        }
+      },
+      setCart: (lastAns: string, count: number) => {
+        const chain = this.state.data.query.answers.map(a => a.get).concat([lastAns])
+        const newState = {
+          ...this.state,
+          data: {
+            ...this.state.data,
+            cart: this.state.data.cart.set(chain, count)
+          }
+        }
+        if (!_.isEqual(newState.data, this.state.data)) {
+          this.setState(newState)
+        }
+      },
+      clearCart: () => {
+        const newState = {
+          ...this.state,
+          data: {
+            ...this.state.data,
+            cart: new Cart()
+          }
         }
         if (!_.isEqual(newState.data, this.state.data)) {
           this.setState(newState)

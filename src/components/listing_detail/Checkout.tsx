@@ -19,6 +19,7 @@ const Checkout: React.FC = () => {
   const context = React.useContext(appContext)
   const {history} = useRouter()
   const service = context.data.service.get.info
+  const cart = context.data.cart
 
   const [selectedMethod, setMethod] = React.useState(PaymentMethod.Cash)
 
@@ -90,6 +91,21 @@ const Checkout: React.FC = () => {
     }
   }
 
+  const purchasingItems = () => {
+    return Array.from(cart.items.entries()).map(([ansChain, count], idx) => {
+      return (
+        <div key={ idx }>
+          <div className="purchase">
+            <p>{ `${ ansChain } x ${ count }` }</p>
+            <p>100.000 VND</p>
+          </div>
+        </div>
+      )
+    })
+  }
+
+  const totalPrice = `${ T('Total') }: ${ cart.totalPrice() } VND`
+
   return (
     <div className="Checkout v_padding_80">
       <Container isSmall={ true }>
@@ -98,13 +114,13 @@ const Checkout: React.FC = () => {
         <div className="margin_top_80">
           <h1 className="title is-5">{ T('Your booking') }</h1>
 
-          <div className="columns">
-            <div className="column">
-              { purchase }
-            </div>
+          <div className="receipt">
+            { purchasingItems() }
 
-            <div className="column is-narrow">
-              <p className="text_right"><b>99.000 VND</b></p>
+            <hr/>
+
+            <div className='text_right'>
+              <b>{ totalPrice }</b>
             </div>
           </div>
         </div>
