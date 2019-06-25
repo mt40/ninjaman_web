@@ -16,6 +16,10 @@ The format is **'english': 'vietnamese'**. Add a line like that for each string 
 
 Same as adding translation, except that you must edit predefined data in file [src/config/services.tsx][services.tsx].
 
+## Edit service pricing
+
+Same as above but use file [src/config/prices.ts][prices.ts].
+
 ## Deploy
 Simply push to `master` and Heroku will pick up the code to build and deploy automatically.
 
@@ -35,5 +39,6 @@ If for some reasons, you want to build the production version, run `yarn build`.
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 [services.tsx]: https://github.com/mt40/ninjaman_web/blob/master/src/config/services.tsx
+[prices.ts]: https://github.com/mt40/ninjaman_web/blob/master/src/config/prices.ts
 [choose_type_of_sv]: /public/images/choose_type_of_sv.png
 [vn.ts]: https://github.com/mt40/ninjaman_web/blob/master/src/config/vn.ts

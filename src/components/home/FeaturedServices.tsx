@@ -3,17 +3,17 @@ import ScrollMenu from 'react-horizontal-scrolling-menu'
 import Container from '../Container'
 import './FeaturedServices.css'
 import useRouter from 'use-react-router'
-import {appContext} from '../../App'
-import {ServiceInfo, services} from '../../config/services'
+import { appContext } from '../../App'
+import { ServiceInfo, services } from '../../config/services'
 import * as Page from '../../context/navigation'
-import {T} from '../../config/translation/util'
+import { T } from '../../config/translation/util'
 
 const FeaturedServices: React.FC = () => {
   const context = React.useContext(appContext)
   const {history} = useRouter()
 
-  const leftArrow = <div className="scroll-menu-arrow">{'<'}</div>
-  const rightArrow = <div className="scroll-menu-arrow">{'>'}</div>
+  const leftArrow = <div className="scroll-menu-arrow">{ '<' }</div>
+  const rightArrow = <div className="scroll-menu-arrow">{ '>' }</div>
 
   const onListingClick = (sv: ServiceInfo) => {
     context.action.setService(sv)
@@ -23,10 +23,10 @@ const FeaturedServices: React.FC = () => {
   const mkServiceElems = (services: ServiceInfo[]) => {
     return services.map((sv, idx) => {
       return (
-        <div className="featured-listing" key={idx} onClick={() => onListingClick(sv)}>
-          <div className="listing-img" style={{backgroundImage: `url('${sv.image}')`}}/>
+        <div className="featured-listing" key={ idx } onClick={ () => onListingClick(sv) }>
+          <div className="listing-img" style={ {backgroundImage: `url('${ sv.image }')`} }/>
           <div className="listing-text">
-            <p>{T(sv.name)}</p>
+            <p>{ T(sv.name) }</p>
           </div>
         </div>
       )
@@ -36,18 +36,18 @@ const FeaturedServices: React.FC = () => {
   const mkScrollMenu = (elems: any[]) => {
     return (
       <div className="ScrollMenu">
-        <ScrollMenu data={elems} arrowLeft={leftArrow} arrowRight={rightArrow}
-                    alignCenter={false} hideSingleArrow={true} hideArrows={true}
-                    arrowDisabledClass="is-invisible" dragging={false} wheel={false}/>
+        <ScrollMenu data={ elems } arrowLeft={ leftArrow } arrowRight={ rightArrow }
+                    alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
+                    arrowDisabledClass="is-invisible" dragging={ false } wheel={ false }/>
       </div>
     )
   }
 
   const featureList = services.map((group, idx) => {
     return (
-      <div key={idx} className="featured-section">
-        <b>{T(group.name)}</b>
-        {mkScrollMenu(mkServiceElems(group.services))}
+      <div key={ idx } className="featured-section">
+        <b>{ T(group.name) }</b>
+        { mkScrollMenu(mkServiceElems(group.services)) }
       </div>
     )
   })
@@ -55,7 +55,7 @@ const FeaturedServices: React.FC = () => {
   return (
     <section className="FeaturedServices section">
       <Container>
-        {featureList}
+        { featureList }
       </Container>
     </section>
   )

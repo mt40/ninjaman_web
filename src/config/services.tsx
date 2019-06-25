@@ -80,7 +80,6 @@ export const services: ServiceGroup[] = [
                 'Foot Massage',
                 'Full Body Massage',
                 'Head Massage',
-                'Massage thư giãn cho người già',
               ],
             },
           },

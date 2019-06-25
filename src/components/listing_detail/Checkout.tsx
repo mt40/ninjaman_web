@@ -9,6 +9,7 @@ import useRouter from 'use-react-router'
 import { getImage } from '../../util/Resource'
 import DivImg from '../DivImg'
 import { T } from '../../config/translation/util'
+import { Cart } from '../../models/Cart'
 
 enum PaymentMethod {
   Cash = 0,
@@ -18,7 +19,7 @@ enum PaymentMethod {
 const Checkout: React.FC = () => {
   const context = React.useContext(appContext)
   const {history} = useRouter()
-  const service = context.data.service.get.info
+  const service = context.data.service.get
   const cart = context.data.cart
 
   const [selectedMethod, setMethod] = React.useState(PaymentMethod.Cash)
@@ -92,19 +93,23 @@ const Checkout: React.FC = () => {
   }
 
   const purchasingItems = () => {
-    return Array.from(cart.items.entries()).map(([ansChain, count], idx) => {
+    return Array.from(cart.items.entries()).map(([ansChain, val], idx) => {
+      const price = Cart.priceOf(service.group, service.info, val.chain)
+        .times(val.count)
+        .toDisplayString()
       return (
         <div key={ idx }>
           <div className="purchase">
-            <p>{ `${ ansChain } x ${ count }` }</p>
-            <p>100.000 VND</p>
+            <p>{ `${ ansChain } x ${ val.count }` }</p>
+            <p>{ price }</p>
           </div>
         </div>
       )
     })
   }
 
-  const totalPrice = `${ T('Total') }: ${ cart.totalPrice() } VND`
+  const totalPrice =
+    `${ T('Total') }: ${ cart.totalPrice(service.group, service.info).toDisplayString() }`
 
   return (
     <div className="Checkout v_padding_80">
@@ -146,7 +151,7 @@ const Checkout: React.FC = () => {
             <div className="column"/>
 
             <div className="column is-narrow">
-              <Link to={ Page.checkout(service).path }>
+              <Link to={ Page.checkout(service.info).path }>
                 <button className="button is-info">
                   { T('Pay') }
                 </button>

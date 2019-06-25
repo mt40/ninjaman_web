@@ -9,6 +9,7 @@ import DivImg from '../DivImg'
 import { AnswerInfo, RichAnswerInfo } from '../../config/services'
 import AddToCart from './AddToCart'
 import { QueryAnswer } from '../../models/QueryAnswer'
+import { Cart } from '../../models/Cart'
 
 const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
@@ -20,7 +21,7 @@ const QueryN: React.FC = () => {
   const query = context.action.getNextQuery().get
   const prevAnswer = _.last(context.data.query.answers) as QueryAnswer
   const answers = query.answers[prevAnswer.get]
-  const service = context.data.service.get.info
+  const service = context.data.service.get
 
   const getAnsDescElem = (a: RichAnswerInfo) => {
     if (a.desc) {
@@ -71,12 +72,18 @@ const QueryN: React.FC = () => {
   }
 
   const onAddRemoveCart = (a: AnswerInfo, count: number) => {
-    if(typeof a === 'string') {
+    if (typeof a === 'string') {
       context.action.setCart(a, count)
     }
     else {
       context.action.setCart(a.text, count)
     }
+  }
+
+  const getPrice = (a: AnswerInfo) => {
+    const ans = typeof a === 'string' ? a : a.text
+    const chain = context.data.query.answers.map(a => a.get).concat([ans])
+    return Cart.priceOf(service.group, service.info, chain)
   }
 
   const finalAnswerElems = () => {
@@ -88,7 +95,7 @@ const QueryN: React.FC = () => {
 
       const footer = (
         <div className="final_answer_footer padding_10">
-          <b>200.000 VND</b>
+          <b>{ getPrice(a).toDisplayString() }</b>
           <AddToCart onItemChange={ (cnt) => onAddRemoveCart(a, cnt) }/>
         </div>
       )
@@ -138,7 +145,7 @@ const QueryN: React.FC = () => {
   }
 
   const onFinalAnswerNextClick = () => {
-    history.push(Page.userInfo(service).path)
+    history.push(Page.userInfo(service.info).path)
   }
 
   const onBackClick = () => {

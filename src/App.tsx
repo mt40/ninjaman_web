@@ -1,14 +1,14 @@
 import React from 'react'
 import './App.css'
 import HomePage from './components/home/HomePage'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ListingDetailPage from './components/listing_detail/ListingDetailPage'
 import TopBar from './components/TopBar'
 import Footer from './components/Footer'
 import * as _ from 'lodash'
-import {none, Option, some} from 'ts-option'
-import {ServiceContext} from './context/service'
-import {groupOf, QueryInfo, ServiceInfo} from './config/services'
+import { none, Option, some } from 'ts-option'
+import { ServiceContext } from './context/service'
+import { groupOf, QueryInfo, ServiceInfo } from './config/services'
 import { Cart } from './models/Cart'
 import { MyContext } from './models/MyContext'
 import { QueryAnswer } from './models/QueryAnswer'
@@ -48,17 +48,18 @@ class App extends React.Component<Props, MyContext> {
       cart: new Cart(),
     },
     action: {
-      answer: (query: QueryInfo, answer: string) => {
+      answer: (query: QueryInfo, ...answers: string[]) => {
         const newState = {
           ...this.state,
           data: {
             ...this.state.data,
             query: {
-              answers: this.state.data.query.answers.concat({
-                query: query,
-                get: answer,
-              }),
-            }
+              answers: this.state.data.query.answers.concat(
+                answers.map(a => {
+                  return { query: query, get: a }
+                })
+              ),
+            },
           },
         }
         if (!_.isEqual(newState.data, this.state.data)) {
@@ -122,8 +123,8 @@ class App extends React.Component<Props, MyContext> {
           ...this.state,
           data: {
             ...this.state.data,
-            cart: this.state.data.cart.set(chain, count)
-          }
+            cart: this.state.data.cart.set(chain, count),
+          },
         }
         if (!_.isEqual(newState.data, this.state.data)) {
           this.setState(newState)
@@ -134,8 +135,8 @@ class App extends React.Component<Props, MyContext> {
           ...this.state,
           data: {
             ...this.state.data,
-            cart: new Cart()
-          }
+            cart: new Cart(),
+          },
         }
         if (!_.isEqual(newState.data, this.state.data)) {
           this.setState(newState)
@@ -148,15 +149,15 @@ class App extends React.Component<Props, MyContext> {
     console.log('app', appContext) // REMOVE
 
     return (
-      <Provider value={this.state}>
+      <Provider value={ this.state }>
         <BrowserRouter>
           <div className="App">
             <TopBar/>
 
             <div className="page_content">
               <Switch>
-                <Route path="/" exact component={HomePage}/>
-                <Route path="/service/:name" component={ListingDetailPage}/>
+                <Route path="/" exact component={ HomePage }/>
+                <Route path="/service/:name" component={ ListingDetailPage }/>
               </Switch>
             </div>
 

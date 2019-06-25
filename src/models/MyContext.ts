@@ -13,7 +13,7 @@ export interface MyContext {
     cart: Cart,
   },
   action: {
-    answer: (query: QueryInfo, answer: string) => void,
+    answer: (query: QueryInfo, ...answers: string[]) => void,
     popAnswer: () => void,
     clearAnswers: () => void,
     getNextQuery: () => Option<QueryInfo>,
