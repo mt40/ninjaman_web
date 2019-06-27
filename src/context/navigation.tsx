@@ -20,3 +20,4 @@ export const serviceDetail = (sv: ServiceInfo) => {
 export const queryN = (sv: ServiceInfo, n: number) => new Page(`${serviceDetail(sv)}/q${n}`)
 export const userInfo = (sv: ServiceInfo) => new Page(`${serviceDetail(sv)}/info`)
 export const checkout = (sv: ServiceInfo) => new Page(`${serviceDetail(sv)}/checkout`)
+export const bookingConfirm = (sv: ServiceInfo) => new Page(`${serviceDetail(sv)}/confirm`)

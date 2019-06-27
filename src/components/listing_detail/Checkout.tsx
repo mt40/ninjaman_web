@@ -151,7 +151,7 @@ const Checkout: React.FC = () => {
             <div className="column"/>
 
             <div className="column is-narrow">
-              <Link to={ Page.checkout(service.info).path }>
+              <Link to={ Page.bookingConfirm(service.info).path }>
                 <button className="button is-info">
                   { T('Pay') }
                 </button>

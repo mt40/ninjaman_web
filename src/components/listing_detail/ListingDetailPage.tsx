@@ -14,6 +14,7 @@ import * as Page from '../../context/navigation'
 import { Elements, StripeProvider } from 'react-stripe-elements'
 import * as _ from 'lodash'
 import { T } from '../../config/translation/util'
+import BookingConfirm from './BookingConfirm'
 
 const ListingDetailPage: React.FC = () => {
   console.log('ListingDetailPage')
@@ -125,6 +126,8 @@ const ListingDetailPage: React.FC = () => {
         <Switch>
           <Route exact path={ Page.checkout(service).path } render={ () => checkout }/>
           <Route exact path={ Page.userInfo(service).path } render={ () => userInfoForm }/>
+          <Route exact path={ Page.bookingConfirm(service).path }
+                 render={ () => <BookingConfirm/> }/>
           <Route path={ Page.serviceDetail(service).path } render={ () => renderQuery() }/>
         </Switch>
       </div>

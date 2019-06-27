@@ -1,0 +1,9 @@
+.BookingConfirm .spinner_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.BookingConfirm .sk-folding-cube {
+  width: 60px;
+  height: 60px;
+}
