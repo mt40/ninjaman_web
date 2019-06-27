@@ -12,4 +12,5 @@
 
 .ListingDetailPage {
   background-color: ghostwhite;
+  flex-grow: 1;
 }
