@@ -182,6 +182,10 @@ i.fas {
   width: 100px;
 }
 
+.is_h150 {
+  height: 150px;
+  width: 100%;
+}
 .is_h300 {
   height: 300px;
   width: 100%;

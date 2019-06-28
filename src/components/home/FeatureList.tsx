@@ -2,8 +2,24 @@ import React from 'react'
 import Container from '../Container'
 import './FeatureList.css'
 import { T } from '../../config/translation/util'
+import DivImg from '../DivImg'
+import { getImage } from '../../util/Resource'
 
 const FeatureList: React.FC = () => {
+  const mkColumn = (img: string, title: string, text: string) => {
+    return (
+      <div className='column'>
+        <DivImg height={ 150 } url={ img } fallbackColor={ 'transparent' } sizeContain={true}/>
+        <p className='title is-4 margin_top_20'>
+          { T(title) }
+        </p>
+        <p>
+          { T(text) }
+        </p>
+      </div>
+    )
+  }
+
   return (
     <section className="FeatureList section">
       <Container>
@@ -12,29 +28,29 @@ const FeatureList: React.FC = () => {
         </div>
 
         <div className="columns">
-          <div className="column is-4">
-            <div><i className="fas fa-thumbs-up"/></div>
-            <b>{ T('High Quality & Trusted Professionals') }</b>
-            <p>
-              { T('We provide only verified, background checked and high quality professionals') }
-            </p>
-          </div>
+          {
+            mkColumn(
+              getImage('undraw_hire'),
+              'High Quality & Trusted Professionals',
+              'We provide only verified, background checked and high quality professionals',
+            )
+          }
 
-          <div className="column is-4">
-            <div><i className="fas fa-user-check"/></div>
-            <b>{ T('Matched to Your Needs') }</b>
-            <p>
-              { T('We match you with the right professionals with the right budget') }
-            </p>
-          </div>
+          {
+            mkColumn(
+              getImage('undraw_notes'),
+              'Matched to Your Needs',
+              'We match you with the right professionals with the right budget',
+            )
+          }
 
-          <div className="column is-4">
-            <div><i className="fas fa-shipping-fast"/></div>
-            <b>{ T('Hassle Free Service Delivery') }</b>
-            <p>
-              { T('Super convenient, guaranteed service from booking to delivery') }
-            </p>
-          </div>
+          {
+            mkColumn(
+              getImage('undraw_on_the_way'),
+              'Hassle Free Service Delivery',
+              'Super convenient, guaranteed service from booking to delivery',
+            )
+          }
         </div>
       </Container>
     </section>

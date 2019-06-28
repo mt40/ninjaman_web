@@ -12,7 +12,7 @@ interface UserInfo {
 const CustomerReview: React.FC = () => {
   const mkReviewCard = (cover: string, text: string, pro: UserInfo) => {
     return (
-      <div className="review_card">
+      <div className="review_card radius_5 shadow bg_white">
         <div>
           <img src={cover} alt=""/>
         </div>

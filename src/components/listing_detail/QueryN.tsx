@@ -89,7 +89,7 @@ const QueryN: React.FC = () => {
   const finalAnswerElems = () => {
     return answers.map((a, idx) => {
       const cls = () => {
-        const common = 'radius_5 border_solid v_margin_10 bg_white cursor_pointer'
+        const common = 'final_answer radius_5 shadow v_margin_20 bg_white cursor_pointer'
         return idx === focusedAnswer ? common + ' focused' : common
       }
 
@@ -194,7 +194,7 @@ const QueryN: React.FC = () => {
       }
       else {
         const cover = ans.image && (
-          <DivImg url={ ans.image } className="is_h300 radius_5"/>
+          <DivImg url={ ans.image } className="radius_5" height={400}/>
         )
 
         return (

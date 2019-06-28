@@ -7,6 +7,7 @@ import { appContext } from '../../App'
 import { ServiceInfo, services } from '../../config/services'
 import * as Page from '../../context/navigation'
 import { T } from '../../config/translation/util'
+import DivImg from '../DivImg'
 
 const FeaturedServices: React.FC = () => {
   const context = React.useContext(appContext)
@@ -23,10 +24,11 @@ const FeaturedServices: React.FC = () => {
   const mkServiceElems = (services: ServiceInfo[]) => {
     return services.map((sv, idx) => {
       return (
-        <div className="featured-listing" key={ idx } onClick={ () => onListingClick(sv) }>
-          <div className="listing-img" style={ {backgroundImage: `url('${ sv.image }')`} }/>
+        <div className="featured-listing radius_5 bg_white shadow" key={ idx }
+             onClick={ () => onListingClick(sv) }>
+          <DivImg url={ sv.image } height={ 150 }/>
           <div className="listing-text">
-            <p>{ T(sv.name) }</p>
+            <p><b>{ T(sv.name) }</b></p>
           </div>
         </div>
       )
@@ -46,7 +48,7 @@ const FeaturedServices: React.FC = () => {
   const featureList = services.map((group, idx) => {
     return (
       <div key={ idx } className="featured-section">
-        <b>{ T(group.name) }</b>
+        <p className='title is-4'>{ T(group.name) }</p>
         { mkScrollMenu(mkServiceElems(group.services)) }
       </div>
     )

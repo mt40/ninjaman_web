@@ -2,18 +2,22 @@ import React from 'react'
 import './HowItWorks.css'
 import Container from '../Container'
 import { T } from '../../config/translation/util'
+import DivImg from '../DivImg'
+import { getImage } from '../../util/Resource'
 
 const HowItWorks: React.FC = () => {
-  const mkTitleColumn = (text: string) => {
+  const mkColumn = (img: string, title: string, text: string) => {
     return (
-      <div className="column">
-        <h1 className="title is-3">{ T(text) }</h1>
+      <div className='column'>
+        <DivImg height={ 150 } url={ img } fallbackColor={ 'transparent' } sizeContain={true}/>
+        <p className='title is-4 margin_top_20'>
+          { T(title) }
+        </p>
+        <p>
+          { T(text) }
+        </p>
       </div>
     )
-  }
-
-  const mkColumn = (text: string) => {
-    return <div className="column">{ T(text) }</div>
   }
 
   return (
@@ -24,18 +28,29 @@ const HowItWorks: React.FC = () => {
         </div>
 
         <div className="columns text_centered">
-          { mkTitleColumn('Select services') }
-          { mkTitleColumn('Enter your details') }
-          { mkTitleColumn('Beautician comes to you') }
-        </div>
+          {
+            mkColumn(
+              getImage('undraw_choose'),
+              'Select services',
+              'Explore our list of services and select the ones you want',
+            )
+          }
 
-        <div className="columns text_centered">
-          { mkColumn('Explore our list of services and select the ones you want') }
-          { mkColumn('Choose appointment date, time, and address then check out securely') }
-          { mkColumn(
-            'Our stylists arrive at your home with everything needed to create your\n' +
-            'perfect look',
-          ) }
+          {
+            mkColumn(
+              getImage('undraw_filling'),
+              'Enter your details',
+              'Choose appointment date, time, and address then check out securely',
+            )
+          }
+
+          {
+            mkColumn(
+              getImage('undraw_makeup'),
+              'Beautician comes to you',
+              'Our stylists arrive at your home with everything needed to create your perfect look',
+            )
+          }
         </div>
 
       </Container>

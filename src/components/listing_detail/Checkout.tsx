@@ -82,8 +82,9 @@ const Checkout: React.FC = () => {
         <div>
 
           <div className="payment_icons">
-            <DivImg className='is_50x100' url={ getImage('visa') }/>
-            <DivImg className='is_50x100 h_margin_20' url={ getImage('mastercard') }/>
+            <DivImg height={ 50 } width={ 100 } url={ getImage('visa') }/>
+            <DivImg height={ 50 } width={ 100 } className='h_margin_20'
+                    url={ getImage('mastercard') }/>
           </div>
 
           <CardElement className="v_margin_20"/>
