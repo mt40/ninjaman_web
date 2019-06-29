@@ -24,7 +24,7 @@ const HowItWorks: React.FC = () => {
     <section className="HowItWorks section">
       <Container>
         <div className="section-title">
-          <h1 className="title is-1">{ T('How NinjaMan works') }</h1>
+          <h1 className="title is-1">{ T('How it works') }</h1>
         </div>
 
         <div className="columns text_centered">

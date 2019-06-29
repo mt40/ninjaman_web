@@ -24,8 +24,8 @@ const ServiceReview: React.FC = () => {
 
         <div className="review_text">
           <p><b>{ sv.name }</b></p>
-          <p>{ sv.job }</p>
-          <div>{ T(sv.review) }</div>
+          <p><i>{ sv.job }</i></p>
+          <div className='v_margin_10'>{ T(sv.review) }</div>
         </div>
 
       </div>
@@ -34,22 +34,22 @@ const ServiceReview: React.FC = () => {
 
   const cards = [
     mkReviewCard({
-      avatar: getImage('pro2', 'jpeg'),
-      name: 'Todd Howard',
-      job: 'Wedding Singer',
-      review: 'From earning 10K a month to being totally booked from November till February',
+      avatar: getImage('shop1', 'jpg'),
+      name: 'Minh Nguyen',
+      job: 'Hair Dresser',
+      review: 'We gain 20% more customers last month from NinjaMan',
     }),
     mkReviewCard({
-      avatar: getImage('pro2', 'jpeg'),
-      name: 'Todd Howard',
-      job: 'Wedding Singer',
-      review: 'From earning 10K a month to being totally booked from November till February',
+      avatar: getImage('girl3', 'jpg'),
+      name: 'Elly Ly',
+      job: 'Makeup Artist',
+      review: 'Never worry about not having customer again',
     }),
     mkReviewCard({
-      avatar: getImage('pro2', 'jpeg'),
-      name: 'Todd Howard',
-      job: 'Wedding Singer',
-      review: 'From earning 10K a month to being totally booked from November till February',
+      avatar: getImage('spa2', 'jpg'),
+      name: 'Spa Xuan Thu',
+      job: 'Spa',
+      review: 'We gain 20% more customers last month from NinjaMan',
     }),
   ]
 
@@ -58,7 +58,7 @@ const ServiceReview: React.FC = () => {
       return (
         <ScrollMenu data={ cards }
                     alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
-                    arrowDisabledClass="is-invisible" dragging={ true } wheel={ true }/>
+                    arrowDisabledClass="is-invisible" dragging={ true } wheel={ false }/>
       )
     }
     else {
@@ -79,7 +79,7 @@ const ServiceReview: React.FC = () => {
       <Container>
         <div className="section-title">
           <h1 className="title is-1">
-            { T('Thousands Of Professionals Are Growing Their Businesses With Ninjaman') }
+            { T('2000+ Partners') }
           </h1>
         </div>
 

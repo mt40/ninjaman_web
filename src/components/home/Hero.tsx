@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
             { T('Consider It Done') }
           </h1>
           <h2 className="subtitle">
-            { T('We bring you the right PROs for every project on your list') }
+            { T('We bring you the right PROs for every task on your list') }
           </h2>
           <SearchBox className='margin_top_20'/>
         </div>

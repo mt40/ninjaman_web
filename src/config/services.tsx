@@ -35,11 +35,10 @@ export const services: ServiceGroup[] = [
     services: [
       {
         name: 'Spa',
-        image: getImage('carpenter', 'jpeg'),
+        image: getImage('spa1', 'jpg'),
         features: [
-          'Doorstep repair within 90 mins',
-          'Protection Against Damage Upto INR 10,000',
-          '30 day post-service guarantee',
+          'At your doorstep within 90 minutes',
+          '3 day post-service guarantee',
         ],
         queries: [
           {
@@ -57,29 +56,49 @@ export const services: ServiceGroup[] = [
                   text: 'Basic Facial cleaning + Spa',
                   image: 'https://villageclubs.com/wp-content/uploads/2018/08/Facial-web_150dpi.jpg',
                   desc: [
-                    'Includes 30 minutes of service',
-                    'Hourly rate card applicable',
-                    "Click the 'i' button for details",
+                    'Gentle to skin',
+                    'Suitable for all skin types',
+                    'Never leave scars',
                   ]
                 },
                 {
                   text: 'Facial pimple and blackheads treatment + Spa',
                   image: 'https://cdn.massagemag.com/wordpress/wp-content/uploads/HolidaySpa.jpg',
                   desc: [
-                    'Includes 30 minutes of service',
-                    'Hourly rate card applicable',
-                    "Click the 'i' button for details",
+                    'Gentle to skin',
+                    'Suitable for all skin types',
+                    'Never leave scars',
                   ]
                 },
-                'Lotus Herbals - natural glow skin radiance facial',
-                'Active charcoal skin purifying facial',
-                'Skin miracle bio whitening facial',
+                {
+                  text: 'Lotus Herbals - natural glow skin radiance facial',
+                  desc: [
+                    'Dermatology certified',
+                    'Strong whitening effect',
+                  ]
+                },
+                {
+                  text: 'Active charcoal skin purifying facial',
+                  desc: [
+                    'Gentle to skin',
+                    'Suitable for all skin types',
+                  ]
+                },
+                {
+                  text: 'Skin miracle bio whitening facial',
+                  desc: [
+                    'Naturally white skin',
+                    'Long lasting effect',
+                  ]
+                },
               ],
               'Massage': [
                 'Back & Shoulder Massage',
                 'Foot Massage',
                 'Full Body Massage',
                 'Head Massage',
+                'Massage for elder',
+                'Massage for mama',
               ],
             },
           },
@@ -87,7 +106,7 @@ export const services: ServiceGroup[] = [
       },
       {
         name: 'Nail',
-        image: getImage('carpenter', 'jpeg'),
+        image: getImage('nail1', 'jpg'),
         features: [
           'Doorstep repair within 10 mins',
           'Protection Against Damage Upto INR 10,000',
@@ -117,8 +136,100 @@ export const services: ServiceGroup[] = [
           },
         ],
       },
+      {
+        name: 'Hair & Makeup',
+        image: getImage('hair', 'jpg'),
+        features: [
+          'Doorstep repair within 10 mins',
+          'Protection Against Damage Upto INR 10,000',
+          '30 day post-service guarantee',
+        ],
+        queries: [
+          {
+            text: '',
+            answers: { '': ['Hair Styling', 'Hair Treatment', 'Hair Coloring'] }
+          },
+          {
+            text: 'What treatment do you need?',
+            isFinal: true,
+            answers: {
+              'Hair Styling': [
+                'Fabulous gala style',
+                'Trendy curling',
+              ],
+              'Hair Treatment': [
+                "L'Oreal Hair Spa (S)",
+                "Keratin Hair Treament (S)",
+                "Keratin Hair Treament (M)",
+              ],
+              'Hair Coloring': [
+                "L'Oreal Global color (S)",
+                "L'Oreal Global color (M)",
+                "L'Oreal Global color (L)",
+              ],
+            }
+          }
+        ]
+      }
     ],
   },
+  {
+    name: 'Photography',
+    services: [
+      {
+        name: 'Wedding',
+        image: getImage('wedding', 'jpg'),
+        features: [
+          'Doorstep repair within 10 mins',
+          'Protection Against Damage Upto INR 10,000',
+          '30 day post-service guarantee',
+        ],
+        queries: [
+          {
+            text: '',
+            answers: { '': ['In city'] }
+          },
+          {
+            text: 'Which event?',
+            isFinal: true,
+            answers: {
+              'In city': [
+                'Engagement Party',
+                'Pre-wedding',
+                'Ceremony',
+              ],
+            }
+          }
+        ]
+      },
+      {
+        name: 'Portrait',
+        image: getImage('kid_portrait', 'jpg'),
+        features: [
+          'Doorstep repair within 10 mins',
+          'Protection Against Damage Upto INR 10,000',
+          '30 day post-service guarantee',
+        ],
+        queries: [
+          {
+            text: '',
+            answers: { '': ['In city'] }
+          },
+          {
+            text: 'How many photos do you want?',
+            isFinal: true,
+            answers: {
+              'In city': [
+                '10-photo album',
+                '30-photo album',
+                '50 photos or more',
+              ],
+            }
+          }
+        ]
+      }
+    ],
+  }
 ]
 
 export interface ServiceGroup {

@@ -5,14 +5,16 @@ import Container from '../Container'
 import { T } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import ScrollMenu from 'react-horizontal-scrolling-menu'
+import ReactCountUp from 'react-countup'
 
 interface UserInfo {
   avatar: string,
-  name: string
+  name: string,
+  booked: string
 }
 
 const CustomerReview: React.FC = () => {
-  const mkReviewCard = (cover: string, text: string, pro: UserInfo) => {
+  const mkReviewCard = (cover: string, text: string, user: UserInfo) => {
     const cls = isMobile() ? 'review_card_mobile' : 'review_card'
 
     return (
@@ -28,11 +30,11 @@ const CustomerReview: React.FC = () => {
           <hr/>
           <div className="columns is-1 is-mobile">
             <div className="column is-narrow">
-              <img className="avatar" src={ pro.avatar } alt=""/>
+              <img className="avatar" src={ user.avatar } alt=""/>
             </div>
             <div className="column h_margin">
-              <p>{ T('THE PRO') }</p>
-              <p>{ pro.name }</p>
+              <p>{ user.name }</p>
+              <p>{T(`Booked ${user.booked}`)}</p>
             </div>
           </div>
         </div>
@@ -43,19 +45,19 @@ const CustomerReview: React.FC = () => {
 
   const cards = [
     mkReviewCard(
-      getImage('pro1', 'jpg'),
-      'Hired #stockblockframes as wedding photographer…Great resource through #NinjaMan',
-      {avatar: getImage('how-it-works'), name: 'Sam Shin'},
+      getImage('two_girls', 'jpg'),
+      'Had a great makeup before the party with my bff',
+      {avatar: getImage('girl2', 'jpg'), name: 'Ha Tran', booked: 'Makeup'},
     ),
     mkReviewCard(
       getImage('pro1', 'jpg'),
-      'Hired #stockblockframes as wedding photographer…Great resource through #NinjaMan',
-      {avatar: getImage('how-it-works'), name: 'Sam Shin'},
+      'Super happy with my wedding photos from #NinjaMan',
+      {avatar: getImage('girl1', 'jpg'), name: 'Tam Nguyen', booked: 'Photography'},
     ),
     mkReviewCard(
-      getImage('pro1', 'jpg'),
-      'Hired #stockblockframes as wedding photographer…Great resource through #NinjaMan',
-      {avatar: getImage('how-it-works'), name: 'Sam Shin'},
+      getImage('massage1', 'jpg'),
+      'I book a massage every weekend since I know NinjaMan',
+      {avatar: getImage('boy1', 'jpg'), name: 'Minh Tri', booked: 'Massage'},
     ),
   ]
 
@@ -85,7 +87,8 @@ const CustomerReview: React.FC = () => {
       <Container>
         <div className="section-title">
           <h1 className="title is-1">
-            { T('Customer Reviews') }
+            <ReactCountUp start={ 4000 } end={ 5000 } delay={ 0 } duration={ 2000 } useEasing/>
+            <p>{ T('Successful Bookings') }</p>
           </h1>
         </div>
 

@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
       <div className="hero-body">
         <Container>
           <h1 className="title">
-            Best { service.info.name } in Ho Chi Minh City
+            Best { service.info.name } in HCMC
           </h1>
           <h2 className="subtitle content">
             <ul>

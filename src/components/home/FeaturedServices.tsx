@@ -42,7 +42,7 @@ const FeaturedServices: React.FC = () => {
         <div>
           <ScrollMenu data={ elems }
                       alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
-                      arrowDisabledClass="is-invisible" dragging={ true } wheel={ true }/>
+                      arrowDisabledClass="is-invisible" dragging={ true } wheel={ false }/>
         </div>
       )
     }

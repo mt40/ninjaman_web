@@ -1,0 +1,12 @@
+.ReviewLabel .super_positive {
+  color: cornflowerblue;
+  font-weight: bold;
+}
+
+.ReviewLabel .mostly_positive {
+  color: cornflowerblue;
+}
+
+.ReviewLabel .positive {
+  color: cornflowerblue;
+}
