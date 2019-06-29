@@ -8,6 +8,7 @@ import { ServiceInfo, services } from '../../config/services'
 import * as Page from '../../context/navigation'
 import { T } from '../../config/translation/util'
 import DivImg from '../DivImg'
+import { isMobile } from '../../util/Resource'
 
 const FeaturedServices: React.FC = () => {
   const context = React.useContext(appContext)
@@ -36,13 +37,24 @@ const FeaturedServices: React.FC = () => {
   }
 
   const mkScrollMenu = (elems: any[]) => {
-    return (
-      <div className="ScrollMenu">
-        <ScrollMenu data={ elems } arrowLeft={ leftArrow } arrowRight={ rightArrow }
-                    alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
-                    arrowDisabledClass="is-invisible" dragging={ false } wheel={ false }/>
-      </div>
-    )
+    if (isMobile()) {
+      return (
+        <div>
+          <ScrollMenu data={ elems }
+                      alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
+                      arrowDisabledClass="is-invisible" dragging={ true } wheel={ true }/>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div style={ {marginLeft: '-100px'} }>
+          <ScrollMenu data={ elems } arrowLeft={ leftArrow } arrowRight={ rightArrow }
+                      alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
+                      arrowDisabledClass="is-invisible" dragging={ false } wheel={ false }/>
+        </div>
+      )
+    }
   }
 
   const featureList = services.map((group, idx) => {

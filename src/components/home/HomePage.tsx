@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="HomePage">
       <Hero/>
-      <ServiceGroupList/>
+      {/*<ServiceGroupList/>*/}
       <FeaturedServices/>
 
       <hr/>
