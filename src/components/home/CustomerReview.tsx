@@ -50,7 +50,7 @@ const CustomerReview: React.FC = () => {
       {avatar: getImage('girl2', 'jpg'), name: 'Ha Tran', booked: 'Makeup'},
     ),
     mkReviewCard(
-      getImage('pro1', 'jpg'),
+      getImage('wedding1', 'jpg'),
       'Super happy with my wedding photos from #NinjaMan',
       {avatar: getImage('girl1', 'jpg'), name: 'Tam Nguyen', booked: 'Photography'},
     ),

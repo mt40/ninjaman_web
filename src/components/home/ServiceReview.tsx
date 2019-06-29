@@ -46,7 +46,7 @@ const ServiceReview: React.FC = () => {
       review: 'Never worry about not having customer again',
     }),
     mkReviewCard({
-      avatar: getImage('spa2', 'jpg'),
+      avatar: getImage('spa2', 'jpeg'),
       name: 'Spa Xuan Thu',
       job: 'Spa',
       review: 'We gain 20% more customers last month from NinjaMan',
