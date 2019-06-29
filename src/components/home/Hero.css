@@ -1,5 +1,7 @@
 .TopHero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/banner.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_829,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/opzjhqddjjn0qemvclqr/AsianMassageExperienceinManila.webp');
   background-size: cover;
+  background-position: center;
+  background-origin: border-box;
   text-align: center;
 }

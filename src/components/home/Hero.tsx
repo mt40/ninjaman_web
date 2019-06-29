@@ -9,10 +9,10 @@ const Hero: React.FC = () => {
       <div className="hero-body">
         <div className="container">
           <h1 className="title">
-            { T('Consider It Done') }
+            { T('The best service experts in town') }
           </h1>
           <h2 className="subtitle">
-            { T('We bring you the right PROs for every task on your list') }
+            { T('Order affordable high quality services like Beauty to your home!') }
           </h2>
           <SearchBox className='margin_top_20'/>
         </div>

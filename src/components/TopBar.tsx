@@ -13,6 +13,7 @@ const TopBar: React.FC = () => {
               <img src={getImage('ninjaman')} width="28" height="28" alt="NinjaMan"/>
             </div>
           </Link>
+          <p className='title is-4' style={{marginTop: 8}}>Ninja Man</p>
         </div>
 
         {/*<div className="navbar-menu">*/}
