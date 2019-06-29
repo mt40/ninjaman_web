@@ -4,6 +4,10 @@ import Container from '../Container'
 import { getImage } from '../../util/Resource'
 import { appContext } from '../../App'
 import { T } from '../../config/translation/util'
+import ReactCountUp from 'react-countup'
+import ReviewLabel, { ReviewRank } from '../ReviewLabel'
+import _ from 'lodash'
+import fakerStatic from 'faker/locale/en'
 
 const Query0: React.FC = () => {
   const context = React.useContext(appContext)
@@ -21,7 +25,7 @@ const Query0: React.FC = () => {
       <div key={ idx }
            className="answers cursor_pointer bg_white v_margin_5 padding_10 radius_5"
            onClick={ () => onAnswerClick(ans()) }>
-        <div className="columns">
+        <div className="columns is-mobile">
           <div className="column">{ T(ans()) }</div>
           <div className="column is-narrow">
             <i className="fas fa-chevron-right"/>
@@ -37,7 +41,7 @@ const Query0: React.FC = () => {
 
   const mkInstruction = (img: any, desc: any) => {
     return (
-      <div className="columns">
+      <div className="columns is-mobile">
         <div className="column is-narrow">
           { img }
         </div>
@@ -53,7 +57,10 @@ const Query0: React.FC = () => {
       <div className="wrapper padding_20 radius_5">
         <h1 className="title is-4 text_white">{ query0.text }</h1>
         { answersElems }
-        <p className="text_white margin_top_20"><b>9999</b> { T('people book this last year') }</p>
+        <p className="text_white margin_top_20">
+          <b><ReactCountUp start={ 2500 } end={ 3000 } delay={ 0 } duration={ 4000 } useEasing/>
+          </b>
+          { ' ' + T('people booked this year') }</p>
       </div>
 
       <div className="instructions padding_20 radius_5 border_solid v_margin_20">
@@ -85,42 +92,50 @@ const Query0: React.FC = () => {
     </div>
   )
 
-  const topServices = Array.from(Array(10).keys()).map(i => {
-    return (
-      <div key={ i }>
-        { i > 0 ? <hr/> : null }
+  const topServices = () => {
+    const randoms = Array.from(Array(4).keys()).map(_ => {
+      const randomRank = ReviewRank.ranks[Math.floor(Math.random() * ReviewRank.ranks.length)]
+      return {
+        name: fakerStatic.company.companyName(),
+        rank: randomRank,
+        reviews: Math.floor(Math.random() * 200) + 50,
+        location: 'District 1, HCMC',
+        image: `${fakerStatic.image.abstract(100, 100)}?random=${Date.now()}`,
+      }
+    })
 
-        <div className="columns" key={ i }>
-          <div className="column is-narrow">
-            <img className="avatar" src={ getImage('pro2', 'jpeg') } alt=""/>
-          </div>
+    return _.sortBy(randoms, [(sv) => sv.rank.id])
+      .map((r, i) => {
+        return (
+          <div key={ i }>
+            { i > 0 && <hr/> }
 
-          <div className="column">
-            <b>Thomas Muller</b>
-            <p>Cu Chi, Ho Chi Minh</p>
-            <p>★5 (170 reviews)</p>
+            <div className='columns is-mobile' key={ i }>
+              <div className="column is-narrow">
+                <img className="avatar" src={ r.image } alt=""/>
+              </div>
+
+              <div className="column">
+                <b className='is_text_3'>{ r.name }</b>
+                <p>{ r.location }</p>
+                <ReviewLabel rank={ r.rank } reviewCount={ r.reviews }/>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    )
-  })
+        )
+      })
+  }
 
   const rightSide = (
     <div className="column">
       <div className="padding_20 radius_5 border_solid">
-        <h1 className="title is-5">{ T('Plumbers in Ho Chi Minh City') }</h1>
-        <p>
-          {
-            T('We went out to find the most professional services in the city. ' +
-              'These plumbers are trusted by many customers to provide a great ' +
-              'service and get the job done.')
-          }
-        </p>
+        <h1 className="title is-5">{ T('Our partners in Ho Chi Minh City') }</h1>
+        {/*<p>{ T('All services are certified by us') }</p>*/ }
 
         <hr/>
 
         <div>
-          { topServices }
+          { topServices() }
         </div>
       </div>
     </div>

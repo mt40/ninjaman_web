@@ -5,6 +5,7 @@ import './UserInfoForm.css'
 import { Link } from 'react-router-dom'
 import * as Page from '../../context/navigation'
 import { T } from '../../config/translation/util'
+import { isMobile } from '../../util/Resource'
 
 const UserInfoForm: React.FC = () => {
   const context = React.useContext(appContext)
@@ -59,8 +60,10 @@ const UserInfoForm: React.FC = () => {
     </div>
   )
 
+  const topPadding = isMobile() ? 'v_padding_20' : 'v_padding_80'
+
   return (
-    <div className="ListingDetailUserInfoForm v_padding_80">
+    <div className={ `ListingDetailUserInfoForm ${ topPadding }` }>
       <Container isSmall={ true }>
 
         <div className="columns">
@@ -72,7 +75,7 @@ const UserInfoForm: React.FC = () => {
 
         <hr className="margin_top_40"/>
 
-        <div className="columns v_margin_20">
+        <div className="columns v_margin_20 is-mobile">
           <div className="column"/>
 
           <div className="column is-narrow">

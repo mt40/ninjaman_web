@@ -186,7 +186,16 @@ i.fas {
   height: 150px;
   width: 100%;
 }
+
 .is_h300 {
   height: 300px;
   width: 100%;
+}
+
+.menu-wrapper--inner {
+  white-space: normal !important;
+}
+
+.is_text_3 {
+  font-size: 1.1rem;
 }

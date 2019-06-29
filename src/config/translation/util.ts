@@ -6,6 +6,8 @@ import vn from '../vn'
 // }
 
 export const T = (id: string) => {
-  const rs = (vn as Record<string, string>)[id]
-  return rs ? rs : id
+  return id
+  // todo: temporarily turn off translation for demo purpose
+  // const rs = (vn as Record<string, string>)[id]
+  // return rs ? rs : id
 }

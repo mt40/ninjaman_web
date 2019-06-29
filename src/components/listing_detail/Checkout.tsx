@@ -6,7 +6,7 @@ import './Checkout.css'
 import { Link } from 'react-router-dom'
 import * as Page from '../../context/navigation'
 import useRouter from 'use-react-router'
-import { getImage } from '../../util/Resource'
+import { getImage, isMobile } from '../../util/Resource'
 import DivImg from '../DivImg'
 import { T } from '../../config/translation/util'
 import { Cart } from '../../models/Cart'
@@ -112,8 +112,10 @@ const Checkout: React.FC = () => {
   const totalPrice =
     `${ T('Total') }: ${ cart.totalPrice(service.group, service.info).toDisplayString() }`
 
+  const topPadding = isMobile() ? 'v_padding_20' : 'v_padding_80'
+
   return (
-    <div className="Checkout v_padding_80">
+    <div className={ `Checkout ${ topPadding }` }>
       <Container isSmall={ true }>
         <h1 className="title text_centered">{ T('Time to pay mate :)') }</h1>
 
@@ -142,7 +144,7 @@ const Checkout: React.FC = () => {
 
           <hr className="margin_top_40"/>
 
-          <div className="columns v_margin_20">
+          <div className="columns v_margin_20 is-mobile">
             <div className="column is-narrow">
               <button className="button" onClick={ () => onBackClick() }>
                 { T('Back') }

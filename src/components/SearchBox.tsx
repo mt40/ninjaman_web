@@ -1,8 +1,12 @@
 import React from 'react'
 
-const SearchBox: React.FC = () => {
+interface Props {
+  className?: string
+}
+
+const SearchBox: React.FC<Props> = (props) => {
   return (
-    <div className="SearchBox columns is-centered">
+    <div className={`SearchBox columns is-centered ${props.className}`}>
       <div className="column is-4">
         <div className="field">
           <p className="control is-expanded">
