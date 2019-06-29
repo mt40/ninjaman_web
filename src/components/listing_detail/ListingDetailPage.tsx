@@ -15,6 +15,7 @@ import { Elements, StripeProvider } from 'react-stripe-elements'
 import * as _ from 'lodash'
 import { T } from '../../config/translation/util'
 import BookingConfirm from './BookingConfirm'
+import { isMobile } from '../../util/Resource'
 
 const ListingDetailPage: React.FC = () => {
   console.log('ListingDetailPage')
@@ -48,7 +49,7 @@ const ListingDetailPage: React.FC = () => {
     const title = `${ T(group.name) } > ${ T(service.name) }`
     const topBar = (
       <div>
-        <div className="columns margin_top_20">
+        <div className="columns margin_top_20 is-mobile">
           <div className="column is-narrow">
             <p><b>{ title }</b></p>
           </div>
@@ -75,10 +76,13 @@ const ListingDetailPage: React.FC = () => {
 
             <div className="columns">
 
-              <div className="column is-2">
-                <h1 className="title is-5 underlined">{ T('Your selection') }</h1>
-                { allAnswers() }
-              </div>
+              {
+                !isMobile() &&
+                <div className="column is-2">
+                  <h1 className="title is-5 underlined">{ T('Your selection') }</h1>
+                  { allAnswers() }
+                </div>
+              }
 
               <div className="column">
                 { queryElem }

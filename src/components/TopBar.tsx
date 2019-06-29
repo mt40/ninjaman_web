@@ -15,17 +15,17 @@ const TopBar: React.FC = () => {
           </Link>
         </div>
 
-        <div className="navbar-menu">
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <SimpleButton text="Join As A Pro"/>
-                <SimpleButton text="Sign Up"/>
-                <SimpleButton text="Login"/>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/*<div className="navbar-menu">*/}
+        {/*  <div className="navbar-end">*/}
+        {/*    <div className="navbar-item">*/}
+        {/*      <div className="buttons">*/}
+        {/*        <SimpleButton text="Join As A Pro"/>*/}
+        {/*        <SimpleButton text="Sign Up"/>*/}
+        {/*        <SimpleButton text="Login"/>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
     </nav>
   )
 }

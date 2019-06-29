@@ -10,6 +10,7 @@ import { AnswerInfo, RichAnswerInfo } from '../../config/services'
 import AddToCart from './AddToCart'
 import { QueryAnswer } from '../../models/QueryAnswer'
 import { Cart } from '../../models/Cart'
+import { isMobile } from '../../util/Resource'
 
 const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
@@ -88,15 +89,18 @@ const QueryN: React.FC = () => {
 
   const finalAnswerElems = () => {
     return answers.map((a, idx) => {
+      const isAnswerFocused = idx === focusedAnswer
+
       const cls = () => {
         const common = 'final_answer radius_5 shadow v_margin_20 bg_white cursor_pointer'
-        return idx === focusedAnswer ? common + ' focused' : common
+        return isAnswerFocused ? common + ' focused' : common
       }
 
       const footer = (
         <div className="final_answer_footer padding_10">
           <b>{ getPrice(a).toDisplayString() }</b>
-          <AddToCart onItemChange={ (cnt) => onAddRemoveCart(a, cnt) }/>
+          <AddToCart useFilledButton={ isAnswerFocused }
+                     onItemChange={ (cnt) => onAddRemoveCart(a, cnt) }/>
         </div>
       )
 
@@ -194,7 +198,7 @@ const QueryN: React.FC = () => {
       }
       else {
         const cover = ans.image && (
-          <DivImg url={ ans.image } className="radius_5" height={400}/>
+          <DivImg url={ ans.image } className="radius_5" height={ 400 }/>
         )
 
         return (
@@ -214,7 +218,7 @@ const QueryN: React.FC = () => {
     <div className="QueryN">
       <div className="columns">
         { answerColumn() }
-        { answerDetailColumn() }
+        { !isMobile() && answerDetailColumn() }
       </div>
     </div>
   )

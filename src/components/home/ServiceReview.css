@@ -6,6 +6,11 @@
   text-align: center;
 }
 
+.service_review_card_mobile {
+  width: 250px;
+  margin: 10px 10px 10px 0;
+}
+
 .service_review_card hr {
   width: 50px;
 }

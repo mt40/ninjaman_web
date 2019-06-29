@@ -4,6 +4,7 @@ import { T } from '../../config/translation/util'
 
 interface AddToCartProp {
   onItemChange?: (count: number) => void
+  useFilledButton?: boolean
 }
 
 const AddToCart: React.FC<AddToCartProp> = (props) => {
@@ -23,9 +24,10 @@ const AddToCart: React.FC<AddToCartProp> = (props) => {
 
   const cls = 'AddToCart'
   if (count === 0) {
+    const btnStyle = props.useFilledButton ? '' : 'is-outlined'
     return (
-      <div className={cls}>
-        <button className="button is-info is-outlined" onClick={ onAddClick }>
+      <div className={ cls }>
+        <button className={ `button is-info ${ btnStyle }` } onClick={ onAddClick }>
           { T('Add') }
         </button>
       </div>
@@ -33,7 +35,7 @@ const AddToCart: React.FC<AddToCartProp> = (props) => {
   }
   else {
     return (
-      <div className={`${cls} positive radius_5`}>
+      <div className={ `${ cls } positive radius_5` }>
         <div className="btn h_padding_10" onClick={ onSubtractClick }>-</div>
         <div className="count h_padding_10">{ count }</div>
         <div className="btn h_padding_10" onClick={ onAddClick }>+</div>

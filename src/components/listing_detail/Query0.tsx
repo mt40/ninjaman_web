@@ -21,7 +21,7 @@ const Query0: React.FC = () => {
       <div key={ idx }
            className="answers cursor_pointer bg_white v_margin_5 padding_10 radius_5"
            onClick={ () => onAnswerClick(ans()) }>
-        <div className="columns">
+        <div className="columns is-mobile">
           <div className="column">{ T(ans()) }</div>
           <div className="column is-narrow">
             <i className="fas fa-chevron-right"/>
@@ -37,7 +37,7 @@ const Query0: React.FC = () => {
 
   const mkInstruction = (img: any, desc: any) => {
     return (
-      <div className="columns">
+      <div className="columns is-mobile">
         <div className="column is-narrow">
           { img }
         </div>

@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
           <h2 className="subtitle">
             { T('We bring you the right PROs for every project on your list') }
           </h2>
-          <SearchBox/>
+          <SearchBox className='margin_top_20'/>
         </div>
       </div>
     </section>

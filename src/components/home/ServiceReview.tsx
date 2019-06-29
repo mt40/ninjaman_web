@@ -1,9 +1,11 @@
 import React from 'react'
-import { getImage } from '../../util/Resource'
+import { getImage, isMobile } from '../../util/Resource'
 import './CustomerReview.css'
 import './ServiceReview.css'
 import Container from '../Container'
 import { T } from '../../config/translation/util'
+import ScrollMenu from 'react-horizontal-scrolling-menu'
+import DivImg from '../DivImg'
 
 interface ServiceInfo {
   avatar: string,
@@ -14,49 +16,66 @@ interface ServiceInfo {
 
 const ServiceReview: React.FC = () => {
   const mkReviewCard = (sv: ServiceInfo) => {
+    const cls = isMobile() ? 'service_review_card_mobile' : 'service_review_card'
+
     return (
-      <div className="review_card service_review_card">
-        <div className="">
-          <img className="avatar" src={ sv.avatar } alt=""/>
+      <div className={ `${ cls } radius_5 shadow bg_white` }>
+        <DivImg url={ sv.avatar } height={ 200 }/>
+
+        <div className="review_text">
+          <p><b>{ sv.name }</b></p>
+          <p>{ sv.job }</p>
+          <div>{ T(sv.review) }</div>
         </div>
 
-        <div className="">
-          <b>{ T(sv.name) }</b>
-          <p>{ T(sv.job) }</p>
-        </div>
-
-        <hr/>
-
-        <p>{ T(sv.review) }</p>
       </div>
     )
   }
 
-  const info = {
-    avatar: getImage('pro2', 'jpeg'),
-    name: 'Todd Howard',
-    job: 'Wedding Singer',
-    review: 'From earning 10K a month to being totally booked from November till February -- My UrbanClap Journey.',
+  const cards = [
+    mkReviewCard({
+      avatar: getImage('pro2', 'jpeg'),
+      name: 'Todd Howard',
+      job: 'Wedding Singer',
+      review: 'From earning 10K a month to being totally booked from November till February',
+    }),
+    mkReviewCard({
+      avatar: getImage('pro2', 'jpeg'),
+      name: 'Todd Howard',
+      job: 'Wedding Singer',
+      review: 'From earning 10K a month to being totally booked from November till February',
+    }),
+    mkReviewCard({
+      avatar: getImage('pro2', 'jpeg'),
+      name: 'Todd Howard',
+      job: 'Wedding Singer',
+      review: 'From earning 10K a month to being totally booked from November till February',
+    }),
+  ]
+
+  const reviews = () => {
+    if (isMobile()) {
+      return (
+        <ScrollMenu data={ cards }
+                    alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
+                    arrowDisabledClass="is-invisible" dragging={ true } wheel={ true }/>
+      )
+    }
+    else {
+      return (
+        <div className="columns">
+          {
+            cards.map((c, i) => {
+              return <div className='column' key={ i }>{ c }</div>
+            })
+          }
+        </div>
+      )
+    }
   }
 
-  const cards = (
-    <div className="columns">
-      <div className="column is-4">
-        { mkReviewCard(info) }
-      </div>
-
-      <div className="column is-4">
-        { mkReviewCard(info) }
-      </div>
-
-      <div className="column is-4">
-        { mkReviewCard(info) }
-      </div>
-    </div>
-  )
-
   return (
-    <section className="ServiceReview section">
+    <section className='ServiceReview section'>
       <Container>
         <div className="section-title">
           <h1 className="title is-1">
@@ -64,7 +83,7 @@ const ServiceReview: React.FC = () => {
           </h1>
         </div>
 
-        { cards }
+        { reviews() }
       </Container>
     </section>
   )
