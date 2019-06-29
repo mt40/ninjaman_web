@@ -74,6 +74,7 @@ export const services: ServiceGroup[] = [
                 'Lotus Herbals - natural glow skin radiance facial',
                 'Active charcoal skin purifying facial',
                 'Skin miracle bio whitening facial',
+                'aaa',
               ],
               'Massage': [
                 'Back & Shoulder Massage',
