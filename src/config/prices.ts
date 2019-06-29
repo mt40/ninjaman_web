@@ -7,6 +7,7 @@ export const prices = {
         'Lotus Herbals - natural glow skin radiance facial': 75000,
         'Active charcoal skin purifying facial': 50000,
         'Skin miracle bio whitening facial': 75000,
+        'aaa': 15000,
       },
       'Massage': {
         'Back & Shoulder Massage': 200000,
