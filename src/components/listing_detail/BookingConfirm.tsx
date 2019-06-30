@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { T } from '../../config/translation/util'
 import Spinner from 'react-spinkit'
 import './BookingConfirm.css'
+import DivImg from '../DivImg'
+import { getImage } from '../../util/Resource'
 
 const BookingConfirm: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState(true)
@@ -36,13 +38,16 @@ const BookingConfirm: React.FC = () => {
       <div>
         <h1 className="title">{ T('Booking successful!') }</h1>
 
-        <p className='margin_top_80'>
+        <DivImg url={ getImage('undraw_confirm') } height={ 200 } sizeContain
+                fallbackColor={ 'transparent' }/>
+
+        <p className='v_margin_20 h_margin_20'>
           {
             T('Now just sit back and relax. ' +
               'Our provider will call you shortly to arrange the service.')
           }
         </p>
-        <p>
+        <p className='h_margin_20'>
           { T('We will also send the booking information to your email in a few minutes') }
         </p>
 
