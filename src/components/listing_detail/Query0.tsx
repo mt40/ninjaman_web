@@ -93,18 +93,31 @@ const Query0: React.FC = () => {
   )
 
   const topServices = () => {
-    const randoms = Array.from(Array(4).keys()).map(_ => {
-      const randomRank = ReviewRank.ranks[Math.floor(Math.random() * ReviewRank.ranks.length)]
-      return {
-        name: fakerStatic.company.companyName(),
-        rank: randomRank,
-        reviews: Math.floor(Math.random() * 200) + 50,
+    const data = [
+      {
+        name: 'Spa Kelly',
+        rank: ReviewRank.superPositive,
+        reviews: 200,
         location: 'District 1, HCMC',
-        image: `${fakerStatic.image.abstract(100, 100)}?random=${Date.now()}`,
+        image: getImage('judge_kelly'),
+      },
+      {
+        name: 'Spa Nick Tran',
+        rank: ReviewRank.superPositive,
+        reviews: 190,
+        location: 'District 3, HCMC',
+        image: getImage('judge_nick'),
+      },
+      {
+        name: "Chat Luangarpa's World Spa",
+        rank: ReviewRank.superPositive,
+        reviews: 190,
+        location: 'District 3, HCMC',
+        image: getImage('judge_chat'),
       }
-    })
+    ]
 
-    return _.sortBy(randoms, [(sv) => sv.rank.id])
+    return _.sortBy(data, [(sv) => sv.rank.id])
       .map((r, i) => {
         return (
           <div key={ i }>

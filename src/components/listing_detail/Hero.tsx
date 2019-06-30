@@ -17,7 +17,10 @@ const Hero: React.FC = () => {
 
   // todo: make features dynamic
   return (
-    <section className="ListingDetailHero hero is-info is-medium">
+    <section className="ListingDetailHero hero is-info is-medium"
+             style={ {
+               background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${ service.info.image }') center/cover no-repeat border-box`,
+             } }>
       <div className="hero-body">
         <Container>
           <h1 className="title">

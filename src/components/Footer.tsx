@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
               <img className="logo" src={getImage('ninjaman')} alt=""/>
               <div className="names">
                 <h1 className="title is-4 has-text-white-ter">NinjaMan</h1>
-                <p>© 2014 NinjaMan Ltd.</p>
+                <p>© 2019 NinjaMan Ltd.</p>
               </div>
             </div>
           </div>

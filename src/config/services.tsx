@@ -1,4 +1,4 @@
-import {getImage} from '../util/Resource'
+import { getImage } from '../util/Resource'
 
 /**
  * List of predefined services used in this app. This is for demo purpose only.
@@ -37,8 +37,9 @@ export const services: ServiceGroup[] = [
         name: 'Spa',
         image: getImage('spa1', 'jpg'),
         features: [
-          'At your doorstep within 90 minutes',
-          '3 day post-service guarantee',
+          'Trained professional therapists',
+          'Hassle free service: massage bed, oils, music, candles, aroma',
+          'Hygiene friendly: disposable items like wipes, towels are used',
         ],
         queries: [
           {
@@ -59,7 +60,7 @@ export const services: ServiceGroup[] = [
                     'Gentle to skin',
                     'Suitable for all skin types',
                     'Never leave scars',
-                  ]
+                  ],
                 },
                 {
                   text: 'Facial pimple and blackheads treatment + Spa',
@@ -68,28 +69,28 @@ export const services: ServiceGroup[] = [
                     'Gentle to skin',
                     'Suitable for all skin types',
                     'Never leave scars',
-                  ]
+                  ],
                 },
                 {
                   text: 'Lotus Herbals - natural glow skin radiance facial',
                   desc: [
                     'Dermatology certified',
                     'Strong whitening effect',
-                  ]
+                  ],
                 },
                 {
                   text: 'Active charcoal skin purifying facial',
                   desc: [
                     'Gentle to skin',
                     'Suitable for all skin types',
-                  ]
+                  ],
                 },
                 {
                   text: 'Skin miracle bio whitening facial',
                   desc: [
                     'Naturally white skin',
                     'Long lasting effect',
-                  ]
+                  ],
                 },
               ],
               'Massage': [
@@ -147,7 +148,7 @@ export const services: ServiceGroup[] = [
         queries: [
           {
             text: '',
-            answers: { '': ['Hair Styling', 'Hair Treatment', 'Hair Coloring'] }
+            answers: {'': ['Hair Styling', 'Hair Treatment', 'Hair Coloring']},
           },
           {
             text: 'What treatment do you need?',
@@ -158,19 +159,19 @@ export const services: ServiceGroup[] = [
                 'Trendy curling',
               ],
               'Hair Treatment': [
-                "L'Oreal Hair Spa (S)",
-                "Keratin Hair Treament (S)",
-                "Keratin Hair Treament (M)",
+                'L\'Oreal Hair Spa (S)',
+                'Keratin Hair Treament (S)',
+                'Keratin Hair Treament (M)',
               ],
               'Hair Coloring': [
-                "L'Oreal Global color (S)",
-                "L'Oreal Global color (M)",
-                "L'Oreal Global color (L)",
+                'L\'Oreal Global color (S)',
+                'L\'Oreal Global color (M)',
+                'L\'Oreal Global color (L)',
               ],
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     ],
   },
   {
@@ -187,7 +188,7 @@ export const services: ServiceGroup[] = [
         queries: [
           {
             text: '',
-            answers: { '': ['In city'] }
+            answers: {'': ['In city']},
           },
           {
             text: 'Which event?',
@@ -198,9 +199,9 @@ export const services: ServiceGroup[] = [
                 'Pre-wedding',
                 'Ceremony',
               ],
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         name: 'Portrait',
@@ -213,7 +214,7 @@ export const services: ServiceGroup[] = [
         queries: [
           {
             text: '',
-            answers: { '': ['In city'] }
+            answers: {'': ['In city']},
           },
           {
             text: 'How many photos do you want?',
@@ -224,12 +225,12 @@ export const services: ServiceGroup[] = [
                 '30-photo album',
                 '50 photos or more',
               ],
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     ],
-  }
+  },
 ]
 
 export interface ServiceGroup {
@@ -280,5 +281,5 @@ export function groupOf(sv: ServiceInfo): ServiceGroup {
   })
 
   if (rs) return rs
-  throw new Error(`Service ${sv.name} doesn't exist in any group`)
+  throw new Error(`Service ${ sv.name } doesn't exist in any group`)
 }
