@@ -14,6 +14,8 @@ export const prices = {
         'Foot Massage': 200000,
         'Full Body Massage': 200000,
         'Head Massage': 200000,
+        'Massage for elder': 250000,
+        'Massage for mama': 250000,
       },
     },
     'Nail': {
