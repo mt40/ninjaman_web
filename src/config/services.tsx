@@ -174,63 +174,63 @@ export const services: ServiceGroup[] = [
       },
     ],
   },
-  {
-    name: 'Photography',
-    services: [
-      {
-        name: 'Wedding',
-        image: getImage('wedding', 'jpg'),
-        features: [
-          'Doorstep repair within 10 mins',
-          'Protection Against Damage Upto INR 10,000',
-          '30 day post-service guarantee',
-        ],
-        queries: [
-          {
-            text: '',
-            answers: {'': ['In city']},
-          },
-          {
-            text: 'Which event?',
-            isFinal: true,
-            answers: {
-              'In city': [
-                'Engagement Party',
-                'Pre-wedding',
-                'Ceremony',
-              ],
-            },
-          },
-        ],
-      },
-      {
-        name: 'Portrait',
-        image: getImage('kid_portrait', 'jpg'),
-        features: [
-          'Doorstep repair within 10 mins',
-          'Protection Against Damage Upto INR 10,000',
-          '30 day post-service guarantee',
-        ],
-        queries: [
-          {
-            text: '',
-            answers: {'': ['In city']},
-          },
-          {
-            text: 'How many photos do you want?',
-            isFinal: true,
-            answers: {
-              'In city': [
-                '10-photo album',
-                '30-photo album',
-                '50 photos or more',
-              ],
-            },
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   name: 'Photography',
+  //   services: [
+  //     {
+  //       name: 'Wedding',
+  //       image: getImage('wedding', 'jpg'),
+  //       features: [
+  //         'Doorstep repair within 10 mins',
+  //         'Protection Against Damage Upto INR 10,000',
+  //         '30 day post-service guarantee',
+  //       ],
+  //       queries: [
+  //         {
+  //           text: '',
+  //           answers: {'': ['In city']},
+  //         },
+  //         {
+  //           text: 'Which event?',
+  //           isFinal: true,
+  //           answers: {
+  //             'In city': [
+  //               'Engagement Party',
+  //               'Pre-wedding',
+  //               'Ceremony',
+  //             ],
+  //           },
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       name: 'Portrait',
+  //       image: getImage('kid_portrait', 'jpg'),
+  //       features: [
+  //         'Doorstep repair within 10 mins',
+  //         'Protection Against Damage Upto INR 10,000',
+  //         '30 day post-service guarantee',
+  //       ],
+  //       queries: [
+  //         {
+  //           text: '',
+  //           answers: {'': ['In city']},
+  //         },
+  //         {
+  //           text: 'How many photos do you want?',
+  //           isFinal: true,
+  //           answers: {
+  //             'In city': [
+  //               '10-photo album',
+  //               '30-photo album',
+  //               '50 photos or more',
+  //             ],
+  //           },
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 ]
 
 export interface ServiceGroup {
