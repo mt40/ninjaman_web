@@ -2,21 +2,22 @@ import React from 'react'
 import SearchBox from '../SearchBox'
 import './Hero.css'
 import { T } from '../../config/translation/util'
+import DivImg from '../DivImg'
+import { getImage } from '../../util/Resource'
 
 const Hero: React.FC = () => {
   return (
-    <section className="TopHero hero is-info is-medium">
-      <div className="hero-body">
-        <div className="container">
-          <h1 className="title">
-            { T('The best service experts in town') }
-          </h1>
-          <h2 className="subtitle">
+    <section>
+      <DivImg url={ getImage('massage2', 'jpg') } height='40vh' verticalCentered dimmed>
+        <div className="container text_centered">
+          <p className="text_white is-size-1 v_margin_20">
+            <b>{ T('The best service experts in town') }</b>
+          </p>
+          <h2 className="text_white is-size-3">
             { T('Order affordable high quality services like Beauty to your home!') }
           </h2>
-          <SearchBox className='margin_top_20'/>
         </div>
-      </div>
+      </DivImg>
     </section>
   )
 }

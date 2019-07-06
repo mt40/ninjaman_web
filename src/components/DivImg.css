@@ -9,4 +9,5 @@
   background-origin: border-box;
 
   flex-grow: 1;
+  display: flex;
 }
