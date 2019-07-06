@@ -1,9 +1,7 @@
 .service_review_card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px 10px;
-  text-align: center;
+  justify-content: space-between;
 }
 
 .service_review_card_mobile {
