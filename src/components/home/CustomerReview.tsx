@@ -18,7 +18,7 @@ const CustomerReview: React.FC = () => {
     const cls = isMobile() ? 'review_card_mobile' : 'review_card'
 
     return (
-      <div className={ `${ cls } radius_5 shadow bg_white` }>
+      <div key={ user.name } className={ `${ cls } radius_5 shadow bg_white` }>
         <DivImg url={ cover } height={ 200 }/>
 
         <div className="review_text">
@@ -34,7 +34,7 @@ const CustomerReview: React.FC = () => {
             </div>
             <div className="column h_margin">
               <p>{ user.name }</p>
-              <p>{T(`Booked ${user.booked}`)}</p>
+              <p>{ T(`Booked ${ user.booked }`) }</p>
             </div>
           </div>
         </div>

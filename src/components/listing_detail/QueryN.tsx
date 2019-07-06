@@ -156,6 +156,7 @@ const QueryN: React.FC = () => {
     context.action.popAnswer()
   }
 
+  // todo: make button sticky to bottom
   const answerColumn = () => {
     const buttons = () => {
       const back = (
