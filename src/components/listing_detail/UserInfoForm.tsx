@@ -134,6 +134,8 @@ const UserInfoForm: React.FC = () => {
               timeFormat='HH:mm'
               dateFormat='HH:mm'
               timeCaption={ T('Time') }
+              minTime={ new Date(0, 0, 0, 10) }
+              maxTime={ new Date(0, 0, 0, 17) }
               withPortal
               customInput={ <DateInput icon='fas fa-clock'/> }
             />

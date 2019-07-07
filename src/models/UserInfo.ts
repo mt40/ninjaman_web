@@ -1,5 +1,27 @@
 const now = new Date()
 
+function defaultAppointmentDate(date: Date): Date {
+  const h = date.getHours()
+  let next2Hours = h + 2
+
+  const copy = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+  )
+
+  if (next2Hours < 10) {
+    copy.setHours(10)
+  }
+
+  if (next2Hours > 17) {
+    copy.setHours(10)
+    copy.setDate(copy.getDate() + 1)
+  }
+
+  return copy
+}
+
 export class UserInfo {
   fullName: string
   email: string
@@ -20,6 +42,6 @@ export class UserInfo {
     'default@mail.com',
     '19001560',
     '1 Nguyen Huu Canh, Q1, HCMC',
-    new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0),
+    defaultAppointmentDate(now),
   )
 }
