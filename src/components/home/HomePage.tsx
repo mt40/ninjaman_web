@@ -1,13 +1,14 @@
 import React from 'react'
 import Hero from './Hero'
-import ServiceGroupList from './ServiceGroupList'
 import FeaturedServices from './FeaturedServices'
 import HowItWorks from './HowItWorks'
 import CustomerReview from './CustomerReview'
 import CallToSignup from './CallToSignup'
 import ServiceReview from './ServiceReview'
 import FeatureList from './FeatureList'
-import {appContext} from '../../App'
+import { appContext } from '../../App'
+import Footer from '../Footer'
+import './HomePage.css'
 
 const HomePage: React.FC = () => {
   console.log('HomePage')
@@ -22,7 +23,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="HomePage">
       <Hero/>
-      {/*<ServiceGroupList/>*/}
+      {/*<ServiceGroupList/>*/ }
       <FeaturedServices/>
 
       <hr/>
@@ -37,6 +38,8 @@ const HomePage: React.FC = () => {
       <hr/>
       <ServiceReview/>
       <CallToSignup/>
+
+      <Footer/>
     </div>
   )
 }

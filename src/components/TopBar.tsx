@@ -1,5 +1,4 @@
 import React from 'react'
-import { getImage } from '../util/Resource'
 import { Link } from 'react-router-dom'
 
 const TopBar: React.FC = () => {
@@ -9,10 +8,9 @@ const TopBar: React.FC = () => {
       <div className="navbar-brand">
         <Link to="/">
           <div className="navbar-item">
-            <img src={ getImage('ninjaman') } width="28" height="28" alt="NinjaMan"/>
+            <p className='is-size-4 brand_font'>BELAZY</p>
           </div>
         </Link>
-        <p className='is-size-4' style={ {marginTop: '8px'} }>Belazy</p>
       </div>
 
       {/*<div className="navbar-menu">*/ }

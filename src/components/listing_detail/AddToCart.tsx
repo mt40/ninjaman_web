@@ -24,10 +24,10 @@ const AddToCart: React.FC<AddToCartProp> = (props) => {
 
   const cls = 'AddToCart'
   if (count === 0) {
-    const btnStyle = props.useFilledButton ? '' : 'is-outlined'
+    const btnStyle = props.useFilledButton ? 'is-info' : 'is-outlined is-dark'
     return (
       <div className={ cls }>
-        <button className={ `button is-info ${ btnStyle }` } onClick={ onAddClick }>
+        <button className={ `button ${ btnStyle }` } onClick={ onAddClick }>
           { T('Add') }
         </button>
       </div>

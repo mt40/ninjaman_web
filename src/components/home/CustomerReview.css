@@ -7,8 +7,12 @@
 }
 
 .review_card_mobile {
-  width: 250px;
+  width: 270px;
   margin: 10px 10px 10px 0;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .review_text {

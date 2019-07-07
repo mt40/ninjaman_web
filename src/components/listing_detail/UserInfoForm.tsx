@@ -15,7 +15,9 @@ const UserInfoForm: React.FC = () => {
   console.log('UserInfoForm', context) // REMOVE
 
   // todo: make global state
-  const [selectedDate, setSelectedDate] = React.useState(new Date())
+  const now = new Date()
+  const [selectedDate, setSelectedDate] = React.useState(
+    new Date(now.getFullYear(), now.getMonth(), now.getDate()))
 
   function mkField(label: string, value: string, faIcon: string) {
     return (
@@ -30,26 +32,6 @@ const UserInfoForm: React.FC = () => {
           <span className="icon is-small is-left">
             <i className={ faIcon }/>
           </span>
-        </div>
-      </div>
-    )
-  }
-
-  function mkSelectField(label: string) {
-    return (
-      <div className="field">
-        <label className="label">{ label }</label>
-        <div className="control">
-          <div className="select">
-            <select>
-              <option>8:00</option>
-              <option>10:00</option>
-              <option>13:00</option>
-              <option>15:00</option>
-              <option>17:00</option>
-              <option>21:00</option>
-            </select>
-          </div>
         </div>
       </div>
     )
@@ -89,7 +71,9 @@ const UserInfoForm: React.FC = () => {
       return (
         <div className="field">
           <div className='control has-icons-left is-expanded' onClick={ this.props.onClick }>
-            <input className="input" type="text" value={ this.props.value } onChange={ () => {} }/>
+            <button className="input">
+              { this.props.value }
+            </button>
             <span className="icon is-small is-left">
               <i className={ this.props.icon }/>
             </span>
@@ -145,7 +129,6 @@ const UserInfoForm: React.FC = () => {
       { mkField('Email', 'tom@hanks.com', 'fas fa-envelope') }
       { mkField('Phone', '18001560', 'fas fa-mobile-alt') }
       { mkField('Address', '12 Wall St, NYC, USA', 'fas fa-map-marker-alt') }
-      {/*{ mkSelectField('What time works best for you') }*/ }
       { dateTimeField() }
     </div>
   )

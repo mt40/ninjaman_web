@@ -160,8 +160,6 @@ class App extends React.Component<Props, MyContext> {
                 <Route path="/service/:name" component={ ListingDetailPage }/>
               </Switch>
             </div>
-
-            <Footer/>
           </div>
         </BrowserRouter>
       </Provider>
