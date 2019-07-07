@@ -8,16 +8,37 @@ import { T } from '../../config/translation/util'
 import { isMobile } from '../../util/Resource'
 import ReactDatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import _ from 'lodash'
 
 const UserInfoForm: React.FC = () => {
   const context = React.useContext(appContext)
   const service = context.data.service.get.info
+  const user = context.data.user
   console.log('UserInfoForm', context) // REMOVE
 
-  // todo: make global state
-  const now = new Date()
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date(now.getFullYear(), now.getMonth(), now.getDate()))
+  const onInputChange = (field: string, value: string | Date) => {
+    const newUser = _.cloneDeep(user)
+
+    switch (field) {
+      case T('Fullname'):
+        newUser.fullName = value as string
+        break
+      case T('Email'):
+        newUser.email = value as string
+        break
+      case T('Phone'):
+        newUser.phone = value as string
+        break
+      case T('Address'):
+        newUser.address = value as string
+        break
+      case T('Date'):
+        newUser.appointmentDate = value as Date
+        break
+    }
+
+    context.action.setUser(newUser)
+  }
 
   function mkField(label: string, value: string, faIcon: string) {
     return (
@@ -28,7 +49,8 @@ const UserInfoForm: React.FC = () => {
             className="input"
             type="text"
             placeholder={ label.toLowerCase() }
-            defaultValue={ value }/>
+            defaultValue={ value }
+            onChange={ (event) => onInputChange(label, event.target.value) }/>
           <span className="icon is-small is-left">
             <i className={ faIcon }/>
           </span>
@@ -42,21 +64,21 @@ const UserInfoForm: React.FC = () => {
       date.getFullYear(),
       date.getMonth(),
       date.getDate(),
-      selectedDate.getHours(),
-      selectedDate.getMinutes(),
+      user.appointmentDate.getHours(),
+      user.appointmentDate.getMinutes(),
     )
-    setSelectedDate(newDate)
+    onInputChange('Date', newDate)
   }
 
   const handleTimeChange = (date: Date) => {
     const newDate = new Date(
-      selectedDate.getFullYear(),
-      selectedDate.getMonth(),
-      selectedDate.getDate(),
+      user.appointmentDate.getFullYear(),
+      user.appointmentDate.getMonth(),
+      user.appointmentDate.getDate(),
       date.getHours(),
       date.getMinutes(),
     )
-    setSelectedDate(newDate)
+    onInputChange('Date', newDate)
   }
 
   interface DateInputProp {
@@ -92,7 +114,7 @@ const UserInfoForm: React.FC = () => {
           <div className='column'>
             <ReactDatePicker
               className='input'
-              selected={ selectedDate }
+              selected={ user.appointmentDate }
               todayButton={ T('today') }
               onChange={ handleDateChange }
               dateFormat="dd/MM/yyyy"
@@ -104,7 +126,7 @@ const UserInfoForm: React.FC = () => {
           <div className='column'>
             <ReactDatePicker
               className='input'
-              selected={ selectedDate }
+              selected={ user.appointmentDate }
               onChange={ handleTimeChange }
               showTimeSelect
               showTimeSelectOnly

@@ -12,6 +12,7 @@ import { groupOf, QueryInfo, ServiceInfo } from './config/services'
 import { Cart } from './models/Cart'
 import { MyContext } from './models/MyContext'
 import { QueryAnswer } from './models/QueryAnswer'
+import { UserInfo } from './models/UserInfo'
 
 // export const appContext = React.createContext<AppContext>(defaultContext)
 // const Provider = appContext.Provider
@@ -23,6 +24,7 @@ export const appContext = React.createContext<MyContext>({
     },
     service: none as Option<ServiceContext>,
     cart: new Cart(),
+    user: UserInfo.default,
   },
   action: {
     answer: () => {},
@@ -32,6 +34,7 @@ export const appContext = React.createContext<MyContext>({
     setService: () => {},
     setCart: () => {},
     clearCart: () => {},
+    setUser: () => {},
   },
 })
 const Provider = appContext.Provider
@@ -46,6 +49,7 @@ class App extends React.Component<Props, MyContext> {
       },
       service: none,
       cart: new Cart(),
+      user: UserInfo.default,
     },
     action: {
       answer: (query: QueryInfo, ...answers: string[]) => {
@@ -136,6 +140,18 @@ class App extends React.Component<Props, MyContext> {
           data: {
             ...this.state.data,
             cart: new Cart(),
+          },
+        }
+        if (!_.isEqual(newState.data, this.state.data)) {
+          this.setState(newState)
+        }
+      },
+      setUser: (user: UserInfo) => {
+        const newState = {
+          ...this.state,
+          data: {
+            ...this.state.data,
+            user: user,
           },
         }
         if (!_.isEqual(newState.data, this.state.data)) {

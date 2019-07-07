@@ -5,8 +5,11 @@ import Spinner from 'react-spinkit'
 import './BookingConfirm.css'
 import DivImg from '../DivImg'
 import { getImage } from '../../util/Resource'
+import { appContext } from '../../App'
 
 const BookingConfirm: React.FC = () => {
+  const context = React.useContext(appContext)
+
   const [isLoading, setIsLoading] = React.useState(true)
   const loadingTime = Math.random() * 3000 + 2000 // millis
 
@@ -57,6 +60,8 @@ const BookingConfirm: React.FC = () => {
       </div>
     )
   }
+
+  console.log('Confirm in context', context.data)
 
   return (
     <div className="BookingConfirm v_padding_80 text_centered">
