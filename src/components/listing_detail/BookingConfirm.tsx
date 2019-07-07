@@ -6,6 +6,7 @@ import './BookingConfirm.css'
 import DivImg from '../DivImg'
 import { getImage } from '../../util/Resource'
 import { appContext } from '../../App'
+import * as Slack from '../../util/Slack'
 
 const BookingConfirm: React.FC = () => {
   const context = React.useContext(appContext)
@@ -16,7 +17,9 @@ const BookingConfirm: React.FC = () => {
   React.useEffect(
     () => {
       setTimeout(() => {
-        setIsLoading(false)
+        Slack.postUserRegistration(context).then(() => {
+          setIsLoading(false)
+        })
       }, loadingTime)
     },
     [loadingTime],
