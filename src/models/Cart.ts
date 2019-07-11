@@ -1,6 +1,7 @@
 import { prices } from '../config/prices'
 import { Price } from './Price'
 import { ServiceGroup, ServiceInfo } from '../config/services'
+import { toPrettyJson } from '../util/Json'
 
 type AnswerChain = string[]
 
@@ -57,5 +58,12 @@ export class Cart {
     }
 
     return new Price(loop(prices, 0))
+  }
+
+  toJson(group: ServiceGroup, sv: ServiceInfo): string {
+    return toPrettyJson({
+      items: Array.from(this.items.values()).map(v => `${ Cart.keyOf(v.chain) }: ${ v.count }`),
+      totalPrice: this.totalPrice(group, sv),
+    })
   }
 }

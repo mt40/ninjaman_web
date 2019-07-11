@@ -27,7 +27,6 @@ code {
   inner children.
    */
   position: relative;
-  padding-bottom: 400px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -158,6 +157,10 @@ code {
 
 .shadow {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow_up {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /*Remove margins from Font-Awesome icons*/

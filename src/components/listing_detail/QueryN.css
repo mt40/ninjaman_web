@@ -1,9 +1,3 @@
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .QueryN .final_answer_footer {
   display: flex;
   flex-direction: row;
@@ -16,4 +10,16 @@
   border-style: solid;
   border-width: 2.5px;
   border-color: cornflowerblue;
+}
+
+.button_bar {
+  background-color: white;
+  position:fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
 }

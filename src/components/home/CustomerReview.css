@@ -1,16 +1,23 @@
 .review_card {
   width: 100%;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .review_card_mobile {
-  width: 250px;
+  width: 270px;
   margin: 10px 10px 10px 0;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .review_text {
   margin: 10px 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .review_user_info {

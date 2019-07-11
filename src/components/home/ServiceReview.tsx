@@ -19,7 +19,7 @@ const ServiceReview: React.FC = () => {
     const cls = isMobile() ? 'service_review_card_mobile' : 'service_review_card'
 
     return (
-      <div className={ `${ cls } radius_5 shadow bg_white` }>
+      <div key={ sv.name } className={ `${ cls } radius_5 shadow bg_white` }>
         <DivImg url={ sv.avatar } height={ 200 }/>
 
         <div className="review_text">

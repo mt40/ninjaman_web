@@ -6,11 +6,39 @@ import { Link } from 'react-router-dom'
 import * as Page from '../../context/navigation'
 import { T } from '../../config/translation/util'
 import { isMobile } from '../../util/Resource'
+import ReactDatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import _ from 'lodash'
 
 const UserInfoForm: React.FC = () => {
   const context = React.useContext(appContext)
   const service = context.data.service.get.info
+  const user = context.data.user
   console.log('UserInfoForm', context) // REMOVE
+
+  const onInputChange = (field: string, value: string | Date) => {
+    const newUser = _.cloneDeep(user)
+
+    switch (field) {
+      case T('Fullname'):
+        newUser.fullName = value as string
+        break
+      case T('Email'):
+        newUser.email = value as string
+        break
+      case T('Phone'):
+        newUser.phone = value as string
+        break
+      case T('Address'):
+        newUser.address = value as string
+        break
+      case T('Date'):
+        newUser.appointmentDate = value as Date
+        break
+    }
+
+    context.action.setUser(newUser)
+  }
 
   function mkField(label: string, value: string, faIcon: string) {
     return (
@@ -21,7 +49,8 @@ const UserInfoForm: React.FC = () => {
             className="input"
             type="text"
             placeholder={ label.toLowerCase() }
-            defaultValue={ value }/>
+            defaultValue={ value }
+            onChange={ (event) => onInputChange(label, event.target.value) }/>
           <span className="icon is-small is-left">
             <i className={ faIcon }/>
           </span>
@@ -30,21 +59,89 @@ const UserInfoForm: React.FC = () => {
     )
   }
 
-  function mkSelectField(label: string) {
-    return (
-      <div className="field">
-        <label className="label">{ label }</label>
-        <div className="control">
-          <div className="select">
-            <select>
-              <option>8:00</option>
-              <option>10:00</option>
-              <option>13:00</option>
-              <option>15:00</option>
-              <option>17:00</option>
-              <option>21:00</option>
-            </select>
+  const handleDateChange = (date: Date) => {
+    const newDate = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      user.appointmentDate.getHours(),
+      user.appointmentDate.getMinutes(),
+    )
+    onInputChange('Date', newDate)
+  }
+
+  const handleTimeChange = (date: Date) => {
+    const newDate = new Date(
+      user.appointmentDate.getFullYear(),
+      user.appointmentDate.getMonth(),
+      user.appointmentDate.getDate(),
+      date.getHours(),
+      date.getMinutes(),
+    )
+    onInputChange('Date', newDate)
+  }
+
+  interface DateInputProp {
+    /** An FA icon. */
+    icon: string
+    value?: string
+    onClick?: () => void
+  }
+
+  class DateInput extends React.Component<DateInputProp> {
+    render() {
+      return (
+        <div className="field">
+          <div className='control has-icons-left is-expanded' onClick={ this.props.onClick }>
+            <button className="input">
+              { this.props.value }
+            </button>
+            <span className="icon is-small is-left">
+              <i className={ this.props.icon }/>
+            </span>
           </div>
+        </div>
+      )
+    }
+  }
+
+  const dateTimeField = () => {
+    return (
+      <div>
+        <label className="label">{ T('What time works best for you') }</label>
+
+        <div className='columns'>
+          <div className='column'>
+            <ReactDatePicker
+              className='input'
+              selected={ user.appointmentDate }
+              todayButton={ T('today') }
+              onChange={ handleDateChange }
+              dateFormat="dd/MM/yyyy"
+              withPortal
+              customInput={ <DateInput icon='fas fa-calendar-alt'/> }
+            />
+          </div>
+
+          <div className='column'>
+            <ReactDatePicker
+              className='input'
+              selected={ user.appointmentDate }
+              onChange={ handleTimeChange }
+              showTimeSelect
+              showTimeSelectOnly
+              timeIntervals={ 30 }
+              timeFormat='HH:mm'
+              dateFormat='HH:mm'
+              timeCaption={ T('Time') }
+              minTime={ new Date(0, 0, 0, 10) }
+              maxTime={ new Date(0, 0, 0, 17) }
+              withPortal
+              customInput={ <DateInput icon='fas fa-clock'/> }
+            />
+
+          </div>
+
         </div>
       </div>
     )
@@ -56,7 +153,7 @@ const UserInfoForm: React.FC = () => {
       { mkField('Email', 'tom@hanks.com', 'fas fa-envelope') }
       { mkField('Phone', '18001560', 'fas fa-mobile-alt') }
       { mkField('Address', '12 Wall St, NYC, USA', 'fas fa-map-marker-alt') }
-      { mkSelectField('What time works best for you') }
+      { dateTimeField() }
     </div>
   )
 

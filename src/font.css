@@ -1,0 +1,10 @@
+.brand_font {
+  font-family: 'Allerta Stencil', sans-serif;
+  background: linear-gradient(to right, #541C8C 0%, #844CD3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  font-family: 'Lora', 'Helvetica', serif;
+}

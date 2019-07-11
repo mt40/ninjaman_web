@@ -92,8 +92,8 @@ const QueryN: React.FC = () => {
       const isAnswerFocused = idx === focusedAnswer
 
       const cls = () => {
-        const common = 'final_answer radius_5 shadow v_margin_20 bg_white cursor_pointer'
-        return isAnswerFocused ? common + ' focused' : common
+        const common = 'final_answer radius_5 v_margin_20 bg_white cursor_pointer'
+        return isAnswerFocused ? common + ' focused shadow' : common
       }
 
       const footer = (
@@ -156,36 +156,14 @@ const QueryN: React.FC = () => {
     context.action.popAnswer()
   }
 
+  // todo: make button sticky to bottom
   const answerColumn = () => {
-    const buttons = () => {
-      const back = (
-        <button className="button" onClick={ () => onBackClick() }>
-          { T('Back') }
-        </button>
-      )
-      const next = query.isFinal && (
-        <button className="button is-info" onClick={ () => onFinalAnswerNextClick() }>
-          { T('Next') }
-        </button>
-      )
-      return (
-        <div className="buttons v_margin_20">
-          { back }
-          { next }
-        </div>
-      )
-    }
-
     return (
       <div className="column is-5">
         <h1 className="title">{ query.text }</h1>
         <div>
           { query.isFinal ? finalAnswerElems() : answerElems() }
         </div>
-
-        <hr className="margin_top_40"/>
-
-        { buttons() }
       </div>
     )
   }
@@ -219,6 +197,17 @@ const QueryN: React.FC = () => {
       <div className="columns">
         { answerColumn() }
         { !isMobile() && answerDetailColumn() }
+      </div>
+
+
+      <div className='button_bar shadow_up'>
+        <button className="button is-outlined is-dark" onClick={ () => onBackClick() }>
+          { T('Back') }
+        </button>
+
+        <button className="button is-info" onClick={ () => onFinalAnswerNextClick() }>
+          { T('Next') }
+        </button>
       </div>
     </div>
   )

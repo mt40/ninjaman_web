@@ -10,10 +10,10 @@ const Hero: React.FC = () => {
     <section>
       <DivImg url={ getImage('massage2', 'jpg') } height='40vh' verticalCentered dimmed>
         <div className="container text_centered">
-          <p className="text_white is-size-1 v_margin_20">
+          <p className="text_white is-size-1 is-size-2-mobile v_margin_20">
             <b>{ T('The best service experts in town') }</b>
           </p>
-          <h2 className="text_white is-size-3">
+          <h2 className="text_white is-size-3 is-size-5-mobile">
             { T('Order affordable high quality services like Beauty to your home!') }
           </h2>
         </div>
