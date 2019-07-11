@@ -45,7 +45,7 @@ const Checkout: React.FC = () => {
     const mkMethod = (m: PaymentMethod, isActive: boolean = false) => {
       const name = () => {
         if (m === PaymentMethod.Cash) return 'Cash'
-        return 'Credit Card'
+        return 'Credit Card (coming soon)'
       }
 
       return (
@@ -60,7 +60,7 @@ const Checkout: React.FC = () => {
       )
     }
 
-    const methods = [PaymentMethod.Cash, PaymentMethod.CreditCard].map(m => {
+    const methods = [PaymentMethod.Cash].map(m => {
       return mkMethod(m, m === selectedMethod)
     })
 
@@ -117,7 +117,7 @@ const Checkout: React.FC = () => {
   return (
     <div className={ `Checkout ${ topPadding }` }>
       <Container isSmall={ true }>
-        <h1 className="title text_centered">{ T('Time to pay mate :)') }</h1>
+        <h1 className="title text_centered">{ T('Booking Summary') }</h1>
 
         <div className="margin_top_80">
           <h1 className="title is-5">{ T('Your booking') }</h1>
@@ -156,7 +156,7 @@ const Checkout: React.FC = () => {
             <div className="column is-narrow">
               <Link to={ Page.bookingConfirm(service.info).path }>
                 <button className="button is-info">
-                  { T('Pay') }
+                  { T('Confirm') }
                 </button>
               </Link>
             </div>

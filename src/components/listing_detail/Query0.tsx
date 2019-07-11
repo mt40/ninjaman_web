@@ -78,14 +78,14 @@ const Query0: React.FC = () => {
             <i className="fas fa-user-clock fa-fw"/>,
             <div>
               <b>{ T('Choose your time-slot') }</b>
-              <p>{ T('From 9am - 9pm everyday') }</p>
+              <p>{ T('From 10am - 5pm everyday') }</p>
             </div>,
           )
         }
         {
           mkInstruction(
             <i className="fas fa-couch fa-fw"/>,
-            <b>{ T('Our professional will get in touch with you soon') }</b>,
+            <b>{ T('Our expert will get in touch with you soon') }</b>,
           )
         }
       </div>
