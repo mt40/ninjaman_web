@@ -22,10 +22,12 @@ const FeaturedServices: React.FC = () => {
     history.push(Page.serviceDetail(sv).path)
   }
 
-  const mkServiceElems = (services: ServiceInfo[]) => {
+  const mkServiceElems = (services: ServiceInfo[], mobile: Boolean = false) => {
+    const cls = mobile ? 'featured_listing_mobile' : 'featured_listing'
+
     return services.map((sv, idx) => {
       return (
-        <div className="featured-listing radius_5 bg_white shadow" key={ idx }
+        <div className={ `${ cls } radius_5 bg_white shadow` } key={ idx }
              onClick={ () => onListingClick(sv) }>
           <DivImg url={ sv.image } height={ 150 }/>
           <div className="listing-text">
@@ -36,15 +38,23 @@ const FeaturedServices: React.FC = () => {
     })
   }
 
-  const mkScrollMenu = (elems: any[]) => {
+  const mkScrollMenu = (services: ServiceInfo[]) => {
+    const elems = mkServiceElems(services, isMobile())
+
     if (isMobile()) {
       return (
-        <div>
-          <ScrollMenu data={ elems }
-                      alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
-                      arrowDisabledClass="is-invisible" dragging={ true } wheel={ false }/>
+        <div className='services_list_mobile'>
+          { elems }
         </div>
       )
+
+      // return (
+      //   <div>
+      //     <ScrollMenu data={ elems }
+      //                 alignCenter={ false } hideSingleArrow={ true } hideArrows={ true }
+      //                 arrowDisabledClass="is-invisible" dragging={ true } wheel={ false }/>
+      //   </div>
+      // )
     }
     else {
       return (
@@ -61,7 +71,7 @@ const FeaturedServices: React.FC = () => {
     return (
       <div key={ idx } className="featured-section">
         <p className='title is-4'>{ T(group.name) }</p>
-        { mkScrollMenu(mkServiceElems(group.services)) }
+        { mkScrollMenu(group.services) }
       </div>
     )
   })

@@ -3,7 +3,7 @@ export const getImage = (name: string, ext: string = 'png') => {
 }
 
 export const isMobile = () => {
-  const userAgent = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent)
+  const userAgent = /iPhone|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent)
   const width = window.innerWidth < 480
   return userAgent || width
 }
