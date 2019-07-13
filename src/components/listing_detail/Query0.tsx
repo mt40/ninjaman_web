@@ -52,15 +52,22 @@ const Query0: React.FC = () => {
     )
   }
 
+  /** @deprecated */
+  const bookingCounter = (
+    <p className="text_white margin_top_20">
+      <b><ReactCountUp start={ 2500 } end={ 3000 } delay={ 0 } duration={ 4000 } useEasing/>
+      </b>
+      { ' ' + T('people booked this year') }
+    </p>
+  )
+
   const leftSide = (
     <div className="column is-5">
       <div className="wrapper padding_20 radius_5">
         <h1 className="title is-4 text_white">{ query0.text }</h1>
         { answersElems }
-        <p className="text_white margin_top_20">
-          <b><ReactCountUp start={ 2500 } end={ 3000 } delay={ 0 } duration={ 4000 } useEasing/>
-          </b>
-          { ' ' + T('people booked this year') }</p>
+
+        {/*{ bookingCounter }*/}
       </div>
 
       <div className="instructions padding_20 radius_5 border_solid v_margin_20">
@@ -109,12 +116,12 @@ const Query0: React.FC = () => {
         image: getImage('judge_nick'),
       },
       {
-        name: "Chat Luangarpa's World Spa",
+        name: 'Chat Luangarpa\'s World Spa',
         rank: ReviewRank.superPositive,
         reviews: 190,
         location: 'District 3, HCMC',
         image: getImage('judge_chat'),
-      }
+      },
     ]
 
     return _.sortBy(data, [(sv) => sv.rank.id])
@@ -139,6 +146,7 @@ const Query0: React.FC = () => {
       })
   }
 
+  /** @deprecated: we don't have enough top services to show right now */
   const rightSide = (
     <div className="column">
       <div className="padding_20 radius_5 border_solid">
@@ -159,7 +167,6 @@ const Query0: React.FC = () => {
       <Container>
         <div className="columns v_margin_20">
           { leftSide }
-          { rightSide }
         </div>
       </Container>
     </section>

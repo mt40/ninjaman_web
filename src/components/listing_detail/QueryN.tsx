@@ -156,11 +156,10 @@ const QueryN: React.FC = () => {
     context.action.popAnswer()
   }
 
-  // todo: make button sticky to bottom
   const answerColumn = () => {
     return (
       <div className="column is-5">
-        <h1 className="title">{ query.text }</h1>
+        <h1 className="title">{ T(query.text) }</h1>
         <div>
           { query.isFinal ? finalAnswerElems() : answerElems() }
         </div>

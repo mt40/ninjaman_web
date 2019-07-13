@@ -30,6 +30,7 @@ export default {
   'Add': 'Chọn',
   'Next': 'Tiếp theo',
 
+  'Tell us about you': 'Xác nhận thông tin',
   'Enter your details': 'Điền thông tin',
   'Back': 'Quay lại',
   'Checkout': 'Thanh toán',
@@ -41,7 +42,7 @@ export default {
   'Fullname': 'Tên đầy đủ',
   'Phone': 'Số điện thoại',
   'Address': 'Địa chỉ',
-  'What time works best for you': 'Chọn giờ phù hợp với bạn nhất',
+  'What time works best for you': 'Thời gian đặt hẹn',
   'Total': 'Tổng cộng',
   'Time': 'Thời gian',
   'today': 'hôm nay',
