@@ -37,9 +37,13 @@ export const services: ServiceGroup[] = [
         name: 'Spa',
         image: getImage('spa1', 'jpg'),
         features: [
-          'Trained professional therapists',
-          'Hassle free service: massage bed, oils, music, candles, aroma',
-          'Hygiene friendly: disposable items like wipes, towels are used',
+          'Be Lazy and Relax',
+
+          'Tired of going to the salon? BeLazy provides services like Spa, Facial, ' +
+          'Manicure, Pedicure from our professionals at home near you. Get beauticians ' +
+          'with at least 2 years of experience at home for the lowest price. Book beauty ' +
+          'parlour service at home in Ho Chi Minh City with a few clicks, to have a ' +
+          'hygienic and mess-free experience.',
         ],
         queries: [
           {
@@ -54,52 +58,69 @@ export const services: ServiceGroup[] = [
             answers: {
               'Facial': [
                 {
-                  text: 'Basic Facial cleaning + Spa',
+                  text: 'Basic Facial cleaning + Spa (1h)',
                   image: 'https://villageclubs.com/wp-content/uploads/2018/08/Facial-web_150dpi.jpg',
-                  desc: [
-                    'Gentle to skin',
-                    'Suitable for all skin types',
-                    'Never leave scars',
+                  packageContent: [
+                    '30min facial cleaning',
+                    '30min face massage',
                   ],
                 },
                 {
-                  text: 'Facial pimple and blackheads treatment + Spa',
+                  text: 'Facial pimple and blackheads treatment + Spa (1h)',
                   image: 'https://cdn.massagemag.com/wordpress/wp-content/uploads/HolidaySpa.jpg',
-                  desc: [
-                    'Gentle to skin',
-                    'Suitable for all skin types',
-                    'Never leave scars',
+                  packageContent: [
+                    '30min Pimple and Blackhead treatment',
+                    '30min face massage',
                   ],
                 },
                 {
-                  text: 'Lotus Herbals - natural glow skin radiance facial',
-                  desc: [
-                    'Dermatology certified',
-                    'Strong whitening effect',
+                  text: 'Lotus Herbals - natural glow skin radiance facial (1h)',
+                  packageContent: [
+                    '30min natural glow skin facial',
+                    '30min face massage',
                   ],
                 },
                 {
-                  text: 'Active charcoal skin purifying facial',
-                  desc: [
-                    'Gentle to skin',
-                    'Suitable for all skin types',
+                  text: 'Active charcoal skin purifying facial (1h)',
+                  packageContent: [
+                    '30min active charcoal purifying facial',
+                    '30min face massage',
                   ],
                 },
                 {
-                  text: 'Skin miracle bio whitening facial',
-                  desc: [
-                    'Naturally white skin',
-                    'Long lasting effect',
+                  text: 'Skin miracle bio whitening facial (1h)',
+                  packageContent: [
+                    '30min Whitening facial',
+                    '30min face massage',
                   ],
                 },
               ],
               'Massage': [
-                'Back & Shoulder Massage',
-                'Foot Massage',
-                'Full Body Massage',
-                'Head Massage',
-                'Massage for elder',
-                'Massage for mama',
+                {
+                  text: 'Back & Shoulder Massage (1h)',
+                  packageContent: [
+                    '30min Back Massage',
+                    '30min Shoulder',
+                  ],
+                },
+                {
+                  text: 'Foot Massage (30min)',
+                  packageContent: [
+                    '30min foot massage',
+                  ],
+                },
+                {
+                  text: 'Full Body Massage (1h)',
+                  packageContent: [
+                    '60min full body massage',
+                  ],
+                },
+                {
+                  text: 'Head Massage (30min)',
+                  packageContent: [
+                    '30min head massage',
+                  ],
+                },
               ],
             },
           },
@@ -120,10 +141,40 @@ export const services: ServiceGroup[] = [
           },
           {
             text: 'What treatment do you need?',
+            isFinal: true,
             answers: {
               'Pedicure & Manicure': [
-                'manicure + polish colour',
-                'manicure + OPI Infinite Shine polish',
+                'Manicure + Basic nail polish',
+                'Pedicure * Basic nail polish',
+                'Manicure + OPI nail polish',
+                'Pedicure * OPI nail polish',
+                'Manicure + Gel polish',
+                'Pedicure + Gel polish',
+                'Remove gel',
+                {
+                  text: 'Combo 1',
+                  packageContent: [
+                    'Manicure',
+                    'Pedicure',
+                    'Basic nail polish',
+                  ],
+                },
+                {
+                  text: 'Combo 2',
+                  packageContent: [
+                    'Manicure',
+                    'Pedicure',
+                    'OPI nail polish',
+                  ],
+                },
+                {
+                  text: 'Combo 3',
+                  packageContent: [
+                    'Manicure',
+                    'Pedicure',
+                    'Gel nail polish',
+                  ],
+                },
               ],
             },
           },
@@ -156,17 +207,32 @@ export const services: ServiceGroup[] = [
             answers: {
               'Hair Styling': [
                 'Fabulous gala style',
+                'Business event style',
+                'Blow dry with Curls',
+                'Hair Ironing',
                 'Trendy curling',
               ],
               'Hair Treatment': [
-                'L\'Oreal Hair Spa (S)',
-                'Keratin Hair Treament (S)',
-                'Keratin Hair Treament (M)',
+                "L'Oreal Hair Spa (S)",
+                "L'Oreal Hair Spa (M)",
+                "L'Oreal Hair Spa (L)",
+                "Keratin Hair Treament (S)",
+                "Keratin Hair Treament (M)",
+                "Keratin Hair Treament (L)",
+                "Permanent Smoothing (S)",
+                "Permanent Smoothing (M)",
+                "Permanent Smoothing (L)",
+                "Permanent Curls (S)",
+                "Permanent Curls (M)",
+                "Permanent Curls (L)",
               ],
               'Hair Coloring': [
-                'L\'Oreal Global color (S)',
-                'L\'Oreal Global color (M)',
-                'L\'Oreal Global color (L)',
+                "L'Oreal Global color (S)",
+                "L'Oreal Global color (M)",
+                "L'Oreal Global color (L)",
+                "L'Oreal Global highlights S)",
+                "L'Oreal Global highlights (M)",
+                "L'Oreal Global highlights (L)",
               ],
             },
           },
@@ -174,63 +240,6 @@ export const services: ServiceGroup[] = [
       },
     ],
   },
-  // {
-  //   name: 'Photography',
-  //   services: [
-  //     {
-  //       name: 'Wedding',
-  //       image: getImage('wedding', 'jpg'),
-  //       features: [
-  //         'Doorstep repair within 10 mins',
-  //         'Protection Against Damage Upto INR 10,000',
-  //         '30 day post-service guarantee',
-  //       ],
-  //       queries: [
-  //         {
-  //           text: '',
-  //           answers: {'': ['In city']},
-  //         },
-  //         {
-  //           text: 'Which event?',
-  //           isFinal: true,
-  //           answers: {
-  //             'In city': [
-  //               'Engagement Party',
-  //               'Pre-wedding',
-  //               'Ceremony',
-  //             ],
-  //           },
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: 'Portrait',
-  //       image: getImage('kid_portrait', 'jpg'),
-  //       features: [
-  //         'Doorstep repair within 10 mins',
-  //         'Protection Against Damage Upto INR 10,000',
-  //         '30 day post-service guarantee',
-  //       ],
-  //       queries: [
-  //         {
-  //           text: '',
-  //           answers: {'': ['In city']},
-  //         },
-  //         {
-  //           text: 'How many photos do you want?',
-  //           isFinal: true,
-  //           answers: {
-  //             'In city': [
-  //               '10-photo album',
-  //               '30-photo album',
-  //               '50 photos or more',
-  //             ],
-  //           },
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
 ]
 
 export interface ServiceGroup {
@@ -269,6 +278,7 @@ export interface QueryInfo {
 export interface RichAnswerInfo {
   text: string
   image?: string
+  packageContent?: string[]
   desc?: string[]
 }
 

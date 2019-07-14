@@ -29,6 +29,7 @@ export default {
   'What treatment do you need?': 'Bạn cần dịch vụ gì?',
   'Add': 'Chọn',
   'Next': 'Tiếp theo',
+  'Include': 'Bao gồm',
 
   'Tell us about you': 'Xác nhận thông tin',
   'Enter your details': 'Điền thông tin',

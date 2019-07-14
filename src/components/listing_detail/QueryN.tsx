@@ -24,13 +24,33 @@ const QueryN: React.FC = () => {
   const answers = query.answers[prevAnswer.get]
   const service = context.data.service.get
 
-  const getAnsDescElem = (a: RichAnswerInfo) => {
-    if (a.desc) {
-      return a.desc.map((d, i) => {
-        return <li key={ i }>⦁ { T(d) }</li>
-      })
+  const answerContentAndDesc = (a: RichAnswerInfo) => {
+    const packageContent = a.packageContent && a.packageContent.map((d, i) => {
+      return <li key={ i }>⦁ { T(d) }</li>
+    })
+
+    const desc = a.desc && a.desc.map((d, i) => {
+      return <li key={ i }>⦁ { T(d) }</li>
+    })
+
+    if (isMobile()) {
+      return (
+        <div>
+          <p><b>{ T('Include') }</b></p>
+          { packageContent }
+          { desc && <hr/> }
+          { desc }
+        </div>
+      )
     }
-    return a.desc
+
+    return packageContent
+  }
+
+  const answerDescOnly = (a: RichAnswerInfo) => {
+    return a.desc && a.desc.map((d, i) => {
+      return <li key={ i }>⦁ { T(d) }</li>
+    })
   }
 
   const answerElems = () => {
@@ -48,23 +68,14 @@ const QueryN: React.FC = () => {
         )
       }
       else {
-        const desc = () => {
-          if (a.desc) {
-            return a.desc.map((d, i) => {
-              return <li key={ i }>⦁ { T(d) }</li>
-            })
-          }
-          return a.desc
-        }
-
         return (
           <div
             key={ idx }
             className={ cls }
             onClick={ () => onAnswerClick(a.text) }>
 
-            <b>{ T(a.text) }</b>
-            <ul className='v_margin_10'>{ desc() }</ul>
+            <b className='is-size-5'>{ T(a.text) }</b>
+            <ul className='v_margin_10'>{ answerContentAndDesc(a) }</ul>
 
           </div>
         )
@@ -127,8 +138,8 @@ const QueryN: React.FC = () => {
             onClick={ () => onFinalAnswerClick(a.text, idx) }>
 
             <div className="padding_10 top_padding_20">
-              <b>{ T(a.text) }</b>
-              <ul className='v_margin_10'>{ getAnsDescElem(a) }</ul>
+              <b className='is-size-5'>{ T(a.text) }</b>
+              <ul className='v_margin_10'>{ answerContentAndDesc(a) }</ul>
             </div>
 
             { footer }
@@ -182,7 +193,7 @@ const QueryN: React.FC = () => {
           <div>
             { cover }
             <h1 className="title is-5 top_padding_20">{ T(ans.text) }</h1>
-            <ul className='v_margin_10'>{ getAnsDescElem(ans) }</ul>
+            <ul className='v_margin_10'>{ answerDescOnly(ans) }</ul>
           </div>
         )
       }
