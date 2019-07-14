@@ -176,7 +176,7 @@ const UserInfoForm: React.FC = () => {
 
           <div className="column is-narrow">
             <Link to={ Page.checkout(service).path }>
-              <button className="button is-info">
+              <button className="button is-info h_padding_50 purple_gradient">
                 { T('Checkout') }
               </button>
             </Link>

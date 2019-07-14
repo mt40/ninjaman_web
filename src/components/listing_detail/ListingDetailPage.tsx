@@ -96,7 +96,7 @@ const ListingDetailPage: React.FC = () => {
     const renderQuery = () => {
       if (_.isEmpty(context.data.query.answers)) {
         return (
-            <Query0/>
+          <Query0/>
         )
       }
       else {

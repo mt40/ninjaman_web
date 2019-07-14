@@ -211,11 +211,12 @@ const QueryN: React.FC = () => {
 
 
       <div className='button_bar shadow_up'>
-        <button className="button is-outlined is-dark" onClick={ () => onBackClick() }>
-          { T('Back') }
+        <button className="button is-outlined is-dark h_padding_10" style={ {minWidth: '70px'} }
+                onClick={ () => onBackClick() }>
+          <i className="fas fa-chevron-left" style={ {fontSize: '100%'} }/>
         </button>
 
-        <button className="button is-info" onClick={ () => onFinalAnswerNextClick() }>
+        <button className="button is-info h_padding_50 purple_gradient" onClick={ () => onFinalAnswerNextClick() }>
           { T('Next') }
         </button>
       </div>

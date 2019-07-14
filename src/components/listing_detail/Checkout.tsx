@@ -146,8 +146,8 @@ const Checkout: React.FC = () => {
 
           <div className="columns v_margin_20 is-mobile">
             <div className="column is-narrow">
-              <button className="button" onClick={ () => onBackClick() }>
-                { T('Back') }
+              <button className="button is-outlined is-dark h_padding_10" onClick={ () => onBackClick() }>
+                <i className="fas fa-chevron-left" style={ {fontSize: '100%'} }/>
               </button>
             </div>
 
@@ -155,7 +155,7 @@ const Checkout: React.FC = () => {
 
             <div className="column is-narrow">
               <Link to={ Page.bookingConfirm(service.info).path }>
-                <button className="button is-info">
+                <button className="button is-info h_padding_50 purple_gradient">
                   { T('Confirm') }
                 </button>
               </Link>
