@@ -100,9 +100,13 @@ const Checkout: React.FC = () => {
         .toDisplayString()
       return (
         <div key={ idx }>
-          <div className="purchase">
-            <p>{ `${ ansChain } x ${ val.count }` }</p>
-            <p>{ price }</p>
+          <div className="columns is-mobile">
+            <div className='column'>
+              <p>{ `${ ansChain } x ${ val.count }` }</p>
+            </div>
+            <div className='column is-3 text_right'>
+              <p><b>{ price }</b></p>
+            </div>
           </div>
         </div>
       )
@@ -119,7 +123,7 @@ const Checkout: React.FC = () => {
       <Container isSmall={ true }>
         <h1 className="title text_centered">{ T('Booking Summary') }</h1>
 
-        <div className="margin_top_80">
+        <div className="margin_top_40">
           <h1 className="title is-5">{ T('Your booking') }</h1>
 
           <div className="receipt">
@@ -146,7 +150,8 @@ const Checkout: React.FC = () => {
 
           <div className="columns v_margin_20 is-mobile">
             <div className="column is-narrow">
-              <button className="button is-outlined is-dark h_padding_10" onClick={ () => onBackClick() }>
+              <button className="button is-outlined is-dark h_padding_10"
+                      onClick={ () => onBackClick() }>
                 <i className="fas fa-chevron-left" style={ {fontSize: '100%'} }/>
               </button>
             </div>
