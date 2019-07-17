@@ -61,4 +61,31 @@ export default {
 
   'Now just sit back and relax. Our provider will call you shortly to arrange the service.': 'Chuyên viên của chúng tôi sẽ liên hệ với bạn qua điện thoại trong thời gian sớm nhất.',
   'We will also message you the booking information in a few minutes': 'Xác nhận đơn hàng sẽ được gửi cho bạn ngay sau đây',
+
+  'Basic Facial Cleaning (1h)': 'Chăm sóc da cơ bản (1h)',
+  'Facial pimple, blackheads treatment & Spa (1h)': 'Chăm sóc da mụn cám, mụn đầu đèn (1h)',
+  'Vitamin C Skincare & Spa (1h)': 'Chăm sóc da bằng Vitamin C nguyên chất (1h)',
+  'Facial acne treatment & Spa (1h 15min)': 'Chăm sóc và kiểm soát da mụn (1h 15p)',
+  'Moisturizing Skincare & Spa (1h 15min)': 'Chăm sóc da tắm dưỡng (1h 15p)',
+
+  'Fullbody Massage (75min)':	'Massage body (75p)',
+  'Fatburning Massage (75min)':	'Massage giảm mỡ bụng (75p)',
+  'Prenatal Massage (75min)':	'Massage cho bà bầu (75p)',
+
+  'Manicure + Basic nail polish (30min)':	'Cắt da/Sửa móng tay + Sơn thường (30p)',
+  'Manicure + OPI nail polish (30min)':	'Cắt da/Sửa móng tay + Sơn OPI (30p)',
+  'Manicure + Gel polish (30min)': 'Cắt da/Sửa móng tay + Sơn gel (30p)',
+
+  'Pedicure * Basic nail polish (30min)':	'Cắt da/Sửa móng chân + Sơn thường (30p)',
+  'Pedicure * OPI nail polish (30min)':	'Cắt da/Sửa móng chân + Sơn OPI (30p)',
+  'Pedicure + Gel polish (30min)': 'Cắt da/Sửa móng chân + Sơn gel (30p)',
+  'Remove gel (5min)': 'Phá gel (5p)',
+
+  'Manicure + Pedicure + Basic nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn thường (45p)',
+  'Manicure + Pedicure + OPI nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn OPI (45p)',
+  'Manicure + Pedicure + Gel nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn gel (45p)',
+
+  'Hair & Make Up for Business Events/ Interviews (1h)': 'Làm tóc và trang điểm cho sự kiện công ty/ Phỏng vấn (1h)',
+  'Hair & Make Up for parties and gala events (1h)': 'Làm tóc và trang điểm cho tiệc (1h)',
+  'Hair & Make Up for Weddings (2h, 1 look)':	'Làm tóc và trang điểm cho cô dâu (1 look) (2h)',
 }

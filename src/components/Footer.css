@@ -12,28 +12,15 @@
   filter: invert(100%);
 }
 
-.Footer .entries {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
 .Footer {
   background-color: #000000;
   margin-top: 80px;
 }
 
 .Footer .company_info {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   color: #adadad;
 }
 
 .Footer .company_info h1 {
   margin-bottom: 5px;
-}
-
-.Footer .company_info .names {
- margin-left: 10px;
 }

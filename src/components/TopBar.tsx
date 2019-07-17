@@ -8,7 +8,7 @@ const TopBar: React.FC = () => {
       <div className="navbar-brand">
         <Link to="/">
           <div className="navbar-item">
-            <p className='is-size-4 brand_font'>BELAZY</p>
+            <p className='is-size-4 brand_font brand_font_gradient'>BELAZY</p>
           </div>
         </Link>
       </div>

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import './SimpleButton.css'
 
 interface SimpleButtonProps {
   text: string,
   lightColor?: boolean
+  style?: CSSProperties
 }
 
 const SimpleButton: React.FC<SimpleButtonProps> = (props) => {
@@ -11,7 +12,10 @@ const SimpleButton: React.FC<SimpleButtonProps> = (props) => {
 
   return (
     // todo: href
-    <a className={`SimpleButton button no_bg ${colorClass}`} href="/">{props.text}</a>
+    <a className={ `SimpleButton button no_bg ${ colorClass }` } href="/"
+       style={ props.style }>
+      { props.text }
+    </a>
   )
 }
 

@@ -2,7 +2,7 @@ export const prices = {
   'Beauty': {
     'Spa': {
       'Facial': {
-        'Basic Facial cleaning + Spa (1h)': 290000,
+        'Basic Facial Cleaning (1h)': 290000,
         'Facial pimple and blackheads treatment + Spa (1h)': 490000,
         'Lotus Herbals - natural glow skin radiance facial (1h)': 490000,
         'Active charcoal skin purifying facial (1h)': 490000,

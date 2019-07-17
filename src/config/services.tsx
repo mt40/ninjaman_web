@@ -58,7 +58,7 @@ export const services: ServiceGroup[] = [
             answers: {
               'Facial': [
                 {
-                  text: 'Basic Facial cleaning + Spa (1h)',
+                  text: 'Basic Facial Cleaning (1h)',
                   image: 'https://villageclubs.com/wp-content/uploads/2018/08/Facial-web_150dpi.jpg',
                   packageContent: [
                     '30min facial cleaning',
