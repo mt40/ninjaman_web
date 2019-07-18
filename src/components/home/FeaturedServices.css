@@ -1,9 +1,3 @@
-.featured-listing {
-  width: 250px;
-  margin: 10px 10px 10px 0;
-  cursor: pointer;
-}
-
 .listing-img {
   height: 120px;
   background-repeat: no-repeat;
@@ -27,4 +21,20 @@
 
 .featured-section {
   margin-bottom: 30px;
+}
+
+.FeaturedServices .services_list_mobile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.FeaturedServices .featured_listing {
+  width: 250px;
+  margin: 10px 10px 10px 0;
+  cursor: pointer;
+}
+
+.FeaturedServices .featured_listing_mobile {
+  margin-top: 20px;
 }

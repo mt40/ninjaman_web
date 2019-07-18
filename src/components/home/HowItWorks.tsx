@@ -40,15 +40,15 @@ const HowItWorks: React.FC = () => {
             mkColumn(
               getImage('undraw_filling'),
               'Enter your details',
-              'Choose appointment date, time, and address then check out securely',
+              'Choose a suitable appointment date, time, and address',
             )
           }
 
           {
             mkColumn(
               getImage('undraw_makeup'),
-              'Beautician comes to you',
-              'Our stylists arrive at your home with everything needed to create your perfect look',
+              'Our experts come to you',
+              'Our experts will arrive at your address with everything needed to create your perfect look',
             )
           }
         </div>

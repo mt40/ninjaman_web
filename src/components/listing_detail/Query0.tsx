@@ -1,13 +1,10 @@
 import React from 'react'
 import './Query0.css'
 import Container from '../Container'
-import { getImage } from '../../util/Resource'
 import { appContext } from '../../App'
 import { T } from '../../config/translation/util'
-import ReactCountUp from 'react-countup'
-import ReviewLabel, { ReviewRank } from '../ReviewLabel'
-import _ from 'lodash'
-import fakerStatic from 'faker/locale/en'
+import DivImg from '../DivImg'
+import { isMobile } from '../../util/Resource'
 
 const Query0: React.FC = () => {
   const context = React.useContext(appContext)
@@ -26,7 +23,7 @@ const Query0: React.FC = () => {
            className="answers cursor_pointer bg_white v_margin_5 padding_10 radius_5"
            onClick={ () => onAnswerClick(ans()) }>
         <div className="columns is-mobile">
-          <div className="column">{ T(ans()) }</div>
+          <div className="column"><b>{ T(ans()) }</b></div>
           <div className="column is-narrow">
             <i className="fas fa-chevron-right"/>
           </div>
@@ -57,13 +54,11 @@ const Query0: React.FC = () => {
       <div className="wrapper padding_20 radius_5">
         <h1 className="title is-4 text_white">{ query0.text }</h1>
         { answersElems }
-        <p className="text_white margin_top_20">
-          <b><ReactCountUp start={ 2500 } end={ 3000 } delay={ 0 } duration={ 4000 } useEasing/>
-          </b>
-          { ' ' + T('people booked this year') }</p>
+
+        {/*{ bookingCounter }*/ }
       </div>
 
-      <div className="instructions padding_20 radius_5 border_solid v_margin_20">
+      <div className="instructions padding_20 radius_5 border_solid v_margin_20 bg_white">
         <h1 className="title is-5">{ T('Instructions') }</h1>
         <hr/>
 
@@ -78,91 +73,63 @@ const Query0: React.FC = () => {
             <i className="fas fa-user-clock fa-fw"/>,
             <div>
               <b>{ T('Choose your time-slot') }</b>
-              <p>{ T('From 9am - 9pm everyday') }</p>
+              <p>{ T('From 10am - 5pm everyday') }</p>
             </div>,
           )
         }
         {
           mkInstruction(
             <i className="fas fa-couch fa-fw"/>,
-            <b>{ T('Our professional will get in touch with you soon') }</b>,
+            <b>{ T('Our expert will get in touch with you soon') }</b>,
           )
         }
       </div>
     </div>
   )
 
-  const topServices = () => {
-    const data = [
-      {
-        name: 'Spa Kelly',
-        rank: ReviewRank.superPositive,
-        reviews: 200,
-        location: 'District 1, HCMC',
-        image: getImage('judge_kelly'),
-      },
-      {
-        name: 'Spa Nick Tran',
-        rank: ReviewRank.superPositive,
-        reviews: 190,
-        location: 'District 3, HCMC',
-        image: getImage('judge_nick'),
-      },
-      {
-        name: "Chat Luangarpa's World Spa",
-        rank: ReviewRank.superPositive,
-        reviews: 190,
-        location: 'District 3, HCMC',
-        image: getImage('judge_chat'),
-      }
-    ]
+  const rightSide = () => {
+    const features = context.data.service.get.info.features.map((f, idx) => {
+      return <li key={ idx }>{ T(f) }</li>
+    })
 
-    return _.sortBy(data, [(sv) => sv.rank.id])
-      .map((r, i) => {
-        return (
-          <div key={ i }>
-            { i > 0 && <hr/> }
-
-            <div className='columns is-mobile' key={ i }>
-              <div className="column is-narrow">
-                <img className="avatar" src={ r.image } alt=""/>
-              </div>
-
-              <div className="column">
-                <b className='is_text_3'>{ r.name }</b>
-                <p>{ r.location }</p>
-                <ReviewLabel rank={ r.rank } reviewCount={ r.reviews }/>
-              </div>
-            </div>
-          </div>
-        )
-      })
-  }
-
-  const rightSide = (
-    <div className="column">
-      <div className="padding_20 radius_5 border_solid">
-        <h1 className="title is-5">{ T('Our partners in Ho Chi Minh City') }</h1>
-        {/*<p>{ T('All services are certified by us') }</p>*/ }
-
-        <hr/>
-
-        <div>
-          { topServices() }
+    return (
+      <div className='column is-7'>
+        <h1 className="title text_white">
+          { T(`Best ${ service.info.name } in HCMC`) }
+        </h1>
+        <div className="is-size-5 content margin_top_40 text_white">
+          <ul>
+            { features }
+          </ul>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
+
+  const render = () => {
+    if (isMobile()) {
+      return (
+        <div className="columns v_margin_20">
+          { rightSide() }
+          { leftSide }
+        </div>
+      )
+    }
+    return (
+      <div className="columns v_margin_20">
+        { leftSide }
+        { rightSide() }
+      </div>
+    )
+  }
 
   return (
-    <section className="ListingDetailQuery0">
+    <DivImg className='ListingDetailQuery0' url={ service.info.image } dimmed verticalCentered
+            fullScreen>
       <Container>
-        <div className="columns v_margin_20">
-          { leftSide }
-          { rightSide }
-        </div>
+        { render() }
       </Container>
-    </section>
+    </DivImg>
   )
 }
 

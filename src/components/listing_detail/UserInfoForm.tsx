@@ -40,7 +40,7 @@ const UserInfoForm: React.FC = () => {
     context.action.setUser(newUser)
   }
 
-  function mkField(label: string, value: string, faIcon: string) {
+  function mkField(label: string, faIcon: string) {
     return (
       <div className="field">
         <label className="label">{ T(label) }</label>
@@ -49,7 +49,6 @@ const UserInfoForm: React.FC = () => {
             className="input"
             type="text"
             placeholder={ label.toLowerCase() }
-            defaultValue={ value }
             onChange={ (event) => onInputChange(label, event.target.value) }/>
           <span className="icon is-small is-left">
             <i className={ faIcon }/>
@@ -149,10 +148,10 @@ const UserInfoForm: React.FC = () => {
 
   const inputs = (
     <div>
-      { mkField('Fullname', 'Tom Hanks', 'fas fa-user') }
-      { mkField('Email', 'tom@hanks.com', 'fas fa-envelope') }
-      { mkField('Phone', '18001560', 'fas fa-mobile-alt') }
-      { mkField('Address', '12 Wall St, NYC, USA', 'fas fa-map-marker-alt') }
+      { mkField('Fullname', 'fas fa-user') }
+      { mkField('Email', 'fas fa-envelope') }
+      { mkField('Phone', 'fas fa-mobile-alt') }
+      { mkField('Address', 'fas fa-map-marker-alt') }
       { dateTimeField() }
     </div>
   )
@@ -177,7 +176,7 @@ const UserInfoForm: React.FC = () => {
 
           <div className="column is-narrow">
             <Link to={ Page.checkout(service).path }>
-              <button className="button is-info">
+              <button className="button is-info h_padding_50 purple_gradient">
                 { T('Checkout') }
               </button>
             </Link>

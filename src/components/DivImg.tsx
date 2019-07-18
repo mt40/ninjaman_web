@@ -11,17 +11,30 @@ interface DivImgProps {
   children?: any
   verticalCentered?: boolean
   dimmed?: boolean
+  /** This only works if container has display flex with column direction */
+  fullScreen?: boolean
 }
 
 const DivImg: React.FC<DivImgProps> = (props) => {
   const [loaded, setLoaded] = React.useState(false)
 
-  const width = props.width
-    ? props.width
-    : props.height ? 'auto' : '100px'
-  const height = props.height
-    ? props.height
-    : props.width ? 'auto' : '100px'
+  const size = () => {
+    if(props.fullScreen) {
+      return {
+        width: 'auto',
+        height: 'auto',
+      }
+    }
+    return {
+      width: props.width
+        ? props.width
+        : props.height ? 'auto' : '100px',
+      height: props.height
+        ? props.height
+        : props.width ? 'auto' : '100px',
+    }
+  }
+
   const cls = `DivImg ${ props.className }`
 
   const onImageLoaded = () => {
@@ -41,11 +54,10 @@ const DivImg: React.FC<DivImgProps> = (props) => {
       <div className='img'
            style={ {
              backgroundImage: props.dimmed ? dimmed : img,
-             height: height,
-             width: width,
              backgroundColor: defaultBgColor,
              backgroundSize: bgSize,
-             alignItems: props.verticalCentered ? 'center' : 'normal'
+             alignItems: props.verticalCentered ? 'center' : 'normal',
+             ...size(),
            } }
            onLoad={ onImageLoaded }>
         {props.children}

@@ -1,6 +1,7 @@
 .DivImg {
   display: flex;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .DivImg .img {

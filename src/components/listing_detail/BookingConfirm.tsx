@@ -54,7 +54,7 @@ const BookingConfirm: React.FC = () => {
           }
         </p>
         <p className='h_margin_20'>
-          { T('We will also send the booking information to your email in a few minutes') }
+          { T('We will also message you the booking information in a few minutes') }
         </p>
 
         <Link to="/">

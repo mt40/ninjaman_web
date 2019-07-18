@@ -37,11 +37,5 @@ export class UserInfo {
     this.appointmentDate = appointmentDate
   }
 
-  static default = new UserInfo(
-    'Phan Lam Phat',
-    'default@mail.com',
-    '19001560',
-    '1 Nguyen Huu Canh, Q1, HCMC',
-    defaultAppointmentDate(now),
-  )
+  static default = new UserInfo('', '', '', '', defaultAppointmentDate(now))
 }

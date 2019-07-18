@@ -98,6 +98,11 @@ code {
   padding-right: 20px;
 }
 
+.h_padding_50 {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 .v_padding_80 {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -197,4 +202,14 @@ i.fas {
 
 .menu-wrapper--inner {
   white-space: normal !important;
+}
+
+.button.purple_gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+  border-width: 0;
+}
+
+.button.purple_gradient:active {
+  background: #764ba2;
 }

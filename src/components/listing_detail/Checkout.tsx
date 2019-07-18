@@ -45,7 +45,7 @@ const Checkout: React.FC = () => {
     const mkMethod = (m: PaymentMethod, isActive: boolean = false) => {
       const name = () => {
         if (m === PaymentMethod.Cash) return 'Cash'
-        return 'Credit Card'
+        return 'Credit Card (coming soon)'
       }
 
       return (
@@ -60,7 +60,7 @@ const Checkout: React.FC = () => {
       )
     }
 
-    const methods = [PaymentMethod.Cash, PaymentMethod.CreditCard].map(m => {
+    const methods = [PaymentMethod.Cash].map(m => {
       return mkMethod(m, m === selectedMethod)
     })
 
@@ -100,9 +100,13 @@ const Checkout: React.FC = () => {
         .toDisplayString()
       return (
         <div key={ idx }>
-          <div className="purchase">
-            <p>{ `${ ansChain } x ${ val.count }` }</p>
-            <p>{ price }</p>
+          <div className="columns is-mobile">
+            <div className='column'>
+              <p>{ `${ ansChain } x ${ val.count }` }</p>
+            </div>
+            <div className='column is-3 text_right'>
+              <p><b>{ price }</b></p>
+            </div>
           </div>
         </div>
       )
@@ -117,9 +121,9 @@ const Checkout: React.FC = () => {
   return (
     <div className={ `Checkout ${ topPadding }` }>
       <Container isSmall={ true }>
-        <h1 className="title text_centered">{ T('Time to pay mate :)') }</h1>
+        <h1 className="title text_centered">{ T('Booking Summary') }</h1>
 
-        <div className="margin_top_80">
+        <div className="margin_top_40">
           <h1 className="title is-5">{ T('Your booking') }</h1>
 
           <div className="receipt">
@@ -146,8 +150,9 @@ const Checkout: React.FC = () => {
 
           <div className="columns v_margin_20 is-mobile">
             <div className="column is-narrow">
-              <button className="button" onClick={ () => onBackClick() }>
-                { T('Back') }
+              <button className="button is-outlined is-dark h_padding_10"
+                      onClick={ () => onBackClick() }>
+                <i className="fas fa-chevron-left" style={ {fontSize: '100%'} }/>
               </button>
             </div>
 
@@ -155,8 +160,8 @@ const Checkout: React.FC = () => {
 
             <div className="column is-narrow">
               <Link to={ Page.bookingConfirm(service.info).path }>
-                <button className="button is-info">
-                  { T('Pay') }
+                <button className="button is-info h_padding_50 purple_gradient">
+                  { T('Confirm') }
                 </button>
               </Link>
             </div>
