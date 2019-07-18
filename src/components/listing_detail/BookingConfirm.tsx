@@ -53,9 +53,9 @@ const BookingConfirm: React.FC = () => {
               'Our provider will call you shortly to arrange the service.')
           }
         </p>
-        <p className='h_margin_20'>
-          { T('We will also message you the booking information in a few minutes') }
-        </p>
+        {/*<p className='h_margin_20'>*/}
+        {/*  { T('We will also message you the booking information in a few minutes') }*/}
+        {/*</p>*/}
 
         <Link to="/">
           <button className='button is-info margin_top_80'>{ T('Home Page') }</button>
