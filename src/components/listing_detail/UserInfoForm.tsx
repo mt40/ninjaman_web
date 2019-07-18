@@ -105,6 +105,26 @@ const UserInfoForm: React.FC = () => {
   }
 
   const dateTimeField = () => {
+    const now = new Date()
+    const maxTime = new Date(0, 0, 0, 17)
+
+    let minDate = new Date()
+    const minTime = () => {
+      const earliest = 10
+      const fromNow = now.getHours() + 2 // need 2 hours in advance
+
+      let rs = fromNow < earliest ? earliest : fromNow
+
+      if(rs > maxTime.getHours()) {
+        rs = earliest
+        minDate.setDate(minDate.getDate() + 1)
+      }
+
+      return new Date(0, 0, 0, rs)
+    }
+
+    console.log('min time', minTime())
+
     return (
       <div>
         <label className="label">{ T('What time works best for you') }</label>
@@ -117,6 +137,7 @@ const UserInfoForm: React.FC = () => {
               todayButton={ T('today') }
               onChange={ handleDateChange }
               dateFormat="dd/MM/yyyy"
+              minDate={ minDate }
               withPortal
               customInput={ <DateInput icon='fas fa-calendar-alt'/> }
             />
@@ -133,8 +154,8 @@ const UserInfoForm: React.FC = () => {
               timeFormat='HH:mm'
               dateFormat='HH:mm'
               timeCaption={ T('Time') }
-              minTime={ new Date(0, 0, 0, 10) }
-              maxTime={ new Date(0, 0, 0, 17) }
+              minTime={ minTime() }
+              maxTime={ maxTime }
               withPortal
               customInput={ <DateInput icon='fas fa-clock'/> }
             />
