@@ -28,7 +28,6 @@ const Footer: React.FC = () => {
             } }>
               <SimpleButton style={ {minWidth: 'auto'} } text="About Us" lightColor={ true }/>
               <SimpleButton style={ {minWidth: 'auto'} } text="Terms & Conditions" lightColor={ true }/>
-              <SimpleButton style={ {minWidth: 'auto'} } text="Privacy" lightColor={ true }/>
             </div>
           </div>
         </div>

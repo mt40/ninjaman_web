@@ -36,8 +36,8 @@ const ServiceReview: React.FC = () => {
     mkReviewCard({
       avatar: getImage('shop1', 'jpg'),
       name: 'Minh Nguyen',
-      job: 'Hair Dresser',
-      review: 'We gain 20% more customers last month from NinjaMan',
+      job: 'Nail Artist',
+      review: 'We gain 20% more customers last month from Belazy',
     }),
     mkReviewCard({
       avatar: getImage('girl3', 'jpg'),
@@ -49,7 +49,7 @@ const ServiceReview: React.FC = () => {
       avatar: getImage('spa2', 'jpeg'),
       name: 'Spa Xuan Thu',
       job: 'Spa',
-      review: 'We gain 20% more customers last month from NinjaMan',
+      review: 'We increased our revenue by 15%',
     }),
   ]
 
@@ -79,7 +79,7 @@ const ServiceReview: React.FC = () => {
       <Container>
         <div className="section-title">
           <h1 className="title is-1">
-            { T('2000+ Partners') }
+            { T('100+ Partners') }
           </h1>
         </div>
 

@@ -51,12 +51,12 @@ const CustomerReview: React.FC = () => {
     ),
     mkReviewCard(
       getImage('wedding1', 'jpg'),
-      'Super happy with my wedding photos from #NinjaMan',
+      'Super happy with my wedding photos from #Belazy',
       {avatar: getImage('girl1', 'jpg'), name: 'Tam Nguyen', booked: 'Photography'},
     ),
     mkReviewCard(
       getImage('massage1', 'jpg'),
-      'I book a massage every weekend since I know NinjaMan',
+      'I book a massage every weekend since I know Belazy',
       {avatar: getImage('boy1', 'jpg'), name: 'Minh Tri', booked: 'Massage'},
     ),
   ]

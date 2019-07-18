@@ -99,7 +99,7 @@ export const services: ServiceGroup[] = [
                   ],
                 },
                 {
-                  text: 'Facial acne treatment (1h) ',
+                  text: 'Facial acne treatment (1h)',
                   packageContent: [
                     'Soothing facial mask',
                     '30min facial cleaning',

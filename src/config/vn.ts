@@ -1,8 +1,9 @@
 export default {
-  'The best service experts in town': 'Dịch vụ hàng đầu trong thành phố',
-  'Order affordable high quality services like Beauty to your home!': 'Mang dịch vụ làm đẹp cấp cao giá thấp đến tận nhà bạn',
+  'The best service experts in town': 'Dịch vụ chăm sóc sắc đẹp toàn diện',
+  'Order affordable high quality services like Beauty to your home!': 'Bạn không phải đi xa, đã có chúng tôi tới nhà',
   'Beauty': 'Làm Đẹp',
-  'Nail': 'Làm móng (Nail)',
+  'Spa': 'Dịch vụ Spa',
+  'Nail': 'Làm vụ làm nail',
   'Hair & Makeup': 'Làm tóc & Trang điểm',
   'How it works': 'Cách hoạt động',
   'Select services': 'Chọn dịch vụ',
