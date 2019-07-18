@@ -58,67 +58,115 @@ export const services: ServiceGroup[] = [
             answers: {
               'Facial': [
                 {
-                  text: 'Basic Facial Cleaning (1h)',
+                  text: 'Basic Facial Cleaning & Spa (1h)',
                   image: 'https://villageclubs.com/wp-content/uploads/2018/08/Facial-web_150dpi.jpg',
                   packageContent: [
+                    'Soothing facial mask',
                     '30min facial cleaning',
                     '30min face massage',
                   ],
+                  desc: [
+                    'The facial treatment removes dirt and cleans your skin',
+                    'Facials deeply cleanse your face leaving it nourished and refreshed',
+                    'Facial massage reduces stress and improves blood circulation',
+                  ],
                 },
                 {
-                  text: 'Facial pimple and blackheads treatment + Spa (1h)',
+                  text: 'Facial Pimple and blackhead treatment (1h)',
                   image: 'https://cdn.massagemag.com/wordpress/wp-content/uploads/HolidaySpa.jpg',
                   packageContent: [
-                    '30min Pimple and Blackhead treatment',
+                    'Soothing facial mask',
+                    '30min facial cleaning',
                     '30min face massage',
+                  ],
+                  desc: [
+                    'The facial treatment removes whiteheads and blackheads and cleans your skin',
+                    'Facials deeply cleanse your face leaving it nourished and refreshed',
+                    'Facial massage reduces stress and improves blood circulation',
                   ],
                 },
                 {
-                  text: 'Lotus Herbals - natural glow skin radiance facial (1h)',
+                  text: 'Vitamin C Skincare (1h)',
                   packageContent: [
-                    '30min natural glow skin facial',
+                    'Soothing facial mask',
+                    '30min facial cleaning',
                     '30min face massage',
+                  ],
+                  desc: [
+                    'The facial treatment removes dirt and cleans your skin',
+                    'Facials deeply cleanse your face leaving it nourished and refreshed with vitamin C',
+                    'Facial massage reduces stress and improves blood circulation',
                   ],
                 },
                 {
-                  text: 'Active charcoal skin purifying facial (1h)',
+                  text: 'Facial acne treatment (1h) ',
                   packageContent: [
-                    '30min active charcoal purifying facial',
+                    'Soothing facial mask',
+                    '30min facial cleaning',
                     '30min face massage',
+                  ],
+                  desc: [
+                    'Professional acne treatment that improves the skin',
+                    'Facials deeply cleanse your face leaving it nourished and refreshed',
+                    'Facial massage reduces stress and improves blood circulation',
                   ],
                 },
                 {
-                  text: 'Skin miracle bio whitening facial (1h)',
+                  text: 'Moisturizing Skincare (1h15min)',
                   packageContent: [
-                    '30min Whitening facial',
+                    'Exfoliation',
+                    'Moisturizing facial mask',
+                    '30min facial cleaning',
                     '30min face massage',
+                  ],
+                  desc: [
+                    'Exfoliation removes of dry/dead skin cells on the surface o achieve healthy and glowing skin',
+                    'Moisturization hydrates your face leaving your skin nourished, refreshed and youthful',
+                    'Facial massage reduces stress and improves blood circulation',
                   ],
                 },
               ],
               'Massage': [
                 {
-                  text: 'Back & Shoulder Massage (1h)',
+                  text: 'Full body massage (1h15min)',
                   packageContent: [
-                    '30min Back Massage',
-                    '30min Shoulder',
+                    'Full body massage',
+                    'Low, medium or high pressure intensity',
+                    'Variety of relaxing oils to choose "',
+                  ],
+                  desc: [
+                    'Strengthens Immune System of body',
+                    'Reduces muscle tension, pain and soreness',
+                    'Full body massage reduces stress and improves blood circulation',
                   ],
                 },
                 {
-                  text: 'Foot Massage (30min)',
+                  text: 'Fat-burning Massage (1h15min)',
                   packageContent: [
-                    '30min foot massage',
+                    'Belly massage for fat burn',
+                    'Low, medium or high pressure intensity',
+                    'Variety of relaxing oils to choose',
+                  ],
+                  desc: [
+                    'Stimulates fat burn in the belly area',
+                    'Reduces tension, pain and soreness',
+                    'Reduces stress and improves blood circulation',
+                    'Strengthens the immune system of body',
                   ],
                 },
                 {
-                  text: 'Full Body Massage (1h)',
+                  text: 'Prenatal Massage (1h15min)',
                   packageContent: [
-                    '60min full body massage',
+                    'Professional prenatal massage therapy',
+                    'Relief of everyday symptoms (Headache, muscle tension, fatique, backache)',
                   ],
-                },
-                {
-                  text: 'Head Massage (30min)',
-                  packageContent: [
-                    '30min head massage',
+                  desc: [
+                    'Increases blood circulation for pregnant women',
+                    'Reduces body aches and pains',
+                    'Stabilizes hormones and reduces symptoms of depression or anxiety',
+                    'Reduces edema during pregnancy',
+                    'Reduces stretch marks abdomen after birth',
+                    'Minimizes premature birth',
                   ],
                 },
               ],
@@ -137,53 +185,144 @@ export const services: ServiceGroup[] = [
         queries: [
           {
             text: '',
-            answers: {'': ['Pedicure & Manicure']},
+            answers: {'': ['Manicure', 'Pedicure', 'Combo']},
           },
           {
             text: 'What treatment do you need?',
             isFinal: true,
             answers: {
-              'Pedicure & Manicure': [
-                'Manicure + Basic nail polish',
-                'Pedicure * Basic nail polish',
-                'Manicure + OPI nail polish',
-                'Pedicure * OPI nail polish',
-                'Manicure + Gel polish',
-                'Pedicure + Gel polish',
-                'Remove gel',
+              'Manicure': [
                 {
-                  text: 'Combo 1',
+                  text: 'Manicure + Basic nail polish (30min)',
                   packageContent: [
-                    'Manicure',
-                    'Pedicure',
-                    'Basic nail polish',
+                    'Cleaning and cutting',
+                    'Variety of colors',
+                    'Variety of stones and gems',
                   ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
                 },
                 {
-                  text: 'Combo 2',
+                  text: 'Manicure + OPI polish (30min)',
                   packageContent: [
-                    'Manicure',
-                    'Pedicure',
-                    'OPI nail polish',
+                    'Cleaning and cutting',
+                    'Variety of colors (OPI)',
+                    'Variety of stones and gems',
                   ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
                 },
                 {
-                  text: 'Combo 3',
+                  text: 'Manicure + gel polish (30min)',
                   packageContent: [
-                    'Manicure',
-                    'Pedicure',
-                    'Gel nail polish',
+                    'Cleaning and cutting',
+                    'Variety of colors (gel)',
+                    'Variety of stones and gems"',
                   ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
                 },
               ],
-            },
-          },
-          {
-            text: 'Which paint quality would you prefer?',
-            isFinal: true,
-            answers: {
-              'manicure + polish colour': ['normal', 'premium'],
-              'manicure + OPI Infinite Shine polish': ['premium', 'best'],
+              'Pedicure': [
+                {
+                  text: 'Pedicure + Basic nail polish (30min)',
+                  packageContent: [
+                    'Cleaning and cutting',
+                    'Variety of colors',
+                    'Variety of stones and gems',
+                  ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
+                },
+                {
+                  text: 'Pedicure + OPI polish (30min)',
+                  packageContent: [
+                    'Cleaning and cutting',
+                    'Variety of colors (OPI)',
+                    'Variety of stones and gems',
+                  ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
+                },
+                {
+                  text: 'Pedicure + gel polish (30min)',
+                  packageContent: [
+                    'Cleaning and cutting',
+                    'Variety of colors (gel)',
+                    'Variety of stones and gems',
+                  ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
+                },
+                {
+                  text: 'Gel removal (5min)',
+                  packageContent: [
+                    'Removing gel',
+                  ],
+                  desc: [
+                    'Clean nails'
+                  ]
+                }
+              ],
+              'Combo': [
+                {
+                  text: 'Manicure + Pedicure + Basic nail polish (45min)',
+                  packageContent: [
+                    'Cleaning and cutting',
+                    'Variety of colors',
+                    'Variety of stones and gems',
+                  ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
+                },
+                {
+                  text: 'Manicure + Pedicure + OPI nail polish (45min)',
+                  packageContent: [
+                    'Cleaning and cutting',
+                    'Variety of colors (OPI)',
+                    'Variety of stones and gems',
+                  ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
+                },
+                {
+                  text: 'Manicure + Pedicure + Gel nail polish (45min)',
+                  packageContent: [
+                    'Cleaning and cutting',
+                    'Variety of colors (gel)',
+                    'Variety of stones and gems',
+                  ],
+                  desc: [
+                    'Clean and beautiful nails',
+                    'Nailcare prevent cracks or infections from developing',
+                    'Regular nailcare help maintain healthy nails',
+                  ]
+                }
+              ]
             },
           },
         ],
@@ -199,41 +338,68 @@ export const services: ServiceGroup[] = [
         queries: [
           {
             text: '',
-            answers: {'': ['Hair Styling', 'Hair Treatment', 'Hair Coloring']},
+            answers: {'': ['Hair & Make Up for Events', 'Hair & Make Up for Weddings']},
           },
           {
             text: 'What treatment do you need?',
             isFinal: true,
             answers: {
-              'Hair Styling': [
-                'Fabulous gala style',
-                'Business event style',
-                'Blow dry with Curls',
-                'Hair Ironing',
-                'Trendy curling',
+              'Hair & Make Up for Events': [
+                {
+                  text: 'Hair & Make Up for Business Events/ Interviews (1h)',
+                  packageContent: [
+                    'Customized hairstyle (20min)',
+                    'One complete professional makeup (40min)',
+                    'Eyelashes',
+                  ],
+                  desc: [
+                    'Only top makeup brands used',
+                    'Exclusive style and look consulting',
+                    'Individual style or copy other styles (pictures required)',
+                  ]
+                },
+                {
+                  text: 'Hair & Make Up for parties and gala events (1h)',
+                  packageContent: [
+                    'Customized hairstyle (20min)',
+                    'One complete professional makeup (40min)',
+                    'Eyelashes',
+                  ],
+                  desc: [
+                    'Only top makeup brands used',
+                    'Exclusive style and look consulting',
+                    'Individual style or copy other styles (pictures required)',
+                  ]
+                }
               ],
-              'Hair Treatment': [
-                "L'Oreal Hair Spa (S)",
-                "L'Oreal Hair Spa (M)",
-                "L'Oreal Hair Spa (L)",
-                "Keratin Hair Treament (S)",
-                "Keratin Hair Treament (M)",
-                "Keratin Hair Treament (L)",
-                "Permanent Smoothing (S)",
-                "Permanent Smoothing (M)",
-                "Permanent Smoothing (L)",
-                "Permanent Curls (S)",
-                "Permanent Curls (M)",
-                "Permanent Curls (L)",
-              ],
-              'Hair Coloring': [
-                "L'Oreal Global color (S)",
-                "L'Oreal Global color (M)",
-                "L'Oreal Global color (L)",
-                "L'Oreal Global highlights S)",
-                "L'Oreal Global highlights (M)",
-                "L'Oreal Global highlights (L)",
-              ],
+              'Hair & Make Up for Weddings': [
+                {
+                  text: 'Hair & Make Up for Weddings (2h, 1 look)',
+                  packageContent: [
+                    'Customized hairstyle for brides (60min)',
+                    'One complete bridal makeup (60min)',
+                    'Eyelashes',
+                  ],
+                  desc: [
+                    'Only top makeup brands used',
+                    'Exclusive style and look consulting',
+                    'Individual style or copy other styles (pictures required)',
+                  ]
+                },
+                {
+                  text: 'Hair & Make Up for Weddings (additional looks or person, 2h)',
+                  packageContent: [
+                    'Customized hairstyle for brides (60min)',
+                    'One complete bridal makeup (60min)',
+                    'Eyelashes',
+                  ],
+                  desc: [
+                    'Only top makeup brands used',
+                    'Exclusive style and look consulting',
+                    'Individual style or copy other styles (pictures required)',
+                  ]
+                }
+              ]
             },
           },
         ],
@@ -283,7 +449,6 @@ export interface RichAnswerInfo {
 }
 
 export type AnswerInfo = string | RichAnswerInfo
-
 
 export function groupOf(sv: ServiceInfo): ServiceGroup {
   const rs = services.find(group => {

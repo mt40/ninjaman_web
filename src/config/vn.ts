@@ -62,30 +62,81 @@ export default {
   'Now just sit back and relax. Our provider will call you shortly to arrange the service.': 'Chuyên viên của chúng tôi sẽ liên hệ với bạn qua điện thoại trong thời gian sớm nhất.',
   'We will also message you the booking information in a few minutes': 'Xác nhận đơn hàng sẽ được gửi cho bạn ngay sau đây',
 
-  'Basic Facial Cleaning (1h)': 'Chăm sóc da cơ bản (1h)',
-  'Facial pimple, blackheads treatment & Spa (1h)': 'Chăm sóc da mụn cám, mụn đầu đèn (1h)',
-  'Vitamin C Skincare & Spa (1h)': 'Chăm sóc da bằng Vitamin C nguyên chất (1h)',
-  'Facial acne treatment & Spa (1h 15min)': 'Chăm sóc và kiểm soát da mụn (1h 15p)',
-  'Moisturizing Skincare & Spa (1h 15min)': 'Chăm sóc da tắm dưỡng (1h 15p)',
+  'Be Lazy and Relax': 'Hãy tận hưởng',
+  'Tired of going to the salon? BeLazy provides services like Spa, Facial, Manicure, Pedicure from our professionals at home near you. Get beauticians with at least 2 years of experience at home for the lowest price. Book beauty parlour service at home in Ho Chi Minh City with a few clicks, to have a hygienic and mess-free experience.': 'Muốn làm đẹp nhưng ngại ra ngoài? BeLazy cung cấp các dịch vụ như Spa, Chăm sóc da mặt, Làm Móng từ các chuyên gia với ít nhất 2 năm kinh nghiệm và giá thấp nhất ngay tại nhà bạn. Đặt dịch vụ làm đẹp tại nhà tại Thành phố Hồ Chí Minh với một cú nhấp chuột.',
 
-  'Fullbody Massage (75min)':	'Massage body (75p)',
-  'Fatburning Massage (75min)':	'Massage giảm mỡ bụng (75p)',
-  'Prenatal Massage (75min)':	'Massage cho bà bầu (75p)',
+  'Basic Facial Cleaning & Spa (1h)': 'Chăm sóc da cơ bản & Massage (1h)',
+  'Soothing facial mask': 'Đắp mặt nạ',
+  '30min facial cleaning': '30 phút Làm sạch da mặt ',
+  '30min face massage': '30 phút Massage mặt',
+  'The facial treatment removes dirt and cleans your skin': 'Liệu trình giúp loại bỏ bụi bẩn và vi khuẩn',
+  'Facials deeply cleanse your face leaving it nourished and refreshed': 'Chăm sóc da mặt làm sạch sâu khuôn mặt của bạn để da mặt được nuôi dưỡng và tươi trẻ',
+  'Facial massage reduces stress and improves blood circulation': 'Massage mặt làm giảm căng thẳng và cải thiện lưu thông máu',
 
-  'Manicure + Basic nail polish (30min)':	'Cắt da/Sửa móng tay + Sơn thường (30p)',
-  'Manicure + OPI nail polish (30min)':	'Cắt da/Sửa móng tay + Sơn OPI (30p)',
-  'Manicure + Gel polish (30min)': 'Cắt da/Sửa móng tay + Sơn gel (30p)',
+  'Facial Pimple and blackhead treatment (1h)': 'Chăm sóc da mụn cám, mụn đầu đèn (1h)',
+  'The facial treatment removes whiteheads and blackheads and cleans your skin': '',
 
-  'Pedicure * Basic nail polish (30min)':	'Cắt da/Sửa móng chân + Sơn thường (30p)',
-  'Pedicure * OPI nail polish (30min)':	'Cắt da/Sửa móng chân + Sơn OPI (30p)',
-  'Pedicure + Gel polish (30min)': 'Cắt da/Sửa móng chân + Sơn gel (30p)',
-  'Remove gel (5min)': 'Phá gel (5p)',
+  'Vitamin C Skincare  (1h)': 'Chăm sóc da bằng Vitamin C nguyên chất (1h)',
 
-  'Manicure + Pedicure + Basic nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn thường (45p)',
-  'Manicure + Pedicure + OPI nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn OPI (45p)',
-  'Manicure + Pedicure + Gel nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn gel (45p)',
+  'Facial acne treatment (1h)': 'Chăm sóc da và trị mụn (1h)',
+  'Professional acne treatment that improves the skin': 'Liệu trình chuyên nghiệp giúp hết mụn và phục hồi da',
 
-  'Hair & Make Up for Business Events/ Interviews (1h)': 'Làm tóc và trang điểm cho sự kiện công ty/ Phỏng vấn (1h)',
-  'Hair & Make Up for parties and gala events (1h)': 'Làm tóc và trang điểm cho tiệc (1h)',
-  'Hair & Make Up for Weddings (2h, 1 look)':	'Làm tóc và trang điểm cho cô dâu (1 look) (2h)',
+  'Moisturizing Skincare (1h15min) ': 'Chăm sóc da tắm dưỡng (1h15p)',
+  'Exfoliation': 'Tẩy tế bào chết',
+  'Moisturizing facial mask': 'Mặt nạ dưỡng ẩm',
+
+  'Full body massage (1h15min)': 'Massage body (1h15min)',
+  'Full body massage': 'Massage toàn thân',
+  'Low, medium or high pressure intensity': 'Cường độ thấp, trung bình hoặc cao',
+  'Variety of relaxing oils to choose ': 'Nhiều loại dầu thư giãn để lựa chọn',
+  'Strengthens Immune System of body': 'Tăng cường hệ thống miễn dịch của cơ thể',
+  'Reduces muscle tension, pain and soreness': 'Giảm căng cơ và đau nhức',
+  'Full body massage reduces stress and improves blood circulation': 'Massage toàn thân làm giảm căng thẳng và cải thiện lưu thông máu',
+
+  'Fat-burning Massage (1h15min)': 'Massage giảm mỡ bụng (1h15min)',
+  'Belly massage for fatburn': 'Massage bụng để đốt mỡ',
+  'Stimulates fat burn in the belly area': 'Kích thích đốt cháy mỡ ở vùng bụng',
+  'Reduces tension, pain and soreness': 'Giảm đau nhức',
+  'Reduces stress and improves blood circulation': 'Giảm căng thẳng và cải thiện lưu thông máu',
+  'Strengthens the immune system of body': 'Tăng cường hệ thống miễn dịch của cơ thể',
+
+  'Prenatal Massage (1h15min)': 'Massage cho bà bầu (1h15p)',
+  'Professional prenatal massage therapy': 'Trị liệu bằng massage trước khi sinh chuyên nghiệp',
+  'Relief of everyday symptoms (Headache, muscle tension, fatique, backache)': 'Giảm các triệu chứng hàng ngày (Nhức đầu, căng cơ, mệt mỏi, đau lưng)',
+  'Increases blood circulation for pregnant women': 'Massage giúp tăng tuần hoàn máu cho bà bầu',
+  'Reduces body aches and pains': 'Massage giúp giảm đau nhức cơ thể',
+  'Stabilizes hormones and reduces symptoms of depression or anxiety': 'Massage giúp ổn định hooc-mon và giúp giảm bớt triệu chứng trầm cảm hoặc lo lắng',
+  'Reduces edema during pregnancy': 'Giảm chứng phù nề khi mang thai',
+  'Reduces stretch marks abdomen after birth': 'Giảm tình trạng rạn da, sổ bụng sau khi sinh',
+  'Minimizes premature birth': 'Massage làm giảm thiểu tình trạng sinh non',
+
+  'Manicure + Basic nail polish (30min)': 'Cắt da/Sửa móng tay + Sơn thường (30 phút)',
+  'Cleaning and cutting': 'Làm sạch và cắt da',
+  'Variety of colors': 'Nhiều màu sơn',
+  'Variety of stones and gems': 'Nhiều loại đá và charm',
+  'Clean and beautiful nails': 'Móng sạch và đẹp',
+  'Nailcare prevent cracks or infections from developing': 'Chăm sóc móng ngăn ngừa vết nứt hoặc nhiễm trùng phát triển',
+  'Regular nailcare help maintain healthy nails': 'Chăm sóc móng thường xuyên giúp duy trì móng khỏe mạnh',
+
+  'Manicure + OPI polish (30min)': 'Cắt da/Sửa móng tay + Sơn OPI (30 phút)',
+  'Variety of colors (OPI)': 'Nhiều màu sơn (OPI)',
+
+  'Manicure + gel polish (30min)': 'Cắt da/Sửa móng tay + Sơn gel (30 phút)',
+  'Variety of colors (gel)': 'Nhiều màu sơn (gel)',
+
+  'Pedicure + Basic nail polish (30min)': 'Cắt da/Sửa móng chân + Sơn thường (30 phút)',
+
+  'Pedicure + OPI polish (30min)': 'Cắt da/Sửa móng chân + Sơn OPI (30 phút)',
+
+  'Pedicure + gel polish (30min)': 'Cắt da/Sửa móng chân + Sơn gel (30 phút)',
+
+  'Gel removal (5min)': 'Phá gel (5 phút)',
+  'Removing gel': 'Làm sạch lớp gel cũ',
+  'Clean nails': 'Móng sạch và đẹp',
+
+  'Manicure + Pedicure + Basic nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn thường (45 phút)',
+
+  'Manicure + Pedicure + OPI nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn OPI (45 phút)',
+
+  'Manicure + Pedicure + Gel nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn Gel (45 phút)',
 }

@@ -2,79 +2,45 @@ export const prices = {
   'Beauty': {
     'Spa': {
       'Facial': {
-        'Basic Facial Cleaning (1h)': 290000,
-        'Facial pimple and blackheads treatment + Spa (1h)': 490000,
-        'Lotus Herbals - natural glow skin radiance facial (1h)': 490000,
-        'Active charcoal skin purifying facial (1h)': 490000,
-        'Skin miracle bio whitening facial (1h)': 490000,
+        'Basic Facial Cleaning & Spa (1h)': 290000,
+        'Facial Pimple and blackhead treatment (1h)': 340000,
+        'Vitamin C Skincare (1h)': 340000,
+        'Facial acne treatment (1h)': 390000,
+        'Moisturizing Skincare (1h15min)': 390000,
       },
       'Massage': {
-        'Back & Shoulder Massage (1h)': 390000,
-        'Foot Massage (30min)': 290000,
-        'Full Body Massage (1h)': 590000,
-        'Head Massage (30min)': 290000,
+        'Full body massage (1h15min)': 390000,
+        'Fat-burning Massage (1h15min)': 490000,
+        'Prenatal Massage (1h15min)': 490000,
       },
     },
     'Nail': {
-      'Pedicure & Manicure': {
-        'Manicure + Basic nail polish': 120000,
-        'Pedicure * Basic nail polish': 120000,
-        'Manicure + OPI nail polish': 180000,
-        'Pedicure * OPI nail polish': 180000,
-        'Manicure + Gel polish': 240000,
-        'Pedicure + Gel polish': 240000,
-        'Remove gel': 1200000,
-        'Combo 1': 220000,
-        'Combo 2': 350000,
-        'Combo 3': 390000,
+      'Manicure': {
+        'Manicure + Basic nail polish (30min)': 120000,
+        'Manicure + OPI polish (30min)': 150000,
+        'Manicure + gel polish (30min)': 180000,
       },
+      'Pedicure': {
+        'Pedicure + Basic nail polish (30min)': 180000,
+        'Pedicure + OPI polish (30min)': 240000,
+        'Pedicure + gel polish (30min)': 240000,
+        'Gel removal (5min)': 50000,
+      },
+      'Combo': {
+        'Manicure + Pedicure + Basic nail polish (45min)': 290000,
+        'Manicure + Pedicure + OPI nail polish (45min)': 350000,
+        'Manicure + Pedicure + Gel nail polish (45min)': 390000,
+      }
     },
     'Hair & Makeup': {
-      'Hair Styling': {
-        'Fabulous gala style': 890000,
-        'Business event style': 790000,
-        'Blow dry with Curls': 190000,
-        'Hair Ironing': 190000,
-        'Trendy curling': 290000,
+      'Hair & Make Up for Events': {
+        'Hair & Make Up for Business Events/ Interviews (1h)': 390000,
+        'Hair & Make Up for parties and gala events (1h)': 490000,
       },
-      'Hair Treatment': {
-        "L'Oreal Hair Spa (S)": 290000,
-        "L'Oreal Hair Spa (M)": 390000,
-        "L'Oreal Hair Spa (L)": 490000,
-        "Keratin Hair Treament (S)": 390000,
-        "Keratin Hair Treament (M)": 490000,
-        "Keratin Hair Treament (L)": 590000,
-        "Permanent Smoothing (S)": 690000,
-        "Permanent Smoothing (M)": 890000,
-        "Permanent Smoothing (L)": 990000,
-        "Permanent Curls (S)": 690000,
-        "Permanent Curls (M)": 890000,
-        "Permanent Curls (L)": 990000,
-      },
-      'Hair Coloring': {
-        "L'Oreal Global color (S)": 690000,
-        "L'Oreal Global color (M)": 890000,
-        "L'Oreal Global color (L)": 990000,
-        "L'Oreal Global highlights S)": 490000,
-        "L'Oreal Global highlights (M)": 690000,
-        "L'Oreal Global highlights (L)": 890000,
-      },
+      'Hair & Make Up for Weddings': {
+        'Hair & Make Up for Weddings (2h, 1 look)': 1490000,
+        'Hair & Make Up for Weddings (additional looks or person, 2h)': 490000,
+      }
     }
   },
-  'Photography': {
-    'Wedding': {
-      'In city': {
-        'Engagement Party': 2000000,
-        'Pre-wedding': 1500000,
-        'Ceremony': 3000000,
-      }
-    },
-    'Portrait': {
-      'In city': {
-        '10-photo album': 1000000,
-        '30-photo album': 2200000,
-        '50 photos or more': 3500000,
-      }
-    }
-  }
 }
