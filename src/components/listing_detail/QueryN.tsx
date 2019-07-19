@@ -47,6 +47,12 @@ const QueryN: React.FC = () => {
     return packageContent
   }
 
+  const answerContentOnly = (a: RichAnswerInfo) => {
+    return a.packageContent && a.packageContent.map((c, i) => {
+      return <li key={ i }>⦁ { T(c) }</li>
+    })
+  }
+
   const answerDescOnly = (a: RichAnswerInfo) => {
     return a.desc && a.desc.map((d, i) => {
       return <li key={ i }>⦁ { T(d) }</li>
@@ -190,9 +196,12 @@ const QueryN: React.FC = () => {
         )
 
         return (
-          <div>
+          <div className='answer_detail'>
             { cover }
             <h1 className="title is-5 top_padding_20">{ T(ans.text) }</h1>
+            <p>{T('This service includes:')}</p>
+            <ul className='v_margin_10'>{ answerContentOnly(ans) }</ul>
+            <p>{T('Description:')}</p>
             <ul className='v_margin_10'>{ answerDescOnly(ans) }</ul>
           </div>
         )

@@ -62,9 +62,13 @@ export default {
 
   'Now just sit back and relax. Our provider will call you shortly to arrange the service.': 'Chuyên viên của chúng tôi sẽ liên hệ với bạn qua điện thoại trong thời gian sớm nhất.',
   'We will also message you the booking information in a few minutes': 'Xác nhận đơn hàng sẽ được gửi cho bạn ngay sau đây',
+  'Please pay by cash to our staff after the service': 'Bạn vui lòng thanh toán tiền mặt cho nhân viên của chúng tôi khi kết thúc dịch vụ',
 
   'Be Lazy and Relax': 'Hãy tận hưởng',
   'Tired of going to the salon? BeLazy provides services like Spa, Facial, Manicure, Pedicure from our professionals at home near you. Get beauticians with at least 2 years of experience at home for the lowest price. Book beauty parlour service at home in Ho Chi Minh City with a few clicks, to have a hygienic and mess-free experience.': 'Muốn làm đẹp nhưng ngại ra ngoài? BeLazy cung cấp các dịch vụ như Spa, Chăm sóc da mặt, Làm Móng từ các chuyên gia với ít nhất 2 năm kinh nghiệm và giá thấp nhất ngay tại nhà bạn. Đặt dịch vụ làm đẹp tại nhà tại Thành phố Hồ Chí Minh với một cú nhấp chuột.',
+
+  'This service includes:': 'Dịch vụ bao gồm:',
+  'Description:': 'Mô tả:',
 
   'Basic Facial Cleaning & Spa (1h)': 'Chăm sóc da cơ bản & Massage (1h)',
   'Soothing facial mask': 'Đắp mặt nạ',
