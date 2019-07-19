@@ -75,7 +75,7 @@ const Checkout: React.FC = () => {
 
   const renderMethod = () => {
     if (selectedMethod === PaymentMethod.Cash) {
-      return 'Cash payment'
+      return T('Please pay by cash to our staff after the service')
     }
     else {
       return (
