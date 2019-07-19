@@ -18,7 +18,7 @@ export default {
   'We match you with the right professionals with the right budget': 'Chúng tôi sẽ lựa chọn chuyên gia phù hợp nhất với nhu cầu của bạn',
   'Hassle Free Service Delivery': 'Nhẹ nhàng & Nhanh chóng',
   'Super convenient, guaranteed service from booking to delivery': 'Cực kì tiện lợi, đảm bảo dịch vụ tận nơi',
-  'Are You A Professional Looking For New Customers?': 'Bạn là chuyên gia làm đẹp muốn mở rộng quy mô?',
+  'Are You A Beauty Professional Looking To Increase Revenue?': 'Bạn là chuyên gia làm đẹp và muốn tăng doanh thu?',
   'Sign Up': 'Đăng ký ngay',
 
   'Choose the type of service': 'Chọn loại dịch vụ',

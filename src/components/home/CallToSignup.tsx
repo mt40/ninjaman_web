@@ -22,7 +22,7 @@ const CallToSignup: React.FC = () => {
     <section className="CallToSignup section">
       <Container>
         <div className="call_to_signup_wrapper" style={ style() }>
-          <p>{ T('Are You A Professional Looking For New Customers?') }</p>
+          <p>{ T('Are You A Beauty Professional Looking To Increase Revenue?') }</p>
           <a className="button button_signup is-info is-normal"
              href='https://docs.google.com/forms/d/e/1FAIpQLSciWgG_DG-GdBnOhLaaV0URVD31PWZEg4RSLAcpz_1Ibf2AQQ/viewform'
              style={ {
