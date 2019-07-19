@@ -16,6 +16,7 @@ const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
   const {history} = useRouter()
   const [focusedAnswer, setFocusedAnswer] = React.useState<number>(0)
+  const [cartSize, setCartSize] = React.useState<number>(0)
 
   console.log('QueryN', context) // REMOVE
 
@@ -90,12 +91,14 @@ const QueryN: React.FC = () => {
   }
 
   const onAddRemoveCart = (a: AnswerInfo, count: number) => {
+    console.log('update cart', a, count) // REMOVE
     if (typeof a === 'string') {
       context.action.setCart(a, count)
     }
     else {
       context.action.setCart(a.text, count)
     }
+    setCartSize(context.data.cart.totalItems())
   }
 
   const getPrice = (a: AnswerInfo) => {
@@ -199,9 +202,9 @@ const QueryN: React.FC = () => {
           <div className='answer_detail'>
             { cover }
             <h1 className="title is-5 top_padding_20">{ T(ans.text) }</h1>
-            <p>{T('This service includes:')}</p>
+            <p>{ T('This service includes:') }</p>
             <ul className='v_margin_10'>{ answerContentOnly(ans) }</ul>
-            <p>{T('Description:')}</p>
+            <p>{ T('Description:') }</p>
             <ul className='v_margin_10'>{ answerDescOnly(ans) }</ul>
           </div>
         )
@@ -209,6 +212,23 @@ const QueryN: React.FC = () => {
     }
 
     return <div className="column">{ content() }</div>
+  }
+
+  const btnNext = () => {
+    if (cartSize > 0) {
+      return (
+        <button className="button is-info h_padding_50 purple_gradient"
+                onClick={ () => onFinalAnswerNextClick() }>
+          { T('Next') }
+        </button>
+      )
+    }
+
+    return (
+      <button className="button is-info h_padding_50 purple_gradient" disabled>
+        { T('Next') }
+      </button>
+    )
   }
 
   return (
@@ -225,9 +245,7 @@ const QueryN: React.FC = () => {
           <i className="fas fa-chevron-left" style={ {fontSize: '100%'} }/>
         </button>
 
-        <button className="button is-info h_padding_50 purple_gradient" onClick={ () => onFinalAnswerNextClick() }>
-          { T('Next') }
-        </button>
+        { btnNext() }
       </div>
     </div>
   )

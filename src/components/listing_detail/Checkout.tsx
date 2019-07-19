@@ -94,23 +94,25 @@ const Checkout: React.FC = () => {
   }
 
   const purchasingItems = () => {
-    return Array.from(cart.items.entries()).map(([ansChain, val], idx) => {
-      const price = Cart.priceOf(service.group, service.info, val.chain)
-        .times(val.count)
-        .toDisplayString()
-      return (
-        <div key={ idx }>
-          <div className="columns is-mobile">
-            <div className='column'>
-              <p>{ `${ ansChain } x ${ val.count }` }</p>
-            </div>
-            <div className='column is-3 text_right'>
-              <p><b>{ price }</b></p>
+    return Array.from(cart.items.entries())
+      .filter(([, val]) => val.count > 0)
+      .map(([ansChain, val], idx) => {
+        const price = Cart.priceOf(service.group, service.info, val.chain)
+          .times(val.count)
+          .toDisplayString()
+        return (
+          <div key={ idx }>
+            <div className="columns is-mobile">
+              <div className='column'>
+                <p>{ `${ ansChain } x ${ val.count }` }</p>
+              </div>
+              <div className='column is-3 text_right'>
+                <p><b>{ price }</b></p>
+              </div>
             </div>
           </div>
-        </div>
-      )
-    })
+        )
+      })
   }
 
   const totalPrice =

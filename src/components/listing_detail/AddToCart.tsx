@@ -11,7 +11,11 @@ const AddToCart: React.FC<AddToCartProp> = (props) => {
   const [count, setCount] = React.useState(0)
 
   const onSubtractClick = () => {
-    setCount(Math.max(count - 1, 0))
+    const newCount = Math.max(count - 1, 0)
+    setCount(newCount)
+    if (props.onItemChange) {
+      props.onItemChange(newCount)
+    }
   }
 
   const onAddClick = () => {

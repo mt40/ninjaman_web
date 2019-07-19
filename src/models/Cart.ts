@@ -32,6 +32,15 @@ export class Cart {
     )
   }
 
+  totalItems(): number {
+    return Array.from(this.items.values()).reduce(
+      (agg: number, v: Value) => {
+        return agg + v.count
+      },
+      0,
+    )
+  }
+
   static keyOf(c: AnswerChain): string {
     return c.reduce((p, c) => `${ p } > ${ c }`)
   }

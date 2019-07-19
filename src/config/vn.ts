@@ -89,6 +89,10 @@ export default {
   'Moisturizing Skincare (1h15min) ': 'Chăm sóc da tắm dưỡng (1h15p)',
   'Exfoliation': 'Tẩy tế bào chết',
   'Moisturizing facial mask': 'Mặt nạ dưỡng ẩm',
+  'Exfoliation removes of dry/dead skin cells on the surface o achieve healthy and glowing skin':
+    'Liệu trình tẩy tế bào chết giúp loại bỏ tế bào da chết giúp da sáng mịn',
+  'Moisturization hydrates your face leaving your skin nourished, refreshed and youthful':
+    'Làm ẩm để da mặt được nuôi dưỡng và tươi trẻ',
 
   'Full body massage (1h15min)': 'Massage body (1h15min)',
   'Full body massage': 'Massage toàn thân',
