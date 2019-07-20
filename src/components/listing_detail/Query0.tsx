@@ -97,7 +97,7 @@ const Query0: React.FC = () => {
     return (
       <div className='column is-7'>
         <h1 className="title text_white">
-          { T(`Best ${ service.info.name } in HCMC`) }
+          { T(service.info.name) }
         </h1>
         <div className="is-size-5 content margin_top_40 text_white">
           <ul>

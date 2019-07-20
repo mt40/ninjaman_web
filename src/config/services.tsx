@@ -178,9 +178,13 @@ export const services: ServiceGroup[] = [
         name: 'Nail',
         image: getImage('nail1', 'jpg'),
         features: [
-          'Doorstep repair within 10 mins',
-          'Protection Against Damage Upto INR 10,000',
-          '30 day post-service guarantee',
+          'Be Lazy and Relax',
+
+          'Tired of going to the salon? BeLazy provides services like Spa, Facial, ' +
+          'Manicure, Pedicure from our professionals at home near you. Get beauticians ' +
+          'with at least 2 years of experience at home for the lowest price. Book beauty ' +
+          'parlour service at home in Ho Chi Minh City with a few clicks, to have a ' +
+          'hygienic and mess-free experience.',
         ],
         queries: [
           {
@@ -331,9 +335,13 @@ export const services: ServiceGroup[] = [
         name: 'Hair & Makeup',
         image: getImage('hair', 'jpg'),
         features: [
-          'Doorstep repair within 10 mins',
-          'Protection Against Damage Upto INR 10,000',
-          '30 day post-service guarantee',
+          'Be Lazy and Relax',
+
+          'Tired of going to the salon? BeLazy provides services like Spa, Facial, ' +
+          'Manicure, Pedicure from our professionals at home near you. Get beauticians ' +
+          'with at least 2 years of experience at home for the lowest price. Book beauty ' +
+          'parlour service at home in Ho Chi Minh City with a few clicks, to have a ' +
+          'hygienic and mess-free experience.',
         ],
         queries: [
           {
