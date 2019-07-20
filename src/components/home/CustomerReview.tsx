@@ -2,10 +2,10 @@ import React from 'react'
 import { getImage, isMobile } from '../../util/Resource'
 import './CustomerReview.css'
 import Container from '../Container'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import ScrollMenu from 'react-horizontal-scrolling-menu'
-import ReactCountUp from 'react-countup'
+import { appContext } from '../../App'
 
 interface UserInfo {
   avatar: string,
@@ -14,6 +14,9 @@ interface UserInfo {
 }
 
 const CustomerReview: React.FC = () => {
+  const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   const mkReviewCard = (cover: string, text: string, user: UserInfo) => {
     const cls = isMobile() ? 'review_card_mobile' : 'review_card'
 
@@ -87,7 +90,7 @@ const CustomerReview: React.FC = () => {
       <Container>
         <div className="section-title">
           <h1 className="title is-1">
-            {/*<ReactCountUp start={ 4000 } end={ 5000 } delay={ 0 } duration={ 2000 } useEasing/>*/}
+            {/*<ReactCountUp start={ 4000 } end={ 5000 } delay={ 0 } duration={ 2000 } useEasing/>*/ }
             <p>{ '50+ ' + T('Successful Bookings') }</p>
           </h1>
         </div>

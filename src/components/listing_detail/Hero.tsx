@@ -2,10 +2,11 @@ import React from 'react'
 import { appContext } from '../../App'
 import './Hero.css'
 import Container from '../Container'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 
 const Hero: React.FC = () => {
   const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
 
   // Can safely get current service here since empty case is already
   // handled earlier in `ListingDetailPage`.

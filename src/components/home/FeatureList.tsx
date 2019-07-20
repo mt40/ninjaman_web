@@ -1,15 +1,19 @@
 import React from 'react'
 import Container from '../Container'
 import './FeatureList.css'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import { getImage } from '../../util/Resource'
+import { appContext } from '../../App'
 
 const FeatureList: React.FC = () => {
+  const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   const mkColumn = (img: string, title: string, text: string) => {
     return (
       <div className='column'>
-        <DivImg height={ 150 } url={ img } fallbackColor={ 'transparent' } sizeContain={true}/>
+        <DivImg height={ 150 } url={ img } fallbackColor={ 'transparent' } sizeContain={ true }/>
         <p className='title is-4 margin_top_20'>
           { T(title) }
         </p>

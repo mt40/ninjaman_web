@@ -4,7 +4,7 @@ import { appContext } from '../../App'
 import './UserInfoForm.css'
 import { Link } from 'react-router-dom'
 import * as Page from '../../context/navigation'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import { isMobile } from '../../util/Resource'
 import ReactDatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -32,13 +32,15 @@ class Field {
 }
 
 const UserInfoForm: React.FC = () => {
+
   const [isFormValid, setIsFormValid] = React.useState<boolean>(false)
   const [invalidFields, setInvalidFields] = React.useState<Field[]>([])
 
   const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   const service = context.data.service.get.info
   const user = context.data.user
-  console.log('UserInfoForm', context) // REMOVE
 
   const validateUserInfo = (user: UserInfo): boolean => {
     const fullName = _.size(user.fullName) > 0

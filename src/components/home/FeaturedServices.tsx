@@ -6,12 +6,13 @@ import useRouter from 'use-react-router'
 import { appContext } from '../../App'
 import { ServiceInfo, services } from '../../config/services'
 import * as Page from '../../context/navigation'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import { isMobile } from '../../util/Resource'
 
 const FeaturedServices: React.FC = () => {
   const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
   const {history} = useRouter()
 
   const leftArrow = <div className="scroll-menu-arrow">{ '<' }</div>

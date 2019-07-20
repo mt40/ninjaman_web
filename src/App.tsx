@@ -4,7 +4,6 @@ import HomePage from './components/home/HomePage'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ListingDetailPage from './components/listing_detail/ListingDetailPage'
 import TopBar from './components/TopBar'
-import Footer from './components/Footer'
 import * as _ from 'lodash'
 import { none, Option, some } from 'ts-option'
 import { ServiceContext } from './context/service'
@@ -13,6 +12,8 @@ import { Cart } from './models/Cart'
 import { MyContext } from './models/MyContext'
 import { QueryAnswer } from './models/QueryAnswer'
 import { UserInfo } from './models/UserInfo'
+import { Lang } from './models/Lang'
+import { ReactCookieProps, withCookies } from 'react-cookie'
 
 // export const appContext = React.createContext<AppContext>(defaultContext)
 // const Provider = appContext.Provider
@@ -25,6 +26,7 @@ export const appContext = React.createContext<MyContext>({
     service: none as Option<ServiceContext>,
     cart: new Cart(),
     user: UserInfo.default,
+    lang: Lang.VN,
   },
   action: {
     answer: () => {},
@@ -35,13 +37,22 @@ export const appContext = React.createContext<MyContext>({
     setCart: () => {},
     clearCart: () => {},
     setUser: () => {},
+    setLang: () => {},
   },
 })
 const Provider = appContext.Provider
 
-type Props = {}
+interface Props extends ReactCookieProps {}
 
 class App extends React.Component<Props, MyContext> {
+  getLang() {
+    if(this.props.cookies) {
+      const fromCookie = this.props.cookies.get('lang')
+      return fromCookie ? Lang.fromName(fromCookie) : Lang.VN
+    }
+    return Lang.VN
+  }
+
   state: MyContext = {
     data: {
       query: {
@@ -50,6 +61,7 @@ class App extends React.Component<Props, MyContext> {
       service: none,
       cart: new Cart(),
       user: UserInfo.default,
+      lang: this.getLang(),
     },
     action: {
       answer: (query: QueryInfo, ...answers: string[]) => {
@@ -60,8 +72,8 @@ class App extends React.Component<Props, MyContext> {
             query: {
               answers: this.state.data.query.answers.concat(
                 answers.map(a => {
-                  return { query: query, get: a }
-                })
+                  return {query: query, get: a}
+                }),
               ),
             },
           },
@@ -158,12 +170,22 @@ class App extends React.Component<Props, MyContext> {
           this.setState(newState)
         }
       },
+      setLang: (lang: Lang) => {
+        const newState = {
+          ...this.state,
+          data: {
+            ...this.state.data,
+            lang: lang,
+          },
+        }
+        if (!_.isEqual(newState.data, this.state.data)) {
+          this.setState(newState)
+        }
+      },
     },
   }
 
   render() {
-    console.log('app', appContext) // REMOVE
-
     return (
       <Provider value={ this.state }>
         <BrowserRouter>
@@ -183,4 +205,4 @@ class App extends React.Component<Props, MyContext> {
   }
 }
 
-export default App
+export default withCookies(App)

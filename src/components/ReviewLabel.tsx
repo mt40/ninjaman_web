@@ -1,7 +1,8 @@
 import React from 'react'
 import './ReviewLabel.css'
 import _ from 'lodash'
-import { T } from '../config/translation/util'
+import { translator } from '../config/translation/util'
+import { appContext } from '../App'
 
 interface ReviewLabelProp {
   rank: ReviewRank
@@ -31,6 +32,9 @@ export class ReviewRank {
 }
 
 const ReviewLabel: React.FC<ReviewLabelProp> = (props) => {
+  const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   return (
     <span className='ReviewLabel'>
       <span className={ props.rank.cssClass }>{ props.rank.text }</span>

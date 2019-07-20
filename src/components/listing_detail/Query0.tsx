@@ -2,7 +2,7 @@ import React from 'react'
 import './Query0.css'
 import Container from '../Container'
 import { appContext } from '../../App'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import { isMobile } from '../../util/Resource'
 
@@ -11,6 +11,8 @@ const Query0: React.FC = () => {
   const service = context.data.service.get
   const query0 = service.info.queries[0]
   const answers = query0.answers['']
+
+  const T = translator(context.data.lang).T
 
   const answersElems = answers.map((a, idx) => {
     const ans = () => {

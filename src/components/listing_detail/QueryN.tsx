@@ -4,7 +4,7 @@ import './QueryN.css'
 import * as _ from 'lodash'
 import useRouter from 'use-react-router'
 import * as Page from '../../context/navigation'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import { AnswerInfo, RichAnswerInfo } from '../../config/services'
 import AddToCart from './AddToCart'
@@ -14,11 +14,10 @@ import { isMobile } from '../../util/Resource'
 
 const QueryN: React.FC = () => {
   const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
   const {history} = useRouter()
   const [focusedAnswer, setFocusedAnswer] = React.useState<number>(0)
   const [cartSize, setCartSize] = React.useState<number>(0)
-
-  console.log('QueryN', context) // REMOVE
 
   const query = context.action.getNextQuery().get
   const prevAnswer = _.last(context.data.query.answers) as QueryAnswer
