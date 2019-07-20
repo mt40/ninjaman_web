@@ -1,6 +1,6 @@
 export default {
-  'The best service experts in town': 'Dịch vụ chăm sóc sắc đẹp toàn diện',
-  'Order affordable high quality services like Beauty to your home!': 'Bạn không phải đi xa, đã có chúng tôi tới nhà',
+  'Your beauty service expert in Ho Chi Minh city': 'Dịch vụ chăm sóc sắc đẹp toàn diện',
+  'We bring quality beauty services to your home': 'Bạn không phải đi xa, có chúng tôi tới nhà',
   'Beauty': 'Làm Đẹp',
   'Spa': 'Dịch vụ Spa',
   'Nail': 'Dịch vụ làm nail',
