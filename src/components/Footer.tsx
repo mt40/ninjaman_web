@@ -95,7 +95,8 @@ const Footer: React.FC = () => {
             <SimpleButton style={ {minWidth: 'auto'} } text="About Us" lightColor={ true }
                           onClick={ toggleAboutUs }/>
             <SimpleButton style={ {minWidth: 'auto'} } text="Terms & Conditions"
-                          lightColor={ true }/>
+                          lightColor={ true }
+                          href={ 'https://drive.google.com/file/d/1i0c95hjWbDtZlcIiNMkWII5woeeJw_5P/view' }/>
           </div>
         </div>
       </div>
