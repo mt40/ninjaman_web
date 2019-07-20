@@ -44,13 +44,11 @@ const Footer: React.FC = () => {
     setIsAboutUsVisible(!isAboutUsVisible)
   }
 
-  return (
-    <footer className="Footer footer">
-      <Container>
-        { aboutUs() }
-
-        <div className="columns">
-          <div className="column is-4">
+  const links = () => {
+    if (isMobile()) {
+      return (
+        <div>
+          <div>
             <div className="company_info">
               <p className='is-size-4 brand_font has-text-white-ter'>BELAZY</p>
               <div className="names">
@@ -59,23 +57,73 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="column"/>
+          <div className="entries v_margin_20" style={ {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: isMobile() ? 'flex-start' : 'flex-end',
+          } }>
+            <SimpleButton style={ {minWidth: 'auto', paddingLeft: 0} } text="About Us"
+                          lightColor={ true }
+                          onClick={ toggleAboutUs }/>
+            <SimpleButton style={ {minWidth: 'auto', paddingLeft: 0} } text="Terms & Conditions"
+                          lightColor={ true }
+                          href={ 'https://drive.google.com/file/d/1i0c95hjWbDtZlcIiNMkWII5woeeJw_5P/view' }/>
+          </div>
+        </div>
+      )
+    }
 
-          <div className="column is-4">
-            <div className="entries" style={ {
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: isMobile() ? 'flex-start' : 'flex-end',
-            } }>
-              <SimpleButton style={ {minWidth: 'auto'} } text="About Us" lightColor={ true }
-                            onClick={ toggleAboutUs }/>
-              <SimpleButton style={ {minWidth: 'auto'} } text="Terms & Conditions"
-                            lightColor={ true }/>
+    return (
+      <div className="columns">
+        <div className="column is-4">
+          <div className="company_info">
+            <p className='is-size-4 brand_font has-text-white-ter'>BELAZY</p>
+            <div className="names">
+              <p>© 2019 Belazy Ltd.</p>
             </div>
           </div>
         </div>
+
+        <div className="column"/>
+
+        <div className="column is-4">
+          <div className="entries" style={ {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: isMobile() ? 'flex-start' : 'flex-end',
+          } }>
+            <SimpleButton style={ {minWidth: 'auto'} } text="About Us" lightColor={ true }
+                          onClick={ toggleAboutUs }/>
+            <SimpleButton style={ {minWidth: 'auto'} } text="Terms & Conditions"
+                          lightColor={ true }/>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const layout = () => {
+    if (isMobile()) {
+      return (
+        <div>
+          { aboutUs() }
+          { links() }
+        </div>
+      )
+    }
+
+    return (
+      <Container>
+        { aboutUs() }
+        { links() }
       </Container>
-    </footer>
+    )
+  }
+
+  return (
+    <div className="Footer footer">
+      { layout() }
+    </div>
   )
 }
 

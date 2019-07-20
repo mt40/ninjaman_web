@@ -3,7 +3,8 @@ import './SimpleButton.css'
 
 interface SimpleButtonProps extends HTMLAttributes<HTMLElement> {
   text: string,
-  lightColor?: boolean
+  lightColor?: boolean,
+  href?: string,
 }
 
 const SimpleButton: React.FC<SimpleButtonProps> = (props) => {
