@@ -3,9 +3,10 @@ import { getImage, isMobile } from '../../util/Resource'
 import './CustomerReview.css'
 import './ServiceReview.css'
 import Container from '../Container'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import ScrollMenu from 'react-horizontal-scrolling-menu'
 import DivImg from '../DivImg'
+import { appContext } from '../../App'
 
 interface ServiceInfo {
   avatar: string,
@@ -15,6 +16,9 @@ interface ServiceInfo {
 }
 
 const ServiceReview: React.FC = () => {
+  const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   const mkReviewCard = (sv: ServiceInfo) => {
     const cls = isMobile() ? 'service_review_card_mobile' : 'service_review_card'
 

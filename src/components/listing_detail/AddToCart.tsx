@@ -1,6 +1,7 @@
 import React from 'react'
 import './AddToCart.css'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
+import { appContext } from '../../App'
 
 interface AddToCartProp {
   onItemChange?: (count: number) => void
@@ -8,6 +9,9 @@ interface AddToCartProp {
 }
 
 const AddToCart: React.FC<AddToCartProp> = (props) => {
+  const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   const [count, setCount] = React.useState(0)
 
   const onSubtractClick = () => {

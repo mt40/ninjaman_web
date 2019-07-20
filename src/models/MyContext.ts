@@ -4,6 +4,7 @@ import { Cart } from './Cart'
 import { QueryInfo, ServiceInfo } from '../config/services'
 import { QueryAnswer } from './QueryAnswer'
 import { UserInfo } from './UserInfo'
+import { Lang } from './Lang'
 
 export interface MyContext {
   data: {
@@ -13,6 +14,7 @@ export interface MyContext {
     service: Option<ServiceContext>,
     cart: Cart,
     user: UserInfo,
+    lang: Lang,
   },
   action: {
     answer: (query: QueryInfo, ...answers: string[]) => void,
@@ -23,5 +25,6 @@ export interface MyContext {
     setCart: (lastAns: string, count: number) => void,
     clearCart: () => void,
     setUser: (user: UserInfo) => void,
+    setLang: (lang: Lang) => void,
   }
 }

@@ -3,9 +3,13 @@ import Container from './Container'
 import { isMobile } from '../util/Resource'
 import './Footer.css'
 import SimpleButton from './SimpleButton'
-import { T } from '../config/translation/util'
+import { translator } from '../config/translation/util'
+import { appContext } from '../App'
 
 const Footer: React.FC = () => {
+  const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   const [isAboutUsVisible, setIsAboutUsVisible] = React.useState(false)
 
   const aboutUs = () => {

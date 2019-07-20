@@ -2,9 +2,13 @@ import React from 'react'
 import { getImage } from '../../util/Resource'
 import './ServiceGroupList.css'
 import Container from '../Container'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
+import { appContext } from '../../App'
 
 const ServiceGroupList: React.FC = () => {
+  const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   const mkGroup = (name: string, imageName: string) => {
     return (
       <div className="level-item has-text-centered">

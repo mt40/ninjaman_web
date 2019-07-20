@@ -1,10 +1,14 @@
 import React, { CSSProperties } from 'react'
 import Container from '../Container'
 import './CallToSignup.css'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import { isMobile } from '../../util/Resource'
+import { appContext } from '../../App'
 
 const CallToSignup: React.FC = () => {
+  const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
+
   const style = (): CSSProperties => {
     if (isMobile()) {
       return {

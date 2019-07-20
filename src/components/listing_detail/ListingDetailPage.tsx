@@ -13,15 +13,15 @@ import Checkout from './Checkout'
 import * as Page from '../../context/navigation'
 import { Elements, StripeProvider } from 'react-stripe-elements'
 import * as _ from 'lodash'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import BookingConfirm from './BookingConfirm'
 import { isMobile } from '../../util/Resource'
 
 const ListingDetailPage: React.FC = () => {
-  console.log('ListingDetailPage')
-
   const context = React.useContext(appContext)
   const {history} = useRouter()
+
+  const T = translator(context.data.lang).T
 
   return context.data.service.match({
     none: () => {

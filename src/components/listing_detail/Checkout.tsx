@@ -8,7 +8,7 @@ import * as Page from '../../context/navigation'
 import useRouter from 'use-react-router'
 import { getImage, isMobile } from '../../util/Resource'
 import DivImg from '../DivImg'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import { Cart } from '../../models/Cart'
 
 enum PaymentMethod {
@@ -18,13 +18,12 @@ enum PaymentMethod {
 
 const Checkout: React.FC = () => {
   const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
   const {history} = useRouter()
   const service = context.data.service.get
   const cart = context.data.cart
 
   const [selectedMethod, setMethod] = React.useState(PaymentMethod.Cash)
-
-  console.log('Checkout', context) // REMOVE
 
   const items = context.data.query.answers.map(a => a.get)
   const purchase = items

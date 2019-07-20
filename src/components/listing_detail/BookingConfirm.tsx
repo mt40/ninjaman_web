@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { T } from '../../config/translation/util'
+import { translator } from '../../config/translation/util'
 import Spinner from 'react-spinkit'
 import './BookingConfirm.css'
 import DivImg from '../DivImg'
@@ -10,6 +10,7 @@ import * as Slack from '../../util/Slack'
 
 const BookingConfirm: React.FC = () => {
   const context = React.useContext(appContext)
+  const T = translator(context.data.lang).T
 
   const [isLoading, setIsLoading] = React.useState(true)
   const loadingTime = Math.random() * 3000 + 2000 // millis
