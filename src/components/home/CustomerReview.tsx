@@ -87,8 +87,8 @@ const CustomerReview: React.FC = () => {
       <Container>
         <div className="section-title">
           <h1 className="title is-1">
-            <ReactCountUp start={ 4000 } end={ 5000 } delay={ 0 } duration={ 2000 } useEasing/>
-            <p>{ T('Successful Bookings') }</p>
+            {/*<ReactCountUp start={ 4000 } end={ 5000 } delay={ 0 } duration={ 2000 } useEasing/>*/}
+            <p>{ '50+ ' + T('Successful Bookings') }</p>
           </h1>
         </div>
 
