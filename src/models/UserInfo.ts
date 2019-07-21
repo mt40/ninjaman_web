@@ -8,15 +8,16 @@ function defaultAppointmentDate(date: Date): Date {
     date.getFullYear(),
     date.getMonth(),
     date.getDate(),
+    next2Hours,
   )
 
   if (next2Hours < 10) {
     copy.setHours(10)
   }
 
-  if (next2Hours > 17) {
-    copy.setHours(10)
+  if (next2Hours > 20) {
     copy.setDate(copy.getDate() + 1)
+    copy.setHours(10)
   }
 
   return copy

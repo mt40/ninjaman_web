@@ -157,7 +157,7 @@ const UserInfoForm: React.FC = () => {
 
   const dateTimeField = () => {
     const now = new Date()
-    const maxTime = new Date(0, 0, 0, 17)
+    const maxTime = new Date(0, 0, 0, 20)
 
     let minDate = new Date()
     const minTime = () => {
