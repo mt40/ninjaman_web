@@ -13,6 +13,8 @@ const TopBar: React.FC = () => {
   const changeLanguage = (lang: Lang) => {
     setCookie('lang', lang.name, {maxAge: 2147483647})
     context.action.setLang(lang)
+
+    if (isBurgerVisible) setIsBurgerVisible(false)
   }
 
   const toggleBurgerVisible = () => {

@@ -8,15 +8,16 @@ interface SimpleButtonProps extends HTMLAttributes<HTMLElement> {
 }
 
 const SimpleButton: React.FC<SimpleButtonProps> = (props) => {
-  const {text, lightColor, ...others} = props
+  const {text, lightColor, onClick, ...others} = props
   const colorClass = lightColor ? 'has-text-white-ter' : ''
 
   return (
-    // todo: href
-    <a className={ `SimpleButton button no_bg ${ colorClass }` }
-       { ...others }>
-      { text }
-    </a>
+    <div onClick={ onClick }>
+      <a className={ `SimpleButton button no_bg ${ colorClass }` }
+         { ...others }>
+        { text }
+      </a>
+    </div>
   )
 }
 
