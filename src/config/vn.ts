@@ -84,7 +84,7 @@ export default {
   'Facial Pimple and blackhead treatment (1h)': 'Chăm sóc da mụn cám, mụn đầu đèn (1h)',
   'The facial treatment removes whiteheads and blackheads and cleans your skin': '',
 
-  'Vitamin C Skincare  (1h)': 'Chăm sóc da bằng Vitamin C nguyên chất (1h)',
+  'Vitamin C Skincare (1h)': 'Chăm sóc da bằng Vitamin C nguyên chất (1h)',
 
   'Facial acne treatment (1h)': 'Chăm sóc da và trị mụn (1h)',
   'Professional acne treatment that improves the skin': 'Liệu trình chuyên nghiệp giúp hết mụn và phục hồi da',
