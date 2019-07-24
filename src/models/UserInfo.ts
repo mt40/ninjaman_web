@@ -38,5 +38,15 @@ export class UserInfo {
     this.appointmentDate = appointmentDate
   }
 
+  forReporting() {
+    return {
+      fullName: this.fullName,
+      email: this.email,
+      phone: this.phone,
+      address: this.address,
+      appointmentDate: this.appointmentDate.toLocaleString('vi-VN'),
+    }
+  }
+
   static default = new UserInfo('', '', '', '', defaultAppointmentDate(now))
 }

@@ -13,7 +13,7 @@ ${ context.data.cart.toJson(service.group, service.info) }
 \`\`\`
 User:
 \`\`\`
-${ toPrettyJson(context.data.user) }
+${ toPrettyJson(context.data.user.forReporting()) }
 \`\`\`
 From:
 \`\`\`
