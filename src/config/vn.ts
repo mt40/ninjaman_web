@@ -84,12 +84,12 @@ export default {
   'Facial Pimple and blackhead treatment (1h)': 'Chăm sóc da mụn cám, mụn đầu đèn (1h)',
   'The facial treatment removes whiteheads and blackheads and cleans your skin': '',
 
-  'Vitamin C Skincare (1h)': 'Chăm sóc da bằng Vitamin C nguyên chất (1h)',
+  'Vitamin C Skincare (1h)': 'Chăm sóc da bằng Vitamin C nguyên chất (1h)',
 
   'Facial acne treatment (1h)': 'Chăm sóc da và trị mụn (1h)',
   'Professional acne treatment that improves the skin': 'Liệu trình chuyên nghiệp giúp hết mụn và phục hồi da',
 
-  'Moisturizing Skincare (1h15min) ': 'Chăm sóc da tắm dưỡng (1h15p)',
+  'Moisturizing Skincare (1h15min)': 'Chăm sóc da tắm dưỡng (1h15p)',
   'Exfoliation': 'Tẩy tế bào chết',
   'Moisturizing facial mask': 'Mặt nạ dưỡng ẩm',
   'Exfoliation removes of dry/dead skin cells on the surface o achieve healthy and glowing skin':
@@ -97,7 +97,7 @@ export default {
   'Moisturization hydrates your face leaving your skin nourished, refreshed and youthful':
     'Làm ẩm để da mặt được nuôi dưỡng và tươi trẻ',
 
-  'Full body massage (1h15min)': 'Massage body (1h15min)',
+  'Full body massage (1h15min)': 'Massage body (1h15p)',
   'Full body massage': 'Massage toàn thân',
   'Low, medium or high pressure intensity': 'Cường độ thấp, trung bình hoặc cao',
   'Variety of relaxing oils to choose ': 'Nhiều loại dầu thư giãn để lựa chọn',
@@ -153,4 +153,23 @@ export default {
   'Manicure + Pedicure + OPI nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn OPI (45 phút)',
 
   'Manicure + Pedicure + Gel nail polish (45min)': 'Cắt da/Sửa móng chân và tay + Sơn Gel (45 phút)',
+
+  'Hair & Make Up for Events': 'Làm tóc và trang điểm cho sự kiện công ty / Phỏng vấn',
+  'Hair & Make Up for Weddings': 'Làm tóc và trang điểm cho đám cưới',
+
+  'Hair & Make Up for Business Events/ Interviews (1h)': 'Làm tóc và trang điểm cho sự kiện công ty / Phỏng vấn (1h)',
+  'Customized hairstyle (20min)': 'Kiểu tóc theo yêu cầu (20 phút)',
+  'One complete professional makeup (40min)': 'Trang điểm chuyên nghiệp hoàn chỉnh (40 phút)',
+  'Eyelashes': 'Gắn lông mi giả',
+  'Only top makeup brands used': 'Chỉ sử dụng các thương hiệu mỹ phẩm hàng đầu',
+  'Exclusive style and look consulting': 'Phong cách độc đáo, tư vấn tận tâm',
+  'Individual style or copy other styles (pictures required)': 'Phong cách cá nhân hoặc phong cách theo yêu cầu',
+
+  'Hair & Make Up for parties and gala events (1h)': 'Làm tóc và trang điểm cho tiệc (1h)',
+
+  'Hair & Make Up for Weddings (2h, 1 look)': 'Làm tóc và trang điểm cho cô dâu (2h, 1 look)',
+  'Customized hairstyle for brides (60min)': 'Kiểu tóc cô dâu theo yêu cầu (60 phút)',
+  'One complete bridal makeup (60min)': 'Trang điểm cô dâu chuyên nghiệp (60 phút)',
+
+  'Hair & Make Up for Weddings (additional looks or person, 2h)': 'Làm tóc và trang điểm cho cô dâu (thêm look hoặc người, 2h)',
 }

@@ -99,11 +99,13 @@ const Checkout: React.FC = () => {
         const price = Cart.priceOf(service.group, service.info, val.chain)
           .times(val.count)
           .toDisplayString()
+        const chain = val.chain.map(x => T(x)).join(' > ')
+
         return (
           <div key={ idx }>
             <div className="columns is-mobile">
               <div className='column'>
-                <p>{ `${ ansChain } x ${ val.count }` }</p>
+                <p>{ `${ chain } x ${ val.count }` }</p>
               </div>
               <div className='column is-3 text_right'>
                 <p><b>{ price }</b></p>
