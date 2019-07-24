@@ -122,6 +122,8 @@ export default {
   'Reduces stretch marks abdomen after birth': 'Giảm tình trạng rạn da, sổ bụng sau khi sinh',
   'Minimizes premature birth': 'Massage làm giảm thiểu tình trạng sinh non',
 
+  'Manicure': 'Làm móng tay',
+  'Pedicure': 'Làm móng chân',
   'Manicure + Basic nail polish (30min)': 'Cắt da/Sửa móng tay + Sơn thường (30 phút)',
   'Cleaning and cutting': 'Làm sạch và cắt da',
   'Variety of colors': 'Nhiều màu sơn',
