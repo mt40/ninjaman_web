@@ -13,7 +13,7 @@ const BookingConfirm: React.FC = () => {
   const T = translator(context.data.lang).T
 
   const [isLoading, setIsLoading] = React.useState(true)
-  const loadingTime = Math.random() * 3000 + 2000 // millis
+  const loadingTime = 3000
 
   React.useEffect(
     () => {
