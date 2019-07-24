@@ -48,5 +48,9 @@ export class UserInfo {
     }
   }
 
+  getLocalBookingDateStr() {
+    return this.appointmentDate.toLocaleString('vi-VN')
+  }
+
   static default = new UserInfo('', '', '', '', defaultAppointmentDate(now))
 }
