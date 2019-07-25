@@ -49,7 +49,7 @@ export const services: ServiceGroup[] = [
           {
             text: '',
             answers: {
-              '': ['Facial', 'Massage'],
+              '': ['Facial', 'Massage', 'Eyelash Extensions'],
             },
           },
           {
@@ -170,6 +170,17 @@ export const services: ServiceGroup[] = [
                   ],
                 },
               ],
+              'Eyelash Extensions': [
+                {
+                  text: 'Eyelash Extensions (1h30min)',
+                  packageContent: [
+                    'Semi-permanent eyelash extensions (lasting 3-4 weeks)',
+                  ],
+                  desc: [
+                    'Longer, thicker and natural looking eyelashes',
+                  ],
+                },
+              ],
             },
           },
         ],
@@ -207,7 +218,7 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
+                  ],
                 },
                 {
                   text: 'Manicure + OPI polish (30min)',
@@ -220,7 +231,7 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
+                  ],
                 },
                 {
                   text: 'Manicure + gel polish (30min)',
@@ -233,7 +244,7 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
+                  ],
                 },
               ],
               'Pedicure': [
@@ -248,7 +259,7 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
+                  ],
                 },
                 {
                   text: 'Pedicure + OPI polish (30min)',
@@ -261,7 +272,7 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
+                  ],
                 },
                 {
                   text: 'Pedicure + gel polish (30min)',
@@ -274,7 +285,7 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
+                  ],
                 },
                 {
                   text: 'Gel removal (5min)',
@@ -282,9 +293,9 @@ export const services: ServiceGroup[] = [
                     'Removing gel',
                   ],
                   desc: [
-                    'Clean nails'
-                  ]
-                }
+                    'Clean nails',
+                  ],
+                },
               ],
               'Combo': [
                 {
@@ -298,7 +309,7 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
+                  ],
                 },
                 {
                   text: 'Manicure + Pedicure + OPI nail polish (45min)',
@@ -311,7 +322,7 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
+                  ],
                 },
                 {
                   text: 'Manicure + Pedicure + Gel nail polish (45min)',
@@ -324,9 +335,9 @@ export const services: ServiceGroup[] = [
                     'Clean and beautiful nails',
                     'Nailcare prevent cracks or infections from developing',
                     'Regular nailcare help maintain healthy nails',
-                  ]
-                }
-              ]
+                  ],
+                },
+              ],
             },
           },
         ],
@@ -364,7 +375,7 @@ export const services: ServiceGroup[] = [
                     'Only top makeup brands used',
                     'Exclusive style and look consulting',
                     'Individual style or copy other styles (pictures required)',
-                  ]
+                  ],
                 },
                 {
                   text: 'Hair & Make Up for parties and gala events (1h)',
@@ -377,8 +388,8 @@ export const services: ServiceGroup[] = [
                     'Only top makeup brands used',
                     'Exclusive style and look consulting',
                     'Individual style or copy other styles (pictures required)',
-                  ]
-                }
+                  ],
+                },
               ],
               'Hair & Make Up for Weddings': [
                 {
@@ -392,7 +403,7 @@ export const services: ServiceGroup[] = [
                     'Only top makeup brands used',
                     'Exclusive style and look consulting',
                     'Individual style or copy other styles (pictures required)',
-                  ]
+                  ],
                 },
                 {
                   text: 'Hair & Make Up for Weddings (additional looks or person, 2h)',
@@ -405,9 +416,9 @@ export const services: ServiceGroup[] = [
                     'Only top makeup brands used',
                     'Exclusive style and look consulting',
                     'Individual style or copy other styles (pictures required)',
-                  ]
-                }
-              ]
+                  ],
+                },
+              ],
             },
           },
         ],

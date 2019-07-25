@@ -13,6 +13,9 @@ export const prices = {
         'Fat-burning Massage (1h15min)': 490000,
         'Prenatal Massage (1h15min)': 490000,
       },
+      'Eyelash Extensions': {
+        'Eyelash Extensions (1h30min)': 490000,
+      },
     },
     'Nail': {
       'Manicure': {
@@ -30,7 +33,7 @@ export const prices = {
         'Manicure + Pedicure + Basic nail polish (45min)': 290000,
         'Manicure + Pedicure + OPI nail polish (45min)': 350000,
         'Manicure + Pedicure + Gel nail polish (45min)': 390000,
-      }
+      },
     },
     'Hair & Makeup': {
       'Hair & Make Up for Events': {
@@ -40,7 +43,7 @@ export const prices = {
       'Hair & Make Up for Weddings': {
         'Hair & Make Up for Weddings (2h, 1 look)': 1490000,
         'Hair & Make Up for Weddings (additional looks or person, 2h)': 490000,
-      }
-    }
+      },
+    },
   },
 }

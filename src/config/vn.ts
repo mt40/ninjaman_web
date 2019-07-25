@@ -122,6 +122,11 @@ export default {
   'Reduces stretch marks abdomen after birth': 'Giảm tình trạng rạn da, sổ bụng sau khi sinh',
   'Minimizes premature birth': 'Massage làm giảm thiểu tình trạng sinh non',
 
+  'Eyelash Extensions': 'Nối mi',
+  'Eyelash Extensions (1h30min)': 'Nối mi (1h30p)',
+  'Semi-permanent eyelash extensions (lasting 3-4 weeks)': 'Nối mi (giữ được 3-4 tuần)',
+  'Longer, thicker and natural looking eyelashes': 'Mi dài, dày, tự nhiên',
+
   'Manicure': 'Làm móng tay',
   'Pedicure': 'Làm móng chân',
   'Manicure + Basic nail polish (30min)': 'Cắt da/Sửa móng tay + Sơn thường (30 phút)',
