@@ -81,7 +81,7 @@ export default {
   'Facials deeply cleanse your face leaving it nourished and refreshed': 'Chăm sóc da mặt làm sạch sâu khuôn mặt của bạn để da mặt được nuôi dưỡng và tươi trẻ',
   'Facial massage reduces stress and improves blood circulation': 'Massage mặt làm giảm căng thẳng và cải thiện lưu thông máu',
 
-  'Facial Pimple and blackhead treatment (1h)': 'Chăm sóc da mụn cám, mụn đầu đèn (1h)',
+  'Facial Pimple and blackhead treatment (1h)': 'Chăm sóc da mụn cám, mụn đầu đen (1h)',
   'The facial treatment removes whiteheads and blackheads and cleans your skin': '',
 
   'Vitamin C Skincare (1h)': 'Chăm sóc da bằng Vitamin C nguyên chất (1h)',
