@@ -203,7 +203,7 @@ const QueryN: React.FC = () => {
             <h1 className="title is-5 top_padding_20">{ T(ans.text) }</h1>
             <p>{ T('This service includes:') }</p>
             <ul className='v_margin_10'>{ answerContentOnly(ans) }</ul>
-            <p>{ T('Description:') }</p>
+            <p>{ T('Benefits:') }</p>
             <ul className='v_margin_10'>{ answerDescOnly(ans) }</ul>
           </div>
         )

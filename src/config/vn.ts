@@ -72,6 +72,7 @@ export default {
 
   'This service includes:': 'Dịch vụ bao gồm:',
   'Description:': 'Mô tả:',
+  'Benefits:': 'Lợi ích:',
 
   'Basic Facial Cleaning & Spa (1h)': 'Chăm sóc da cơ bản & Massage (1h)',
   'Soothing facial mask': 'Đắp mặt nạ',
