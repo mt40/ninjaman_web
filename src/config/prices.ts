@@ -14,7 +14,11 @@ export const prices = {
         'Prenatal Massage (1h15min)': 490000,
       },
       'Eyelash Extensions': {
-        'Eyelash Extensions (1h30min)': 490000,
+        'Classic Eyelash Extensions (1h)': 350000,
+        'Volume Eyelashes 2D-6D (1h)': 390000,
+        'Cartoon, Angel, Wet-Look Eyelashes (1h30min)': 450000,
+        'Vietnamese Eyelashes (1h30min)': 490000,
+        'Remove Eyelashes (15min)': 50000,
       },
     },
     'Nail': {

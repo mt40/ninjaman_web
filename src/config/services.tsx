@@ -172,12 +172,97 @@ export const services: ServiceGroup[] = [
               ],
               'Eyelash Extensions': [
                 {
-                  text: 'Eyelash Extensions (1h30min)',
+                  text: 'Classic Eyelash Extensions (1h)',
                   packageContent: [
-                    'Semi-permanent eyelash extensions (lasting 3-4 weeks)',
+                    'Classic eyelash extensions, a method where 1 lash extension ' +
+                    '(0,1 mm to 0,25 mm) is glued to your natural ' +
+                    'eyelashes. Classic eyelash extensions are perfect for clients who already ' +
+                    'have a lot of lashes, but want to add more length to look more beautiful',
+
+                    'We make sure that your eyes are protected and won\'t be irritated',
+                    'We choose eye lashes with suitable length, thickness and curvature',
+                    'We clean your eyes with oil-free products before applying lash extensions',
+                    'We help and advise you how to take care of the extensions',
+                    'Eyelash extensions can last up to 6 weeks with correct care and maintenance',
                   ],
                   desc: [
-                    'Longer, thicker and natural looking eyelashes',
+                    'Long and even lashes will help your eyes look bigger, more beautiful and ' +
+                    'attractive',
+                    'No itching or irritation',
+                    'No glue grease of eyelash extensions',
+                    'No harm to real eyelashes',
+                  ],
+                },
+                {
+                  text: 'Volume Eyelashes 2D-6D (1h)',
+                  packageContent: [
+                    'Volume eyelash, a method where 2 to 10 lash extensions (0,04 mm to 0,07 mm) ' +
+                    'are glued to 1 natural lash. Volume lashes are perfect for clients who ' +
+                    'don\'t have a lot of lashes, have sparse lashes, bald spots or just want a ' +
+                    'more dramatic look without having to use a thicker lash',
+
+                    'We make sure that your eyes are protected and won\'t be irritated',
+                    'We choose eye lashes with suitable length, thickness and curvature',
+                    'We clean your eyes with oil-free products before applying lash extensions',
+                    'We help and advise you how to take care of the extensions',
+                    'Eyelash extensions can last up to 6 weeks with correct care and maintenance',
+                  ],
+                  desc: [
+                    'Long and even lashes will help your eyes look bigger, more beautiful ' +
+                    'and attractive',
+                    'No itching or irritation',
+                    'No glue grease of eyelash extensions',
+                    'No harm to real eyelashes"',
+                  ],
+                },
+                {
+                  text: 'Cartoon, Angel, Wet-Look Eyelashes (1h30min)',
+                  packageContent: [
+                    'Cartoon, Angel, Wet-Look Eyelashes are styles that are popular with younger ' +
+                    'generations who love anime and cosplay',
+                    'We make sure that your eyes are protected and won\'t be irritated',
+                    'We choose eye lashes with suitable length, thickness and curvature',
+                    'We clean your eyes with oil-free products before applying lash extensions',
+                    'We help and advise you how to take care of the extensions',
+                    'Eyelash extensions can last up to 6 weeks with correct care and maintenance',
+                  ],
+                  desc: [
+                    'Long and even lashes will help your eyes look bigger, more beautiful ' +
+                    'and attractive',
+                    'No itching or irritation',
+                    'No glue grease of eyelash extensions',
+                    'No harm to real eyelashes"',
+                  ],
+                },
+                {
+                  text: 'Vietnamese Eyelashes (1h30min)',
+                  packageContent: [
+                    'Vietnamese eyelashes is a method where multiple eyelash extensions with ' +
+                    'different lengths are glued to real lash in a vietnamese fashion',
+                    'We make sure that your eyes are protected and won\'t be irritated',
+                    'We choose eye lashes with suitable length, thickness and curvature',
+                    'We clean your eyes with oil-free products before applying lash extensions',
+                    'We help and advise you how to take care of the extensions',
+                    'Eyelash extensions can last up to 6 weeks with correct care and maintenance"',
+                  ],
+                  desc: [
+                    'Long and even lashes will help your eyes look bigger, more beautiful ' +
+                    'and attractive',
+                    'No itching or irritation',
+                    'No glue grease of eyelash extensions',
+                    'No harm to real eyelashes"',
+                  ],
+                },
+                {
+                  text: 'Remove Eyelashes (15min)',
+                  packageContent: [
+                    'Facial cleaning',
+                    'Use of skin friendly eyelash remover products',
+                    'Clean eyelids',
+                  ],
+                  desc: [
+                    'No itching or irritation',
+                    'No harm to real eyelashes',
                   ],
                 },
               ],

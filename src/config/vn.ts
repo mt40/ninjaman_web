@@ -124,9 +124,33 @@ export default {
   'Minimizes premature birth': 'Massage làm giảm thiểu tình trạng sinh non',
 
   'Eyelash Extensions': 'Nối mi',
-  'Eyelash Extensions (1h30min)': 'Nối mi (1h30p)',
-  'Semi-permanent eyelash extensions (lasting 3-4 weeks)': 'Nối mi (giữ được 3-4 tuần)',
-  'Longer, thicker and natural looking eyelashes': 'Mi dài, dày, tự nhiên',
+
+  'Classic Eyelash Extensions (1h)': 'Nối Mi Classic (1h)',
+  'Classic eyelash extensions, a method where 1 lash extension (0,1 mm to 0,25 mm) is glued to your natural eyelashes. Classic eyelash extensions are perfect for clients who already have a lot of lashes, but want to add more length to look more beautiful': 'Nối mi Classic (one by one) một sợi mi giả sẽ được gắn vào một sợi mi thật (sợi mi 0,1 mm đến 0,25 mm)',
+  'We make sure that your eyes are protected and won\'t be irritated': 'Kiểm tra tình trạng mi và độ kích ứng nếu có của khách hàng',
+  'We choose eye lashes with suitable length, thickness and curvature': 'Tìm hiểu mục đích sử dụng của khách hàng để tư vấn về kỹ thuật nối mi. lựa chọn sợi mi có độ dài, dày và độ cong phù hợp với đôi mắt',
+  'We clean your eyes with oil-free products before applying lash extensions': 'Vệ sinh mắt cho khách hàng bằng các sản phẩm không chứa dầu trước khi tiến hành nối mi',
+  'We help and advise you how to take care of the extensions': 'Hướng dẫn khách hàng cách giữ gìn mi sau khi nối',
+  'Eyelash extensions can last up to 6 weeks with correct care and maintenance': 'Nếu được chăm sóc kỹ lưỡng, mi nối có thể duy trì đến 6 tuần trước khi lần lượt rụng đi',
+
+  'Long and even lashes will help your eyes look bigger, more beautiful and attractive': 'Một hàng mi dài và đều đặn sẽ giúp đôi mắt của bạn trông to hơn, đẹp hơn và thu hút ánh nhìn của người đối diện',
+  'No itching or irritation': 'KHÔNG cộm, ngứa hoặc khó chịu',
+  'No glue grease of eyelash extensions': 'KHÔNG lộ chân keo, chân keo mướt',
+  'No harm to real eyelashes': 'KHÔNG nặng mắt và ảnh hưởng đến mi thật',
+
+  'Volume Eyelashes 2D-6D (1h)': 'Mi Volume 2D-6D (1h)',
+  'Volume eyelash, a method where 2 to 10 lash extensions (0,04 mm to 0,07 mm) are glued to 1 natural lash. Volume lashes are perfect for clients who don\'t have a lot of lashes, have sparse lashes, bald spots or just want a more dramatic look without having to use a thicker lash': 'Nối mi Volume, nối từ hai đến mười sợi mi giả trên một sợi mi thật (sợi mi 0,04 mm đến 0,07 mm). Biện pháp này được ưa chuộng và phổ biến hơn do độ bền và hạn chế các sợi mi bị rối',
+
+  'Cartoon, Angel, Wet-Look Eyelashes (1h30min)': 'Mi Katun, Thiên Thần, Mắt Ướt (1h30p)',
+  'Cartoon, Angel, Wet-Look Eyelashes are styles that are popular with younger generations who love anime and cosplay': 'Nối mi Katun, Thiên Thần hoặc Mắt Ướt là  những kiểu nối mi được đông đảo bạn trẻ yêu thích bởi sự cá tính và lộng lẫy mà nó mang lại',
+
+  'Vietnamese Eyelashes (1h30min)': 'Mi Hoa Hồng Đen (1h30p)',
+  'Vietnamese eyelashes is a method where multiple eyelash extensions with different lengths are glued to real lash in a vietnamese fashion': 'Nối mi hoa hồng đen  (loại mi theo phong cách Việt Nam) cách nối cách nối mi nhiều sợi mi giả trên một sợi mi thật nhưng có độ ngắn dài khác nhau',
+
+  'Remove Eyelashes (15min)': 'Tháo Mi (15p)',
+  'Facial cleaning': 'Tẩy trang cho mắt',
+  'Use of skin friendly eyelash remover products': 'Dùng sản phẩm gỡ keo dán lông mi giả',
+  'Clean eyelids': 'Lau sạch và rửa mi mắt',
 
   'Manicure': 'Làm móng tay',
   'Pedicure': 'Làm móng chân',
