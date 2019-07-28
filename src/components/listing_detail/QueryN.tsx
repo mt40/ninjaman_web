@@ -3,7 +3,7 @@ import { appContext } from '../../App'
 import './QueryN.css'
 import * as _ from 'lodash'
 import useRouter from 'use-react-router'
-import * as Page from '../../context/navigation'
+import * as pages from '../../models/Page'
 import { translator } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import { AnswerInfo, RichAnswerInfo } from '../../config/services'
@@ -168,7 +168,7 @@ const QueryN: React.FC = () => {
   }
 
   const onFinalAnswerNextClick = () => {
-    history.push(Page.userInfo(service.info).path)
+    history.push(pages.userInfo(service.info).path)
   }
 
   const onBackClick = () => {

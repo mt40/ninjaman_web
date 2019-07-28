@@ -5,7 +5,7 @@ import './FeaturedServices.css'
 import useRouter from 'use-react-router'
 import { appContext } from '../../App'
 import { ServiceInfo, services } from '../../config/services'
-import * as Page from '../../context/navigation'
+import * as pages from '../../models/Page'
 import { translator } from '../../config/translation/util'
 import DivImg from '../DivImg'
 import { isMobile } from '../../util/Resource'
@@ -20,7 +20,7 @@ const FeaturedServices: React.FC = () => {
 
   const onListingClick = (sv: ServiceInfo) => {
     context.action.setService(sv)
-    history.push(Page.serviceDetail(sv).path)
+    history.push(pages.serviceDetail(sv).path)
   }
 
   const mkServiceElems = (services: ServiceInfo[], mobile: Boolean = false) => {

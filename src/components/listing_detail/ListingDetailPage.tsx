@@ -10,7 +10,7 @@ import { ServiceGroup, ServiceInfo } from '../../config/services'
 import UserInfoForm from './UserInfoForm'
 import { Route, Switch } from 'react-router'
 import Checkout from './Checkout'
-import * as Page from '../../context/navigation'
+import * as pages from '../../models/Page'
 import { Elements, StripeProvider } from 'react-stripe-elements'
 import * as _ from 'lodash'
 import { translator } from '../../config/translation/util'
@@ -25,7 +25,7 @@ const ListingDetailPage: React.FC = () => {
 
   return context.data.service.match({
     none: () => {
-      history.replace(Page.home.path)
+      history.replace(pages.home.path)
       return null
     },
     some: sv => {
@@ -43,7 +43,7 @@ const ListingDetailPage: React.FC = () => {
 
     const deepQueryCloseBtnClick = () => {
       context.action.clearAnswers()
-      history.replace(Page.serviceDetail(service).path)
+      history.replace(pages.serviceDetail(service).path)
     }
 
     const title = `${ T(group.name) } > ${ T(service.name) }`
@@ -125,11 +125,11 @@ const ListingDetailPage: React.FC = () => {
     return (
       <div className="ListingDetailPage">
         <Switch>
-          <Route exact path={ Page.checkout(service).path } render={ () => checkout }/>
-          <Route exact path={ Page.userInfo(service).path } render={ () => userInfoForm }/>
-          <Route exact path={ Page.bookingConfirm(service).path }
+          <Route exact path={ pages.checkout(service).path } render={ () => checkout }/>
+          <Route exact path={ pages.userInfo(service).path } render={ () => userInfoForm }/>
+          <Route exact path={ pages.bookingConfirm(service).path }
                  render={ () => <BookingConfirm/> }/>
-          <Route path={ Page.serviceDetail(service).path } render={ () => renderQuery() }/>
+          <Route path={ pages.serviceDetail(service).path } render={ () => renderQuery() }/>
         </Switch>
       </div>
     )

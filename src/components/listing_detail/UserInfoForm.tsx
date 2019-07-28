@@ -3,7 +3,7 @@ import Container from '../Container'
 import { appContext } from '../../App'
 import './UserInfoForm.css'
 import { Link } from 'react-router-dom'
-import * as Page from '../../context/navigation'
+import * as pages from '../../models/Page'
 import { translator } from '../../config/translation/util'
 import { isMobile } from '../../util/Resource'
 import ReactDatePicker from 'react-datepicker'
@@ -231,7 +231,7 @@ const UserInfoForm: React.FC = () => {
   const btnCheckout = () => {
     if (isFormValid) {
       return (
-        <Link to={ Page.checkout(service).path }>
+        <Link to={ pages.checkout(service).path }>
           <button className="button is-info h_padding_50 purple_gradient">
             { T('Checkout') }
           </button>

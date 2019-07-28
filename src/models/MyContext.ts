@@ -1,5 +1,5 @@
 import { none, Option, some } from 'ts-option'
-import { ServiceContext } from '../context/service'
+import { ServiceContext } from './ServiceContext'
 import { Cart } from './Cart'
 import { groupOf, QueryInfo, ServiceInfo } from '../config/services'
 import { QueryAnswer } from './QueryAnswer'

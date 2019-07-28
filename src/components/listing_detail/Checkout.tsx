@@ -4,7 +4,7 @@ import { appContext } from '../../App'
 import { CardElement, injectStripe } from 'react-stripe-elements'
 import './Checkout.css'
 import { Link } from 'react-router-dom'
-import * as Page from '../../context/navigation'
+import * as pages from '../../models/Page'
 import useRouter from 'use-react-router'
 import { getImage, isMobile } from '../../util/Resource'
 import DivImg from '../DivImg'
@@ -162,7 +162,7 @@ const Checkout: React.FC = () => {
             <div className="column"/>
 
             <div className="column is-narrow">
-              <Link to={ Page.bookingConfirm(service.info).path }>
+              <Link to={ pages.bookingConfirm(service.info).path }>
                 <button className="button is-info h_padding_50 purple_gradient">
                   { T('Confirm') }
                 </button>
