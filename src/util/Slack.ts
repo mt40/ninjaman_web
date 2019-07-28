@@ -2,6 +2,8 @@ import { MyContext } from '../models/MyContext'
 import { toPrettyJson } from './Json'
 import _ from 'lodash'
 import { translator } from '../config/translation/util'
+import * as http from './http'
+import * as apis from '../config/apis'
 
 /** Reports user registration to Slack. */
 export const postUserRegistration = (context: MyContext) => {
@@ -44,14 +46,5 @@ ${ generateResponse() }
 \`\`\`
 `
 
-  return fetch(
-    'https://hooks.slack.com/services/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',
-    {
-      method: 'POST',
-      headers: {
-        // 'Content-Type': 'application/json',
-      },
-      body: toPrettyJson({text: message}),
-    },
-  ).catch(console.log)
+  return http.post(apis.slack.postMessage, {text: message})
 }
